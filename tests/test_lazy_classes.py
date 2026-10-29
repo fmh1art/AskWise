@@ -9,10 +9,10 @@ def test_exact_ec2_trace_for_every_three_bit_boolean_function():
         for true in range(8):
             oracle=p.run(true,'ec2')
             expected=[t['question'] for t in oracle['trace'] if 'question' in t]
-            for acquisition in ['comparison','fixed','random']:
+            for acquisition,bound in [('comparison','independent'),('fixed','independent'),('random','independent'),('comparison','partition'),('random','partition')]:
                 calls=[]
                 def execute(i):calls.append(i);return labels[i]
-                r=run_lazy(worlds,execute,lambda q:worlds[true][q],acquisition=acquisition)
+                r=run_lazy(worlds,execute,lambda q:worlds[true][q],acquisition=acquisition,bound=bound)
                 assert r['asked']==expected
                 assert r['answer']==labels[true]
                 assert len(calls)==len(set(calls))<=8
