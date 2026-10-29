@@ -2,7 +2,7 @@
   "schema_version": 1,
   "topic": "A2: Ask only questions that change the answer",
   "phase": "algorithm-development",
-  "updated_at": "2026-10-29T05:04:07.588720+00:00",
+  "updated_at": "2026-10-29T06:11:19.975182+00:00",
   "active_hypotheses": [
     "Sound query structure may support cheaper correctness and relevance certificates; generic EC2 action certification has not beaten the simple execution-cost control"
   ],
@@ -20,7 +20,8 @@
     "E009 stronger bounds lose primary metric to immediate-witness control",
     "E010: 120 fresh-seed tasks and 48 descriptive stress fixtures across ten configurations",
     "Expanded paper: 10x10 main table, eight statistical figures, and 24 relevant references",
-    "Grouped table/figure redesign with reference-defined model strata and separate contract audit"
+    "Grouped table/figure redesign with reference-defined model strata and separate contract audit",
+    "Ten-page main working draft with overview, algorithm framework and six experimental subsections; user requirements synchronized into AutoResearchSkills"
   ],
   "budget": {
     "wall_hours_limit": null,
@@ -64,8 +65,14 @@
   "latest_user_steering": {
     "date": "2026-10-29",
     "source": "User messages in this session",
-    "request": "Redesign confusing Table 2 and sparse figures using grouped bar charts and task/method grouped tables; reference papers linked in the supplied CV. Keep actual model quality separate from finite-universe contract checks.",
-    "scope": "Presentation and evidence expansion; strict guarantees and substantive-algorithm acceptance remain unchanged."
+    "request": "Add a single-column overview and a double-column algorithm framework; expand main content to about ten pages with substantial experiment coverage. Persist requirements from the entire process back to AutoResearchSkills.",
+    "scope": "Authorized expanded working manuscript, not a final page-limit-compliant submission. Strict guarantees, substantive algorithm requirement and per-round resource constraints remain unchanged."
   },
-  "latest_evaluation": "results/E010/report.json"
+  "latest_evaluation": "results/E010/report.json",
+  "manuscript": {
+    "main_content_pages": 10,
+    "total_pdf_pages": 17,
+    "status": "expanded working draft for user trimming",
+    "validation": "results/E010/manuscript-expansion-validation.json"
+  }
 }

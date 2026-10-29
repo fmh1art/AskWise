@@ -1,0 +1,29 @@
+{
+  "kind": "explanatory diagrams, not measurements",
+  "example": {
+    "completed_total": 100,
+    "pending_observed": 0,
+    "pending_allowed_repair": 50,
+    "answer_matrix": [
+      [
+        100,
+        100
+      ],
+      [
+        100,
+        150
+      ]
+    ]
+  },
+  "algorithm_scope": "finite supplied universe; binary coordinate policies with local relevance",
+  "source": "scripts/draw_concept_figures.py",
+  "source_sha256": "8a01c83fe1cb4ac18d0facd82237065f93b03eaf77b62d33f832555f73b42b9d",
+  "files": {
+    "figures/overview.pdf": "56bea0cb06eff5d6dee8bf865a6a5b1e8933c0c753bcacd3666b3392d98b73a2",
+    "figures/overview.svg": "b9abed6505371a7885d086bda790e374361731c74c26fd945a41f4e5e50a1ba4",
+    "figures/overview.png": "4b8aeb22b7c4bcc325e584abb45c2da568b729d32127d173ebf7f3d4bc773a27",
+    "figures/algorithm_framework.pdf": "073996426ac689e44c5101b7dc3afbc3be1bb01b0969fc37207e3c71c6658b59",
+    "figures/algorithm_framework.svg": "9dfdad5f0c7bebed1bc7942bed2c4c9dd540e7852c4453880a1e221b9e284018",
+    "figures/algorithm_framework.png": "e6959c2496fdeddb81be632fe6044a2b8121e6ef285efebc6ba145f8b2d848a9"
+  }
+}

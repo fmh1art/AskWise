@@ -108,5 +108,7 @@
       "recall": 29.24528301886792,
       "all_found": 58.490566037735846
     }
-  }
+  },
+  "superseded_for_manuscript_layout_by": "results/E010/manuscript-expansion-validation.json",
+  "historical_layout_note": "The plot-polish validation describes the preceding 15-page manuscript. Its data and statistical-figure checks remain unchanged; the expanded manuscript has its own layout validation."
 }
