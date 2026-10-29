@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-29",
+  "status": "passed",
+  "scope": "Matplotlib reference-style refinement only",
+  "comparison_code_commit": "bebbd635961e95f4a775c1ed96593a43908d8e1e",
+  "comparison_paper_commit": "b93bfa676ea8f3d939b99d048a0d3555a312477d",
+  "references_reviewed": [
+    {
+      "paper": "AutoPrep",
+      "page": 11,
+      "figure": 8
+    },
+    {
+      "paper": "DeepPrep",
+      "page": 11,
+      "figure": 6
+    },
+    {
+      "paper": "BatchER",
+      "page": 10,
+      "figure": 7
+    }
+  ],
+  "style": {
+    "font": "DejaVu Sans",
+    "headings": "bold centered panel headings and bold axis labels",
+    "model_bars": "pale purple dense hatching for observed-state; dark purple solid for two-state",
+    "policy_bars": "four selection colors; solid fixed / pale hatched witness",
+    "legend": "compact lightly boxed shared legends below main grouped figures",
+    "uncertainty": "unchanged estimates and intervals; visible thin caps and light bands"
+  },
+  "statistical_figures": 9,
+  "figure_outputs": 27,
+  "vector_figure_checks": {
+    "figures/cost_frontier.pdf": {
+      "width_points": 499.08,
+      "height_points": 274.48,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold",
+        "DejaVuSans-Oblique"
+      ]
+    },
+    "figures/cost_sensitivity.pdf": {
+      "width_points": 243.84,
+      "height_points": 174.69,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold",
+        "DejaVuSans-Oblique"
+      ]
+    },
+    "figures/paired_execution.pdf": {
+      "width_points": 498.93,
+      "height_points": 145.81,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold"
+      ]
+    },
+    "figures/stress_panel.pdf": {
+      "width_points": 510.09,
+      "height_points": 247.44,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold"
+      ]
+    },
+    "figures/structured_scaling.pdf": {
+      "width_points": 510.24,
+      "height_points": 186.24,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold"
+      ]
+    },
+    "figures/bound_certificates.pdf": {
+      "width_points": 510.24,
+      "height_points": 175.44,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold"
+      ]
+    },
+    "figures/model_support.pdf": {
+      "width_points": 514.35,
+      "height_points": 252.09,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold",
+        "DejaVuSans-Oblique"
+      ]
+    },
+    "figures/database_support.pdf": {
+      "width_points": 521.18,
+      "height_points": 330.66,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold"
+      ]
+    },
+    "figures/repair_audit.pdf": {
+      "width_points": 510.24,
+      "height_points": 197.04,
+      "raster_images": 0,
+      "fonts": [
+        "DejaVuSans",
+        "DejaVuSans-Bold"
+      ]
+    }
+  },
+  "all_report_statistics": "report.json byte-identical to previous commit",
+  "source_measurements": "all five non-script source hashes unchanged and verified",
+  "model_outcomes": "310 cached output hashes unchanged and verified",
+  "generated_tables": "all four byte-identical to previous commit",
+  "image_generated_illustrations": "both selected PNG hashes unchanged",
+  "new_api_calls": 0,
+  "new_policy_runs": 0,
+  "paper": {
+    "pages": 17,
+    "main_content_pages": 10,
+    "conclusion_page": 10,
+    "limitations_page": 11,
+    "figure_pages": {
+      "cost_frontier": 7,
+      "cost_sensitivity": 8,
+      "bound_certificates": 9,
+      "model_support": 10,
+      "paired_execution": 14,
+      "stress_panel": 14,
+      "structured_scaling": 14,
+      "repair_audit": 15,
+      "database_support": 15
+    },
+    "pdf_sha256": "94dc436b082cb98898ed57431bb0d0389bacee673ade50bafa44394c8ad4d5a5",
+    "latex_warnings_and_overfull_boxes": [],
+    "underfull_box_diagnostics": 46,
+    "official_style": "original hashes verified",
+    "visual_review": "all nine standalone plots; main pages 7-10 and appendix pages 14-15",
+    "grayscale_review": [
+      "model_support",
+      "cost_frontier"
+    ],
+    "layout_note": "Ten-page user-requested expanded working draft; not final submission compliance"
+  },
+  "artifact_manifest": "results/E010/report-manifest.json",
+  "plot_source_sha256": "072de8aba53c6107960601af21d02ae03fb0a52c21414d89f131c46878631059",
+  "research_acceptance": "unchanged; substantive algorithm gate remains open"
+}

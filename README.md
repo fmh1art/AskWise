@@ -47,11 +47,13 @@ literature/presentation-reference-notes.md for sources and interpretation.
 The manuscript cites 24 relevant scientific works; presentation references are
 recorded separately.
 
-The plot-polish revision applies a shared publication style to all nine figures,
-separates selection/acquisition legends, adds measured subgroup difference
-labels, and exposes the cost crossover using excess cost. Numeric results and
-tables are unchanged. See results/E010/presentation-validation.json for the
-current artifact and compiled-PDF checks.
+The latest plot revision follows the user's published AutoPrep/DeepPrep figures:
+sans-serif type, bold headings, solid/pale-hatched bar pairs, purple model
+comparisons, and compact lower shared legends. All nine plots use consistent
+axes and uncertainty styling; line plots retain BatchER-inspired marker/line
+distinctions. Numeric results and tables are unchanged. See
+results/E010/reference-style-validation.json for current plot and compiled-PDF
+checks; earlier presentation validations describe historical versions.
 
 The manuscript expansion adds a single-column overview and a double-column
 algorithm framework. Following the user's explicit image-model request, the
@@ -65,8 +67,8 @@ pages in total. It is an expanded working version for later trimming, not a
 page-limit-compliant submission. Existing measured outputs, tables and nine
 statistical plots remain unchanged; explanatory diagrams have a separate
 manifest. Current manuscript checks and selected-image provenance are in
-results/E010/imagegen-figure-validation.json and imagegen-figure-manifest.json
-in the same directory; manuscript-expansion-validation.json records the previous
-vector version. The user's complete A2
+results/E010/reference-style-validation.json, with illustration provenance in
+results/E010/imagegen-figure-manifest.json. The preceding imagegen-figure-validation.json
+and manuscript-expansion-validation.json record earlier layouts. The user's complete A2
 requirements are also maintained in AutoResearchSkills at
 docs/requirements/a2-2026-10-29.md, with reusable guidance in the related Skills.

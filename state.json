@@ -2,7 +2,7 @@
   "schema_version": 1,
   "topic": "A2: Ask only questions that change the answer",
   "phase": "algorithm-development",
-  "updated_at": "2026-10-29T07:21:41.144676+00:00",
+  "updated_at": "2026-10-29T10:59:27.838697+00:00",
   "active_hypotheses": [
     "Sound query structure may support cheaper correctness and relevance certificates; generic EC2 action certification has not beaten the simple execution-cost control"
   ],
@@ -22,7 +22,8 @@
     "Expanded paper: 10x10 main table, eight statistical figures, and 24 relevant references",
     "Grouped table/figure redesign with reference-defined model strata and separate contract audit",
     "Ten-page main working draft with overview, algorithm framework and six experimental subsections; user requirements synchronized into AutoResearchSkills",
-    "Image-model PNG overview and framework integrated; actual generation/edit prompts archived and final column-width layout checked"
+    "Image-model PNG overview and framework integrated; actual generation/edit prompts archived and final column-width layout checked",
+    "Nine statistical plots restyled against AutoPrep/DeepPrep/BatchER; data, intervals, tables and generated illustrations preserved"
   ],
   "budget": {
     "wall_hours_limit": null,
@@ -66,7 +67,7 @@
   "latest_user_steering": {
     "date": "2026-10-29",
     "source": "User messages in this session",
-    "request": "Write prompts and actually call an image-generation model to create paper-ready PNG illustrations. Keep the single-column overview intuitive and light on technical detail; preserve correct double-column framework logic. Persist this requirement in AutoResearchSkills.",
+    "request": "Further optimize experimental Matplotlib figures to match the user's existing papers' plot style, using inspected reference figures rather than only a generic publication theme.",
     "scope": "Authorized expanded working manuscript, not a final page-limit-compliant submission. Strict guarantees, substantive algorithm requirement and per-round resource constraints remain unchanged."
   },
   "latest_evaluation": "results/E010/report.json",
@@ -74,7 +75,7 @@
     "main_content_pages": 10,
     "total_pdf_pages": 17,
     "status": "expanded working draft for user trimming",
-    "validation": "results/E010/imagegen-figure-validation.json",
+    "validation": "results/E010/reference-style-validation.json",
     "figure_manifest": "results/E010/imagegen-figure-manifest.json"
   }
 }
