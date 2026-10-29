@@ -1,0 +1,26 @@
+[
+  {
+    "name": "DeepPrep",
+    "url": "https://www.vldb.org/pvldb/vol19/p3371-fan.pdf",
+    "sha256": "3be0bf4d1cf0920eb3092f1cf2a7bf904d63f7bd6a650aa387847d459c86655b",
+    "pages": 14
+  },
+  {
+    "name": "AutoPrep",
+    "url": "https://www.vldb.org/pvldb/vol18/p3504-fan.pdf",
+    "sha256": "f1f4370d82129b8aa4ce8a7066e09c62c0cd408e74fd9a102dd54204d1162749",
+    "pages": 14
+  },
+  {
+    "name": "BatchER",
+    "url": "https://fmh1art.github.io/files/BatchER-ICDE2024.pdf",
+    "sha256": "3442f9f63095513317dd32e94e1aac280461e7b6611f5a299c13afb150f9e23d",
+    "pages": 14
+  },
+  {
+    "name": "DeepAnalyze",
+    "url": "https://arxiv.org/pdf/2510.16872",
+    "sha256": "282a12564d395e1f827697737be5a1483381f5f992b94879e42a985340a1b434",
+    "pages": 23
+  }
+]

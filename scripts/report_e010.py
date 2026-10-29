@@ -61,52 +61,105 @@ for method in METHODS:
     summary[method]['tasks'] = len(rr)
     summary[method]['episodes'] = 16*len(rr)
 
-# Main table: exactly 10 configurations and 10 columns (method + 9 metrics).
-lines = [r'\begin{table*}[t]',r'\centering\small',r'\setlength{\tabcolsep}{3.2pt}',
-         r'\begin{tabular}{lrrrrrrrrr}',r'\toprule',
-         r'Configuration & Acc.\% & $E$ & $Q$ & Irr.\% & Unpr.\% & Cert.\% & $E+Q$ & $E+10Q$ & ms \\',r'\midrule']
-for index, m in enumerate(METHODS):
-    s = summary[m]
-    vals = [100*s['accuracy']['mean'],s['executions']['mean'],s['questions']['mean'],
-            None if s['irrelevant_rate']['mean'] is None else 100*s['irrelevant_rate']['mean'],
-            None if s['unproved_rate']['mean'] is None else 100*s['unproved_rate']['mean'],
-            100*s['stop_certificate']['mean'],s['cost1']['mean'],s['cost10']['mean'],s['cpu_ms']['mean']]
-    texts = ['--' if x is None else f'{x:.3f}' if j==8 else f'{x:.2f}' for j,x in enumerate(vals)]
-    lines.append(LABEL[m]+' & '+' & '.join(texts)+r' \\')
-    if index==3: lines.append(r'\midrule')
+
+# Main comparison: matched guarantees; crossed policy and task groups.
+families = ['top_region','customer_count','threshold_count']
+STRICT = ['full_relevant_ec2','exact_fixed','exact_witness','partition_fixed',
+          'partition_witness','immediate_fixed','immediate_witness']
+COHORTS = families+['pooled']
+FAMILY_LABEL = {'top_region':'Leading region','customer_count':'Customer count',
+                'threshold_count':'Order threshold','pooled':'All tasks'}
+family_summary = {}
+for family in COHORTS:
+    family_summary[family] = {}
+    for method in STRICT:
+        rr=[r for r in fresh if r['method']==method and (family=='pooled' or r['family']==family)]
+        family_summary[family][method]={}
+        for metric in ['executions','questions','cost10','cpu_ms']:
+            values=np.array([np.mean([r[metric] for r in rr if r['seed']==seed]) for seed in seeds])
+            family_summary[family][method][metric]={
+                'mean':float(values.mean()),
+                'ci95':np.quantile(values[sample].mean(axis=1),[.025,.975]).tolist()}
+lines=[r'\begin{table*}[t]',r'\centering\small',r'\setlength{\tabcolsep}{4.1pt}',
+       r'\begin{tabular}{llrrrrrrr}',r'\toprule',
+       r' & & Full relevant & \multicolumn{2}{c}{Exact bound} & \multicolumn{2}{c}{Partition bound} & \multicolumn{2}{c}{Immediate witness} \\',
+       r'\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}',
+       r'Task family & Metric & EC2 & Fixed & Witness & Fixed & Witness & Fixed & Witness \\',r'\midrule']
+for fi,family in enumerate(COHORTS):
+    for mi,(metric,label) in enumerate([('executions',r'$E\downarrow$'),('questions',r'$Q$'),('cost10',r'$C_{10}\downarrow$')]):
+        values=[family_summary[family][m][metric]['mean'] for m in STRICT]
+        best=min(values)
+        cells=[(r'\textbf{'+f'{v:.2f}'+'}') if metric!='questions' and abs(v-best)<1e-10 else f'{v:.2f}' for v in values]
+        name=FAMILY_LABEL[family]+(' ($n=120$)' if family=='pooled' else ' ($n=40$)') if mi==0 else ''
+        lines.append(name+' & '+label+' & '+' & '.join(cells)+r' \\')
+    if fi<3:lines.append(r'\midrule')
 lines += [r'\bottomrule',r'\end{tabular}',
-          r'\caption{Ten fixed configurations on 120 fresh-seed sales tasks (1,920 hidden-world episodes per row). $E$: counted executions; $Q$: questions. Irr. and Unpr. are question-conditional rates of truly irrelevant questions and questions lacking an observed local witness; a dash means no questions. Cert. is the valid stopping-certificate rate. ms measures policy computation with cached truth labels, excluding SQL construction and auditing. Costs are hypothetical weights. Paired seed-cluster intervals appear in the figures and machine-readable report.}',
+          r'\caption{Execution and interaction costs under the same strict answer/relevance contract. Rows group three generated SQL families and their pooled mean; columns cross selection rule and acquisition order. $E$: executed worlds; $Q$: questions; $C_{10}=E+10Q$. Bold marks the smallest mean $E$ or $C_{10}$ within a row, including ties, not statistical significance. Candidate worlds are supplied and responses are simulated; this is not an LLM accuracy evaluation. Each family has 40 seeds and 16 hidden worlds per seed. Cluster intervals appear in Figure~\ref{fig:frontier}.}',
           r'\label{tab:main-expanded}',r'\end{table*}']
 (TABLE/'main-expanded.tex').write_text('\n'.join(lines)+'\n')
 
-# Frontier and cost sensitivity use precisely the same measured E,Q pairs.
-fig, ax = plt.subplots(1,2,figsize=(7.1,3.1),layout='constrained')
-for j,m in enumerate(METHODS):
-    s = summary[m]; x = s['executions']['mean']; y = s['questions']['mean']
-    ci = s['executions']['ci95']; qi = s['questions']['ci95']
-    ax[0].errorbar(x,y,xerr=[[max(0,x-ci[0])],[max(0,ci[1]-x)]],
-                   yerr=[[max(0,y-qi[0])],[max(0,qi[1]-y)]],fmt=MARKERS[j],color=COLORS[j],
-                   label=LABEL[m],capsize=2,markersize=5,alpha=.85)
-ratios = np.logspace(-2,2,100)
-for m in ['full_relevant_ec2','exact_fixed','partition_fixed','immediate_fixed','immediate_witness']:
-    j = METHODS.index(m); s = summary[m]
-    costs = s['executions']['mean']+ratios*s['questions']['mean']
-    bc = boot[m]['executions'][:,None]+ratios*boot[m]['questions'][:,None]
-    lo,hi = np.quantile(bc,[.025,.975],axis=0)
-    ax[1].plot(ratios,costs,color=COLORS[j],linestyle=['-','--',':','-.','-'][['full_relevant_ec2','exact_fixed','partition_fixed','immediate_fixed','immediate_witness'].index(m)],label=LABEL[m])
-    ax[1].fill_between(ratios,lo,hi,color=COLORS[j],alpha=.08)
-ax[0].set(xlabel='Counted executions, E',ylabel='Questions, Q',title='(a) Cost and interaction')
-zoom=ax[0].inset_axes([.08,.34,.53,.44])
-for m in METHODS[3:]:
-    j=METHODS.index(m);s=summary[m];x=s['executions']['mean'];y=s['questions']['mean']
-    lo,hi=s['executions']['ci95'];ql,qh=s['questions']['ci95']
-    zoom.errorbar(x,y,xerr=[[x-lo],[hi-x]],yerr=[[y-ql],[qh-y]],fmt=MARKERS[j],color=COLORS[j],capsize=1,markersize=3)
-zoom.set(xlim=(12.7,16.2),ylim=(.68,.98),title='Strict policies (zoom)',xticks=[13,14,15,16],yticks=[.7,.8,.9])
-zoom.title.set_fontsize(6.5);zoom.tick_params(labelsize=6)
-ax[1].set(xscale='log',yscale='log',xlabel='Question / execution cost, c',ylabel='E + cQ',title='(b) Strict-policy sensitivity')
-ax[1].legend(loc='upper left',fontsize=6.5)
-fig.legend(*ax[0].get_legend_handles_labels(),loc='outside lower center',ncol=5,fontsize=6.6,frameon=False)
+# Contract checks are counts, separated from the performance comparison.
+audit_summary={}
+lines=[r'\begin{table*}[!t]',r'\centering\small',r'\setlength{\tabcolsep}{3.7pt}',
+       r'\begin{tabular}{lrrrrrrrr}',r'\toprule',
+       r' & \multicolumn{4}{c}{Fresh sales: 1,920 episodes / configuration} & \multicolumn{4}{c}{Stress: 768 episodes / configuration} \\',
+       r'\cmidrule(lr){2-5}\cmidrule(lr){6-9}',
+       r'Configuration & Wrong & Irr.Q & Unpr.Q & No cert. & Wrong & Irr.Q & Unpr.Q & No cert. \\',r'\midrule']
+for method in METHODS:
+    audit_summary[method]={}
+    cells=[]
+    for name,subset in [('fresh',fresh),('stress',stress)]:
+        rr=[r for r in subset if r['method']==method]
+        n=sum(r['episodes'] for r in rr)
+        def total(metric):return int(round(sum(r[metric]*r['episodes'] for r in rr)))
+        counts={'episodes':n,'wrong':n-total('accuracy'),'irrelevant':total('irrelevant'),
+                'unproved':total('unproved'),'uncertified':n-total('stop_certificate'),
+                'questions':total('questions')}
+        audit_summary[method][name]=counts
+        cells += [str(counts['wrong']),str(counts['irrelevant']) if counts['questions'] else '--',
+                  str(counts['unproved']) if counts['questions'] else '--',str(counts['uncertified'])]
+    lines.append(LABEL[method]+' & '+' & '.join(cells)+r' \\')
+lines += [r'\bottomrule',r'\end{tabular}',
+          r'\caption{Retrospective contract audit of all ten configurations. Wrong: wrong returned answers; Irr.Q: irrelevant questions; Unpr.Q: questions without an observed local witness; No cert.: returns without complete known agreement. Entries are counts, with a dash when no questions were asked. Zero errors are expected from certificate-based stopping with supplied worlds and truthful responses; they are not a measured LLM success rate. Stress fixtures include repeated truth maps.}',
+          r'\label{tab:contract-audit}',r'\end{table*}']
+(TABLE/'contract-audit.tex').write_text('\n'.join(lines)+'\n')
+
+# Multiple task clusters and crossed selection/acquisition variants.
+POLICY_COLOR=['#0072B2','#E69F00','#E69F00','#AA4499','#AA4499','#009E73','#009E73']
+POLICY_HATCH=['','', '//','', '//','', '//']
+SHORT=['Full relevant EC2','Exact / fixed','Exact / witness','Partition / fixed',
+       'Partition / witness','Immediate / fixed','Immediate / witness']
+fig,axes=plt.subplots(2,2,figsize=(7.1,4.65),layout='constrained')
+x=np.arange(4);width=.105
+for ax,metric,title,ylabel in zip(axes.flat,
+        ['executions','questions','cost10','cpu_ms'],
+        ['(a) Execution cost','(b) User questions','(c) Weighted total cost','(d) Policy computation'],
+        ['Executed worlds, E','Questions, Q','C₁₀ = E + 10Q','Time per episode (ms)']):
+    for j,method in enumerate(STRICT):
+        entries=[family_summary[f][method][metric] for f in COHORTS]
+        means=np.array([r['mean'] for r in entries]);lo=np.array([r['ci95'][0] for r in entries]);hi=np.array([r['ci95'][1] for r in entries])
+        ax.bar(x+(j-3)*width,means,width=width*.94,label=SHORT[j],color=POLICY_COLOR[j],
+               hatch=POLICY_HATCH[j],edgecolor='#333333',linewidth=.35,
+               yerr=np.maximum(0,np.array([means-lo,hi-means])),error_kw={'elinewidth':.6,'capsize':1.3})
+    ax.set(xticks=x,xticklabels=['Region','Customers','Threshold','All'],ylabel=ylabel,title=title,ylim=(0,None))
+    ax.tick_params(axis='x',labelsize=7)
+    ax.set_axisbelow(True);ax.grid(axis='y',linestyle=':',alpha=.25)
+fig.legend(*axes[0,0].get_legend_handles_labels(),loc='outside lower center',ncol=4,fontsize=7,frameon=False)
 save(fig,'cost_frontier')
+
+# Cost sensitivity remains available, explicitly separated from new evidence.
+fig,ax=plt.subplots(figsize=(3.4,2.5),layout='constrained')
+ratios=np.logspace(-2,2,100)
+for m,style in [('full_relevant_ec2','-'),('exact_fixed','--'),('partition_fixed',':'),('immediate_fixed','-.')]:
+    j=STRICT.index(m)
+    costs=summary[m]['executions']['mean']+ratios*summary[m]['questions']['mean']
+    bc=boot[m]['executions'][:,None]+ratios*boot[m]['questions'][:,None]
+    lo,hi=np.quantile(bc,[.025,.975],axis=0)
+    ax.plot(ratios,costs,color=POLICY_COLOR[j],linestyle=style,label=LABEL[m])
+    ax.fill_between(ratios,lo,hi,color=POLICY_COLOR[j],alpha=.10)
+ax.set(xscale='log',xlabel='Question / execution cost, c',ylabel='E + cQ',ylim=(0,None))
+ax.legend(frameon=False,fontsize=6.5,loc='upper left')
+save(fig,'cost_sensitivity')
 
 # Paired effects are case averages; three panels retain the task families.
 families = ['top_region','customer_count','threshold_count']
@@ -225,40 +278,95 @@ for model,rr in models.items():
                       latency_p90=float(np.quantile([r['elapsed_seconds'] for r in rr],.9)))
         model_summary[model][rule]=result;model_boot[model,rule]=b
 
-lines=[r'\begin{table*}[t]',r'\centering\small',r'\setlength{\tabcolsep}{3.0pt}',r'\begin{tabular}{lrrrrrrrrr}',r'\toprule',
-       r'Model / pruning & Rec.\% & Prec.\% & All\% & SQL\% & Gen. & Kept & Tokens & $t_{50}$ & $t_{90}$ \\',r'\midrule']
-for model,name in [('doubao_seed2_lite','Doubao Lite'),('gpt5_6_sol_hydra','GPT Sol')]:
-    for rule,label in [('observed','observed'),('stable','two-state')]:
-        r=model_summary[model][rule]
-        vals=[100*r[m]['mean'] for m in ['recall','precision','all_found']]+[100*r['valid_sql_rate'],r['generated'],r['support_size']['mean'],r['tokens_per_task'],r['latency_p50'],r['latency_p90']]
-        lines.append(name+' / '+label+' & '+' & '.join(f'{v:.0f}' if j==6 else f'{v:.2f}' for j,v in enumerate(vals))+r' \\')
-lines += [r'\bottomrule',r'\end{tabular}',r'\caption{Cached E003 analysis: 155 cases per model, 20 databases. Rec./Prec. measure two-state reference-signature support; All is full reference recovery. SQL is the fraction of generated queries executable in both states; Gen./Kept are mean candidate counts. Tokens and latency quantiles (seconds) describe the shared generation call, repeated here for comparison, not additional calls. Both pruning rules use exactly the same candidates.}',r'\label{tab:model-expanded}',r'\end{table*}']
+
+# Reference-defined strata, fixed independently of model outputs.
+model_strata={}
+stratum_defs=[('all','All cases',lambda r:True),('distinct','Two signatures',lambda r:r['metrics']['gold_support_size']==2),
+              ('invariant','One signature',lambda r:r['metrics']['gold_support_size']==1)]
+for model,rr in models.items():
+    model_strata[model]={}
+    for name,_,condition in stratum_defs:
+        cohort=[r for r in rr if condition(r)]
+        model_strata[model][name]={'n':len(cohort),'db_clusters':len({r['db_id'] for r in cohort}),'rules':{}}
+        for rule in ['observed','stable']:
+            values={}
+            counts=np.array([sum(r['db_id']==db for r in cohort) for db in dbs])
+            for metric in ['recall','precision','all_found']:
+                sums=np.array([sum(float(r['metrics'][rule][metric]) for r in cohort if r['db_id']==db) for db in dbs])
+                denom=counts[db_sample].sum(axis=1)
+                b=np.divide(sums[db_sample].sum(axis=1),denom,out=np.full(len(denom),np.nan),where=denom>0)
+                values[metric]={'mean':float(sums.sum()/counts.sum()),'ci95':np.nanquantile(b,[.025,.975]).tolist()}
+            model_strata[model][name]['rules'][rule]=values
+# Reference-cohort membership must be identical for both model caches.
+assert [[r['id'],r['metrics']['gold_support_size']] for r in models['doubao_seed2_lite']] == [[r['id'],r['metrics']['gold_support_size']] for r in models['gpt5_6_sol_hydra']]
+lines=[r'\begin{table*}[t]',r'\centering\small',r'\setlength{\tabcolsep}{3.5pt}',
+       r'\begin{tabular}{llrrrrrrrrr}',r'\toprule',
+       r' & & \multicolumn{3}{c}{All cases ($n=155$)} & \multicolumn{3}{c}{Two signatures ($n=53$)} & \multicolumn{3}{c}{One signature ($n=102$)} \\',
+       r'\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}',
+       r'Model & Pruning & Rec. & Prec. & Full & Rec. & Prec. & Full & Rec. & Prec. & Full \\',r'\midrule']
+for mi,(model,name) in enumerate([('doubao_seed2_lite','Doubao Lite'),('gpt5_6_sol_hydra','GPT Sol')]):
+    for rule,label in [('observed','Observed'),('stable','Two-state')]:
+        cells=[]
+        for group,_,_ in stratum_defs:
+            for metric in ['recall','precision','all_found']:
+                value=100*model_strata[model][group]['rules'][rule][metric]['mean']
+                cells.append(f'{value:.2f}')
+        lines.append((name if rule=='observed' else '')+' & '+label+' & '+' & '.join(cells)+r' \\')
+    if mi==0:lines.append(r'\midrule')
+lines += [r'\bottomrule',r'\end{tabular}',
+          r'\caption{Actual model candidate recovery (\%). Rec.: reference recall; Prec.: reference precision; Full: complete reference recovery. Groups are defined by the number of distinct reference execution signatures across the same two data states, independently of either model. The 53 two-signature and 102 one-signature cases partition the 155 sampled cases; they are descriptive subgroups, not extra benchmarks. Both pruning rules use the same generation outputs. Resources are reported once per model in Table~\ref{tab:model-resources}.}',
+          r'\label{tab:model-expanded}',r'\end{table*}']
 (TABLE/'model-expanded.tex').write_text('\n'.join(lines)+'\n')
-fig,ax=plt.subplots(1,3,figsize=(7.1,2.7),layout='constrained',sharey=True)
-for a,metric,title in zip(ax,['recall','precision','all_found'],['Reference recall','Reference precision','All references recovered']):
-    for j,rule in enumerate(['observed','stable']):
-        means=[];lo=[];hi=[]
-        for model in models:
-            r=model_summary[model][rule][metric];means.append(100*r['mean']);lo.append(100*(r['mean']-r['ci95'][0]));hi.append(100*(r['ci95'][1]-r['mean']))
-        a.bar(np.arange(2)+(j-.5)*.32,means,width=.30,color=['#56B4E9','#D55E00'][j],label=['Observed-state','Two-state'][j],
-              yerr=[lo,hi],capsize=2,hatch=['','//'][j],alpha=.9)
-    a.set(xticks=[0,1],xticklabels=['Doubao','GPT Sol'],title=title,ylim=(0,100))
-ax[0].set_ylabel('Percent');ax[-1].legend(frameon=False,fontsize=6.5)
+lines=[r'\begin{table*}[!t]',r'\centering\small',r'\setlength{\tabcolsep}{5pt}',
+       r'\begin{tabular}{lrrrrrrr}',r'\toprule',
+       r'Model & Outcomes & Valid SQL (\%) & Generated & Kept: obs./two & Tokens & $t_{50}$ (s) & $t_{90}$ (s) \\',r'\midrule']
+for model,name in [('doubao_seed2_lite','Doubao Lite'),('gpt5_6_sol_hydra','GPT Sol')]:
+    a=model_summary[model]['observed'];b=model_summary[model]['stable']
+    lines.append(name+f" & {a['n']} & {100*a['valid_sql_rate']:.2f} & {a['generated']:.2f} & {a['support_size']['mean']:.2f} / {b['support_size']['mean']:.2f} & {a['tokens_per_task']:.0f} & {a['latency_p50']:.2f} & {a['latency_p90']:.2f}"+r' \\')
+lines += [r'\bottomrule',r'\end{tabular}',
+          r'\caption{Generation resources and candidate counts, recorded once per model. Generated, kept, and tokens are per-case means; kept counts compare observed/two-state pruning. SQL validity requires execution on both states and does not imply correctness. Latencies describe recorded generation calls. The same 155 calls per model serve all pruning rules and subgroup analyses.}',
+          r'\label{tab:model-resources}',r'\end{table*}']
+(TABLE/'model-resources.tex').write_text('\n'.join(lines)+'\n')
+fig,axes=plt.subplots(2,3,figsize=(7.1,4.25),layout='constrained',sharey=True)
+for row,(model,name) in enumerate([('doubao_seed2_lite','Doubao Lite'),('gpt5_6_sol_hydra','GPT Sol')]):
+    for col,(metric,title) in enumerate([('recall','Reference recall'),('precision','Reference precision'),('all_found','Full reference recovery')]):
+        ax=axes[row,col]
+        for j,rule in enumerate(['observed','stable']):
+            data=[model_strata[model][group]['rules'][rule][metric] for group,_,_ in stratum_defs]
+            means=np.array([r['mean']*100 for r in data])
+            low=np.array([r['ci95'][0]*100 for r in data]);high=np.array([r['ci95'][1]*100 for r in data])
+            ax.bar(np.arange(3)+(j-.5)*.34,means,width=.31,
+                   color=['#56B4E9','#D55E00'][j],hatch=['','//'][j],edgecolor='#333333',linewidth=.35,
+                   yerr=np.maximum(0,np.array([means-low,high-means])),error_kw={'elinewidth':.75,'capsize':1.8},
+                   label=['Observed-state','Two-state'][j])
+        ax.set(xticks=range(3),xticklabels=['All\n155','Two sig.\n53','One sig.\n102'],ylim=(0,105),
+               title='('+chr(97+row*3+col)+') '+title)
+        if metric=='all_found':
+            ax.text(1-.17,1.5,'0',ha='center',va='bottom',fontsize=7,color='#333333')
+        ax.tick_params(axis='x',labelsize=7)
+        ax.set_axisbelow(True);ax.grid(axis='y',linestyle=':',alpha=.22)
+        if col==0:ax.set_ylabel(name+'\nPercent')
+fig.legend(*axes[0,0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False)
 save(fig,'model_support')
 
-fig,ax=plt.subplots(1,2,figsize=(7.1,4.4),layout='constrained',sharey=True)
+
+fig,ax=plt.subplots(1,2,figsize=(7.1,5.0),layout='constrained',sharey=True)
 database_rows=[]
 for a,(model,rr) in zip(ax,models.items()):
-    changes=[]
-    for db in dbs:
-        subset=[r for r in rr if r['db_id']==db]
-        delta=np.mean([r['metrics']['stable']['recall']-r['metrics']['observed']['recall'] for r in subset])*100
-        changes.append(delta);database_rows.append({'model':model,'db_id':db,'n':len(subset),'delta_recall_pp':float(delta)})
-    a.hlines(range(len(dbs)),0,changes,color='#0072B2',linewidth=1.2)
-    a.scatter(changes,range(len(dbs)),color='#D55E00',s=17)
-    a.set(xlabel='Two-state − observed recall (pp)',title='Doubao Lite' if model.startswith('doubao') else 'GPT Sol')
-ax[0].set_yticks(range(len(dbs)),dbs,fontsize=7)
-ax[0].invert_yaxis()
+    for j,rule in enumerate(['observed','stable']):
+        means=[]
+        for db in dbs:
+            subset=[r for r in rr if r['db_id']==db]
+            means.append(100*np.mean([r['metrics'][rule]['recall'] for r in subset]))
+            if rule=='stable':
+                delta=100*np.mean([r['metrics']['stable']['recall']-r['metrics']['observed']['recall'] for r in subset])
+                database_rows.append({'model':model,'db_id':db,'n':len(subset),'delta_recall_pp':float(delta)})
+        a.barh(np.arange(len(dbs))+(j-.5)*.36,means,height=.34,color=['#56B4E9','#D55E00'][j],
+               hatch=['','//'][j],edgecolor='#333333',linewidth=.25,label=['Observed-state','Two-state'][j])
+    a.set(xlabel='Reference recall (%)',xlim=(0,100),title='Doubao Lite' if model.startswith('doubao') else 'GPT Sol')
+    a.set_axisbelow(True);a.grid(axis='x',linestyle=':',alpha=.22)
+ax[0].set_yticks(range(len(dbs)),dbs,fontsize=6.5);ax[0].invert_yaxis()
+fig.legend(*ax[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False)
 save(fig,'database_support')
 
 audit=json.loads((ROOT/'results/E002/audit_status.json').read_text())
@@ -289,14 +397,14 @@ for model in models:
                                   'ci95':np.quantile(delta,[.025,.975]).tolist()}
 report={'scope':'E010 fresh-seed check and separately labeled reuse/stress diagnostics',
         'bootstrap':{'replicates':2000,'seed':20261029,'sales_clusters':40,'model_clusters':20},
-        'main':summary,'models':model_summary,'paired_effects':paired,'bound_diagnostic':bound_rows,
+        'main':summary,'models':model_summary,'family_costs':family_summary,'model_strata':model_strata,'contract_audit':audit_summary,'paired_effects':paired,'bound_diagnostic':bound_rows,
         'paired_exact_minus_immediate_executions':paired_summary,'paired_model_support_gains':model_gains,
         'database_effects':database_rows,'figures':sorted({str(Path(p).with_suffix('')) for p in artifacts})}
 (OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 manifest={'sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [OUT/'per_task.json',ROOT/'results/E007/scaling.json',ROOT/'experiments/E003-plan.json',ROOT/'results/E002/audit_status.json',ROOT/'results/E002/summary.json',Path(__file__)]},
           'model_cache_sha256':{str(p.relative_to(DATA)):hashlib.sha256(p.read_bytes()).hexdigest() for model in models for i in plan['ids'] for p in [DATA/'E003'/model/(str(i)+'.json')]},
-          'table_files':{str(p.relative_to(PAPER)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [TABLE/'main-expanded.tex',TABLE/'model-expanded.tex']},
+          'table_files':{str(p.relative_to(PAPER)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [TABLE/'main-expanded.tex',TABLE/'model-expanded.tex',TABLE/'contract-audit.tex',TABLE/'model-resources.tex']},
           'figure_files':{p:hashlib.sha256((PAPER/p).read_bytes()).hexdigest() for p in artifacts},
-          'new_api_requests':0,'main_table_rows':10,'main_table_columns':10,'figure_count':len(artifacts)//3}
+          'new_api_requests':0,'main_table_rows':12,'main_table_columns':9,'main_policy_configurations':7,'model_table_rows':4,'model_table_columns':11,'figure_count':len(artifacts)//3}
 (OUT/'report-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(json.dumps({'main':{m:{k:summary[m][k]['mean'] for k in ['accuracy','executions','questions']} for m in METHODS},'figures':len(artifacts)//3},indent=2))

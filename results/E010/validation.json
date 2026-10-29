@@ -23,5 +23,7 @@
     "undefined_citations": false,
     "overfull_boxes": false,
     "bibtex_warnings": false
-  }
+  },
+  "presentation_status": "Historical validation of initial layout, superseded by presentation-validation.json",
+  "paper_revision": "A2-paper@5f1585a"
 }

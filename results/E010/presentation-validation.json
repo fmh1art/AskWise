@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "original_measured_outcomes": "unchanged, SHA256 verified",
+  "overall_metrics_vs_previous_commit": "identical",
+  "family_means": "independently recomputed",
+  "model_cohorts": [
+    155,
+    53,
+    102
+  ],
+  "model_stratum_weighted_averages": "match original pooled metrics",
+  "main_table_shape": [
+    12,
+    9
+  ],
+  "strict_configurations": 7,
+  "audit_configurations": 10,
+  "model_table_shape": [
+    4,
+    11
+  ],
+  "statistical_figures": 9,
+  "source_and_artifact_hashes": "verified",
+  "new_api_calls": 0,
+  "new_policy_runs": 0,
+  "paper": {
+    "pages": 15,
+    "pdf_sha256": "a0fc86c3dbbe21835ed12537f26c0b5a03119969e0b38d189da1c0446f4752d9",
+    "undefined_citations": false,
+    "overfull_boxes": false,
+    "visual_review": [
+      "Table 2 grouped headers",
+      "Table 3 reference strata",
+      "4-panel cost figure",
+      "6-panel model figure",
+      "paired database bars"
+    ],
+    "nonfatal_layout_warning": "Appendix page 13 contains only floats"
+  }
+}

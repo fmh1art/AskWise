@@ -5,7 +5,7 @@
     "experiments/E003-plan.json": "2bd8257c2230ef86d1122009c4ea861dbaaf6eb95b90d9e41d9ece8369424963",
     "results/E002/audit_status.json": "ff073a886e92641e68f2ef95260ad110189451d5eb31ceffa882184bc6c5aa9a",
     "results/E002/summary.json": "65f2536af684cb7ed242e8f73d7f7a213138903a89404c382257399b5b09e0f8",
-    "scripts/report_e010.py": "8c155d461d65216911887ebcf16773cc5bb17a9e1ae209e0304c532d5297735c"
+    "scripts/report_e010.py": "c09b7f2ffedcb112bc948e6a20f9e4a01e149d4fdaebecaf57027eeff6f724a7"
   },
   "model_cache_sha256": {
     "E003/doubao_seed2_lite/556.json": "b7f53d63fbc84544b7abece962d085a165a3208baec2a424a6bc2cc9c2e410d0",
@@ -320,13 +320,18 @@
     "E003/gpt5_6_sol_hydra/491.json": "93ca7bce385576dc11575767c46afe4fb31396aefcb90858e35551f2d82dd060"
   },
   "table_files": {
-    "tables/main-expanded.tex": "2728e133d117ef22bd26d229274d62299f47ca774e748492a3fe016394c444be",
-    "tables/model-expanded.tex": "5e211c74d85d11a947e848017516fd80221477eb007bcd7d8bd9ddf9a6054c1d"
+    "tables/main-expanded.tex": "0210ac865515869f923cdc81e5f43120959e9e9470101e9605e4b856f4c2b77d",
+    "tables/model-expanded.tex": "df0b05f1153f7307c9d3539dfdabeefe317b803f60502926291c8cf34f487218",
+    "tables/contract-audit.tex": "3f15a81a6428aa5911ec9afb10896b45650c8426ea029ea3ba816e8200fcc59c",
+    "tables/model-resources.tex": "c43e17f84cab4a22a862df8f9c9234c0e576d6fd26d44ce18a344e9156d55e46"
   },
   "figure_files": {
-    "figures/cost_frontier.pdf": "a07d4e0c139506dfea9e0b90df79ed0cc9c92d59808dedb3b8b774babd945d08",
-    "figures/cost_frontier.svg": "bb362e4c5dec24a8b9722fda717502e3a5f23f58c83af8f4d55e75e5a6b86f91",
-    "figures/cost_frontier.png": "68f21fd13df782f556890a1e4bdf0a4df23cb3a59fbee188dc6dfd6ce01dcfbb",
+    "figures/cost_frontier.pdf": "25cd580ad017b37adcc042f44ce9cd256ef21a55c07df2aaa8b918107f9f589a",
+    "figures/cost_frontier.svg": "3ea8c7130532c52951e001300e266d1d364d2f5a565443a49e005fafe015ba24",
+    "figures/cost_frontier.png": "0b43b7da942afa6ed1628eb54f72d0d95eb0abafc937f6916d6fee02203adb40",
+    "figures/cost_sensitivity.pdf": "e1a7f1012a1978ce05046e72c9a1ef0a8abd84c1a96162d46e5ff8f44c87cf30",
+    "figures/cost_sensitivity.svg": "62c2966244e9b58161eaf4510292e35a0888d6e1310f99acced5c9db7d142cdb",
+    "figures/cost_sensitivity.png": "db4a0a0418ed73fb576753733817477ac18e052a2f9e24f4b92a57035f05cff5",
     "figures/paired_execution.pdf": "698d0d3d2858f598286059c4b3cb05b88c9be7eb59e4aa5e13d73ea159db7bd9",
     "figures/paired_execution.svg": "6b1e41e3254c4368ed69164acc2696bb14663370cc619edea1dac1af6d96ae8d",
     "figures/paired_execution.png": "2ec5f92b74c8200693619bb3c130a883ef69b82946f7f0a4a6936f9a2ba29d4f",
@@ -339,18 +344,28 @@
     "figures/bound_certificates.pdf": "d4f3d04463e55faa48291f3583a255ee03f34699ac2e5cf6ba89ce1921fe7606",
     "figures/bound_certificates.svg": "b0401d357d4cd750e8c6212e7a97e0e360fdfae1199dbb91d461f2f53b04dbde",
     "figures/bound_certificates.png": "02b09da95f16eb24638c0b9e009b49e3118340926158b294e5c9c9350471987f",
-    "figures/model_support.pdf": "feb06f110b9aa006286a4813d221a27200c25651f645ba89e2752e46357570a3",
-    "figures/model_support.svg": "13691aba89ecfcf42555904ede06fccf4bba72aebf990e6d05a1a1f228bbc4af",
-    "figures/model_support.png": "0177d3bb99f55320661766fd89ad40ff99761f2d19a56cdf3d09b4a2c5027066",
-    "figures/database_support.pdf": "510af5fa68b86678b74bfa621e67ed93ee4d48cabc9b0edc1bc28ca5b6e0215e",
-    "figures/database_support.svg": "ad1b813fd7e131a2adf20633f0e020f04993fa6b7cec803b780881e94e99e5d0",
-    "figures/database_support.png": "003de383677fbf60a3c1b10ed154bd98cb63ee91f4cc5551ecd477f4d8b5aa0e",
+    "figures/model_support.pdf": "956b52762f6528a6b1386069a5e58c6041c294c27703e4a026e7d06389fbc078",
+    "figures/model_support.svg": "02e590682581a4279a40ecfed9d7169e347fabb3572b1bcbebaeecfdce492b8f",
+    "figures/model_support.png": "361654f3f41f5aa0162da40c88ff116d483ec004ee9bacd51024d3983fa8bc7c",
+    "figures/database_support.pdf": "d116591ca8701e52eef7d246e2fea76e14073fd67bb8cccfcd9ad6a6a224f458",
+    "figures/database_support.svg": "8ada8b3d19188f6a7fc08371017941f3a0388d7bc28819b3451736451600d2f7",
+    "figures/database_support.png": "dad3e964fb76c0bbac32834150dc7f0e20b0dc823e61a49f147dae357060a755",
     "figures/repair_audit.pdf": "7da6ace449425067b35ffe7df0ec50981a43d4252926c20fe59875d802144ccf",
     "figures/repair_audit.svg": "cd1730eca754dd3a13a28449abbcf22415f6416a6da326d3bc401e0457dd27fb",
     "figures/repair_audit.png": "c3ad81a563774f6b1e7e8d75803b09381abd539edffe804f5f2f9a1782d1515b"
   },
   "new_api_requests": 0,
-  "main_table_rows": 10,
-  "main_table_columns": 10,
-  "figure_count": 8
+  "main_table_rows": 12,
+  "main_table_columns": 9,
+  "main_policy_configurations": 7,
+  "model_table_rows": 4,
+  "model_table_columns": 11,
+  "figure_count": 9,
+  "unchanged_figure_serializations_preserved": [
+    "bound_certificates",
+    "paired_execution",
+    "repair_audit",
+    "stress_panel",
+    "structured_scaling"
+  ]
 }

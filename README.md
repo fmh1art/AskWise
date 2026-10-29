@@ -34,10 +34,14 @@ querying. These negative development results remain recorded. The substantive
 algorithm and independent confirmation gate have **not** been passed.
 
 
-E010 expands the evidence without new API calls: 120 fresh generated SQL tasks,
-48 descriptive stress fixtures, a ten-by-ten main table, and eight publication
-plots. Run scripts/run_e010.py and then scripts/report_e010.py with the project
-virtual environment. The report reuses the external E003 model cache and E007
-scaling measurements. See results/E010/analysis.md for denominators, provenance,
-and the remaining negative execution-cost result. The manuscript now cites 24
-relevant works with source metadata retained in literature/expanded-metadata.
+E010 expands the evidence without new API calls: 120 fresh generated SQL tasks
+and 48 descriptive stress fixtures. The revised main cost table crosses task
+families and metrics with seven matched-guarantee policies (12 rows, nine columns);
+all ten configurations remain in a separate contract audit. Actual model recovery
+is stratified by 53 two-signature and 102 one-signature cases. Nine statistical
+figures include grouped cost, model, and database bars. Run scripts/run_e010.py
+and scripts/report_e010.py with the project environment. The report reuses the
+external E003 cache and E007 scaling data. See results/E010/analysis.md and
+literature/presentation-reference-notes.md for sources and interpretation.
+The manuscript cites 24 relevant scientific works; presentation references are
+recorded separately.

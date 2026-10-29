@@ -41,3 +41,20 @@ around certification and these tradeoffs, with eight plots and 24 relevant
 citations. This improves reporting, not the unresolved algorithmic acceptance
 status. Fresh seeds are not a new benchmark; stress repetitions are not
 independent evidence; extra cost weights and pruning metrics are not extra runs.
+
+
+## 2026-10-29 grouped presentation revision
+User found the prior main table abnormal and its repeated 100% accuracy entries
+confusing, requested clustered bar charts, and supplied the CV as a source of
+paper-format examples. Inspected DeepPrep, AutoPrep, BatchER and DeepAnalyze.
+Replaced the mixed accuracy/certificate/cost table with matched-guarantee costs
+crossed by task family, metric, selection rule and acquisition order. All ten
+configurations remain in a separate contract audit. Conditional correctness
+from supplied worlds is not called model accuracy.
+
+Added a descriptive split of the same 155 E003 cases into 53 two-signature and
+102 one-signature reference cases. This split is reference-defined and agrees
+across models; it is not a new benchmark or a preregistered primary endpoint.
+All recall gains occur in the two-signature stratum. The observed-state rule's
+zero full-recovery rate there follows from collapsing equal observed answers.
+No new model calls or policy runs were used, and no measured outcomes changed.

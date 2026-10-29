@@ -2,7 +2,7 @@
   "schema_version": 1,
   "topic": "A2: Ask only questions that change the answer",
   "phase": "algorithm-development",
-  "updated_at": "2026-10-29T04:42:08.340708+00:00",
+  "updated_at": "2026-10-29T05:04:07.588720+00:00",
   "active_hypotheses": [
     "Sound query structure may support cheaper correctness and relevance certificates; generic EC2 action certification has not beaten the simple execution-cost control"
   ],
@@ -19,7 +19,8 @@
     "E008 strict relevance audit and exact binary comparison identity",
     "E009 stronger bounds lose primary metric to immediate-witness control",
     "E010: 120 fresh-seed tasks and 48 descriptive stress fixtures across ten configurations",
-    "Expanded paper: 10x10 main table, eight statistical figures, and 24 relevant references"
+    "Expanded paper: 10x10 main table, eight statistical figures, and 24 relevant references",
+    "Grouped table/figure redesign with reference-defined model strata and separate contract audit"
   ],
   "budget": {
     "wall_hours_limit": null,
@@ -63,7 +64,7 @@
   "latest_user_steering": {
     "date": "2026-10-29",
     "source": "User messages in this session",
-    "request": "Strengthen main-paper presentation with a large table, more plots and citations; prefer reusing measurements for more metrics and fewer new experiments for fast iteration.",
+    "request": "Redesign confusing Table 2 and sparse figures using grouped bar charts and task/method grouped tables; reference papers linked in the supplied CV. Keep actual model quality separate from finite-universe contract checks.",
     "scope": "Presentation and evidence expansion; strict guarantees and substantive-algorithm acceptance remain unchanged."
   },
   "latest_evaluation": "results/E010/report.json"
