@@ -8,7 +8,7 @@ PDFs and page renders are cached outside the repository in
 | Reference inspected | Pages | Presentation pattern used |
 |---|---|---|
 | [DeepPrep](https://www.vldb.org/pvldb/vol19/p3371-fan.pdf) | 10–11 | Dataset groups with repeated metrics; baseline/ablation grouping; small multiples for task comparisons. |
-| [AutoPrep](https://www.vldb.org/pvldb/vol18/p3504-fan.pdf) | 10 | Two-level headers, comparable metrics under each group, aligned entries and explicit best-value emphasis. |
+| [AutoPrep](https://www.vldb.org/pvldb/vol18/p3504-fan.pdf) | 10–11 | Two-level headers; compact clustered bars with shared legend and light outlines (Figure 8). |
 | [BatchER](https://fmh1art.github.io/files/BatchER-ICDE2024.pdf) | 10 | Task-by-metric row blocks crossed with method families and variants; multiple panels sharing visual conventions. |
 | [DeepAnalyze](https://arxiv.org/pdf/2510.16872) | 8 | Dense but labeled horizontal method comparisons and consistent grouping. |
 
@@ -32,3 +32,31 @@ A2 changes:
   Database figure: paired horizontal bars in two model panels.
 - All sampling intervals remain cluster bootstrap intervals. No significance
   stars or extra experimental runs are inferred from the denser presentation.
+
+Second plot-polish pass (2026-10-29):
+- Following AutoPrep Figure 8 and DeepPrep Figure 6, narrow bars form visible
+  method pairs within task clusters. Cost plots separate selection colors from
+  acquisition hatches, with a shared legend for each. All bar axes start at zero.
+- All nine plots use the same Times-like STIX typography, muted colors, thin
+  boxed axes, sparse grids, and lighter error bars. PDF/SVG exports remain vector;
+  PNG previews are 300 dpi. Panel labels and legend positions are consistent.
+- The six model panels share their scale and highlight the reference-defined
+  two-signature cohort. Four callouts report measured percentage-point differences,
+  not significance. Sample counts and structural zero recovery remain explicit.
+- The certificate comparison now uses paired bars at discrete observation counts.
+  Exact/partition colors match the main policy plot. The finite-map diagnostic
+  has no sampling intervals.
+- Stress heatmaps use white for zero violations and gray/dashes for undefined
+  question-conditional rates. Database bars share alternating row guides and
+  include sample counts; the controlled-audit bubble plot has a size legend.
+- Cost sensitivity displays excess over the cheapest displayed policy at each
+  cost weight, exposing the mean crossover at 24.75. Bootstrap replicates
+  recompute the comparator minimum. This is a transformation of the existing
+  paired counts, not a new policy run or an optimized adaptive policy.
+- BatchER Figure 7 informs consistent small-multiple axes/markers and light
+  uncertainty bands. Runtime markers show only the measured repair sizes;
+  enumeration is never extrapolated.
+
+The paper captions describe these encodings. Final validation checks the compiled
+ACL pages as well as individual figures; all saved measurement statistics and
+four generated tables are unchanged from the previous revision.

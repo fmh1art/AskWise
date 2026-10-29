@@ -39,9 +39,16 @@ and 48 descriptive stress fixtures. The revised main cost table crosses task
 families and metrics with seven matched-guarantee policies (12 rows, nine columns);
 all ten configurations remain in a separate contract audit. Actual model recovery
 is stratified by 53 two-signature and 102 one-signature cases. Nine statistical
-figures include grouped cost, model, and database bars. Run scripts/run_e010.py
-and scripts/report_e010.py with the project environment. The report reuses the
+figures include grouped cost, model, and database bars. Regenerate the figures
+and tables with .venv/bin/python scripts/report_e010.py; this does not rerun
+policies or call model APIs. The report reuses the
 external E003 cache and E007 scaling data. See results/E010/analysis.md and
 literature/presentation-reference-notes.md for sources and interpretation.
 The manuscript cites 24 relevant scientific works; presentation references are
 recorded separately.
+
+The plot-polish revision applies a shared publication style to all nine figures,
+separates selection/acquisition legends, adds measured subgroup difference
+labels, and exposes the cost crossover using excess cost. Numeric results and
+tables are unchanged. See results/E010/presentation-validation.json for the
+current artifact and compiled-PDF checks.

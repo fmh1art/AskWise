@@ -25,16 +25,88 @@
   "new_policy_runs": 0,
   "paper": {
     "pages": 15,
-    "pdf_sha256": "a0fc86c3dbbe21835ed12537f26c0b5a03119969e0b38d189da1c0446f4752d9",
+    "pdf_sha256": "0578204fc91537b466dda3b4dee5fd36a0c37757e8285b6734aa86e4200da9a5",
     "undefined_citations": false,
     "overfull_boxes": false,
+    "latex_warnings": [],
+    "official_style_and_bibliography": "unchanged",
     "visual_review": [
-      "Table 2 grouped headers",
-      "Table 3 reference strata",
-      "4-panel cost figure",
-      "6-panel model figure",
-      "paired database bars"
+      "all nine standalone plots",
+      "cost figure on page 6",
+      "model figure on page 8",
+      "sensitivity on page 11",
+      "three appendix plots on page 12",
+      "audit/database plots on page 14"
     ],
-    "nonfatal_layout_warning": "Appendix page 13 contains only floats"
+    "figure_body_font_size_points": "approximately 6.3-8.3 after manuscript scaling; mathematical scripts smaller"
+  },
+  "revision": "plot polish, 2026-10-29",
+  "comparison_code_commit": "ae6e64b1e2d1deb993b3c10245d2c298d1a83bf5",
+  "comparison_paper_commit": "e5b600672ce10768b36295d9940cd13d7d4fc07b",
+  "all_report_statistics_vs_previous_commit": "byte-identical report.json",
+  "generated_tables_vs_previous_commit": "all four byte-identical",
+  "unchanged_model_outcomes": 310,
+  "plot_outputs": 27,
+  "vector_figure_checks": {
+    "figures/cost_frontier.pdf": {
+      "width_points": 496.23,
+      "height_points": 284.28,
+      "vector": true
+    },
+    "figures/cost_sensitivity.pdf": {
+      "width_points": 243.84,
+      "height_points": 174.69,
+      "vector": true
+    },
+    "figures/paired_execution.pdf": {
+      "width_points": 496.23,
+      "height_points": 144.34,
+      "vector": true
+    },
+    "figures/stress_panel.pdf": {
+      "width_points": 510.06,
+      "height_points": 247.44,
+      "vector": true
+    },
+    "figures/structured_scaling.pdf": {
+      "width_points": 510.24,
+      "height_points": 186.24,
+      "vector": true
+    },
+    "figures/bound_certificates.pdf": {
+      "width_points": 510.24,
+      "height_points": 175.44,
+      "vector": true
+    },
+    "figures/model_support.pdf": {
+      "width_points": 502.79,
+      "height_points": 264.59,
+      "vector": true
+    },
+    "figures/database_support.pdf": {
+      "width_points": 494.49,
+      "height_points": 329.19,
+      "vector": true
+    },
+    "figures/repair_audit.pdf": {
+      "width_points": 510.24,
+      "height_points": 197.04,
+      "vector": true
+    }
+  },
+  "sensitivity": {
+    "ordinate": "policy mean cost minus cheapest displayed policy at each weight",
+    "bootstrap": "paired seed resampling, pointwise minimum recomputed in each replicate",
+    "mean_crossover": 24.749999999999993
+  },
+  "annotated_two_signature_differences_pp": {
+    "doubao_seed2_lite": {
+      "recall": 25.47169811320754,
+      "all_found": 50.943396226415096
+    },
+    "gpt5_6_sol_hydra": {
+      "recall": 29.24528301886792,
+      "all_found": 58.490566037735846
+    }
   }
 }

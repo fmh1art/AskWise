@@ -8,6 +8,9 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+from matplotlib.ticker import MaxNLocator, FixedLocator, FuncFormatter
+from matplotlib.colors import LinearSegmentedColormap
 from a2.evaluation import METHODS
 from a2.binary_bounds import comparison_interval
 from a2.binary_policy import partition_lower
@@ -27,15 +30,42 @@ LABEL = {'anchor':'Anchor answer', 'ask_all':'Ungated ask-all', 'full_ec2':'Full
          'immediate_witness':'Immediate / witness'}
 COLORS = ['#999999','#555555','#56B4E9','#0072B2','#E69F00','#D55E00','#CC79A7','#882255','#009E73','#332288']
 MARKERS = ['x','+','s','D','^','v','<','>','o','P']
-plt.rcParams.update({'font.family':'DejaVu Sans','font.size':8,'axes.labelsize':9,
-                     'axes.titlesize':10,'legend.fontsize':7,'xtick.labelsize':8,'ytick.labelsize':8,
+# Sizes are in points at the exported 7.1-inch width. STIX matches the
+# manuscript's Times-like typography and ships with Matplotlib.
+plt.rcParams.update({'font.family':'STIXGeneral','mathtext.fontset':'stix',
+                     'font.size':8.5,'axes.labelsize':8.5,'axes.titlesize':9,
+                     'legend.fontsize':8,'xtick.labelsize':8,'ytick.labelsize':8,
+                     'axes.titlelocation':'left','axes.titleweight':'bold',
+                     'axes.linewidth':.5,'axes.edgecolor':'#92979C',
+                     'axes.labelcolor':'#25282B','text.color':'#25282B',
+                     'xtick.color':'#45494D','ytick.color':'#45494D',
+                     'xtick.major.width':.5,'ytick.major.width':.5,
+                     'xtick.major.size':2.5,'ytick.major.size':2.5,
+                     'xtick.major.pad':3,'ytick.major.pad':3,
+                     'lines.linewidth':1.1,'lines.markersize':4,
+                     'hatch.linewidth':.35,'legend.handlelength':1.5,
+                     'legend.columnspacing':1.5,'legend.handletextpad':.5,
                      'pdf.fonttype':42,'ps.fonttype':42,'svg.fonttype':'none',
-                     'axes.spines.top':False,'axes.spines.right':False})
+                     'svg.hashsalt':'a2-publication-figures',
+                     'axes.spines.top':True,'axes.spines.right':True})
+SELECTION_COLOR={'full':'#587FA3','exact':'#CDA257',
+                 'partition':'#9380AA','immediate':'#4A917E'}
+PRUNE_COLOR={'observed':'#A6BED1','stable':'#79669B'}
+INK='#45494D'
+ERROR_STYLE={'elinewidth':.55,'capsize':1.35,'capthick':.55,'ecolor':INK}
+def grid(ax,axis='y'):
+    ax.set_axisbelow(True)
+    ax.grid(axis=axis,color='#E0E3E6',linewidth=.45)
+
+def panel(ax,letter,title):
+    ax.set_title(f'({letter}) {title}',pad=5)
+
 artifacts = []
 def save(fig, name):
     for ext in ('pdf','svg','png'):
         p = FIG/(name+'.'+ext)
-        fig.savefig(p, bbox_inches='tight', dpi=220)
+        metadata={'CreationDate':None,'ModDate':None} if ext=='pdf' else ({'Date':None} if ext=='svg' else None)
+        fig.savefig(p,bbox_inches='tight',pad_inches=.035,dpi=300,metadata=metadata)
         artifacts.append(str(p.relative_to(PAPER)))
     plt.close(fig)
 
@@ -124,106 +154,168 @@ lines += [r'\bottomrule',r'\end{tabular}',
           r'\label{tab:contract-audit}',r'\end{table*}']
 (TABLE/'contract-audit.tex').write_text('\n'.join(lines)+'\n')
 
-# Multiple task clusters and crossed selection/acquisition variants.
-POLICY_COLOR=['#0072B2','#E69F00','#E69F00','#AA4499','#AA4499','#009E73','#009E73']
-POLICY_HATCH=['','', '//','', '//','', '//']
-SHORT=['Full relevant EC2','Exact / fixed','Exact / witness','Partition / fixed',
-       'Partition / witness','Immediate / fixed','Immediate / witness']
-fig,axes=plt.subplots(2,2,figsize=(7.1,4.65),layout='constrained')
-x=np.arange(4);width=.105
-for ax,metric,title,ylabel in zip(axes.flat,
-        ['executions','questions','cost10','cpu_ms'],
-        ['(a) Execution cost','(b) User questions','(c) Weighted total cost','(d) Policy computation'],
-        ['Executed worlds, E','Questions, Q','C₁₀ = E + 10Q','Time per episode (ms)']):
+# Multiple task clusters; color encodes selection, hatch acquisition.
+POLICY_COLOR=[SELECTION_COLOR[k] for k in
+              ['full','exact','exact','partition','partition','immediate','immediate']]
+POLICY_HATCH=['','','///','','///','','///']
+fig,axes=plt.subplots(2,2,figsize=(7.1,3.95))
+fig.subplots_adjust(left=.075,right=.985,bottom=.15,top=.885,hspace=.51,wspace=.25)
+x=np.arange(4)
+# Extra gaps separate the three fixed/witness pairs inside each task cluster.
+offsets=[-.34,-.205,-.115,.025,.115,.255,.345]
+for ax,metric,letter,title,ylabel in zip(axes.flat,
+        ['executions','questions','cost10','cpu_ms'],'abcd',
+        ['Execution cost','User questions','Weighted total cost','Policy computation'],
+        ['Executed worlds, $E$','Questions, $Q$','$C_{10}=E+10Q$','Time per episode (ms)']):
+    ax.axvspan(2.54,3.50,color='#F2F3F5',zorder=0)
+    high_max=0
     for j,method in enumerate(STRICT):
         entries=[family_summary[f][method][metric] for f in COHORTS]
         means=np.array([r['mean'] for r in entries]);lo=np.array([r['ci95'][0] for r in entries]);hi=np.array([r['ci95'][1] for r in entries])
-        ax.bar(x+(j-3)*width,means,width=width*.94,label=SHORT[j],color=POLICY_COLOR[j],
-               hatch=POLICY_HATCH[j],edgecolor='#333333',linewidth=.35,
-               yerr=np.maximum(0,np.array([means-lo,hi-means])),error_kw={'elinewidth':.6,'capsize':1.3})
-    ax.set(xticks=x,xticklabels=['Region','Customers','Threshold','All'],ylabel=ylabel,title=title,ylim=(0,None))
-    ax.tick_params(axis='x',labelsize=7)
-    ax.set_axisbelow(True);ax.grid(axis='y',linestyle=':',alpha=.25)
-fig.legend(*axes[0,0].get_legend_handles_labels(),loc='outside lower center',ncol=4,fontsize=7,frameon=False)
+        high_max=max(high_max,float(hi.max()))
+        ax.bar(x+offsets[j],means,width=.075,color=POLICY_COLOR[j],
+               hatch=POLICY_HATCH[j],edgecolor=INK,linewidth=.3,
+               yerr=np.maximum(0,np.array([means-lo,hi-means])),error_kw=ERROR_STYLE)
+    ax.set(xticks=x,xticklabels=['Region','Customers','Threshold','Pooled'],
+           ylabel=ylabel,xlim=(-.53,3.50),ylim=(0,high_max*1.12))
+    ax.yaxis.set_major_locator(MaxNLocator(4,integer=metric in ['executions','cost10']))
+    panel(ax,letter,title);grid(ax)
+selection_handles=[Patch(facecolor=SELECTION_COLOR[k],edgecolor=INK,linewidth=.3,label=label)
+                   for k,label in [('full','Full relevant EC2'),('exact','Exact bound'),
+                                   ('partition','Partition bound'),('immediate','Immediate witness')]]
+fig.legend(handles=selection_handles,loc='upper center',bbox_to_anchor=(.53,1.005),
+           ncol=4,frameon=False)
+acquisition_handles=[Patch(facecolor='white',edgecolor=INK,linewidth=.4,hatch=h,label=label)
+                     for h,label in [('', 'Fixed acquisition'),('///','Witness acquisition')]]
+fig.legend(handles=acquisition_handles,loc='lower center',bbox_to_anchor=(.53,-.005),
+           ncol=2,frameon=False)
 save(fig,'cost_frontier')
 
-# Cost sensitivity remains available, explicitly separated from new evidence.
-fig,ax=plt.subplots(figsize=(3.4,2.5),layout='constrained')
-ratios=np.logspace(-2,2,100)
-for m,style in [('full_relevant_ec2','-'),('exact_fixed','--'),('partition_fixed',':'),('immediate_fixed','-.')]:
+# Same cost data, but plot excess relative to the cheapest policy at each c.
+# This exposes the crossover that absolute costs obscure at large c.
+fig,ax=plt.subplots(figsize=(3.4,2.45),layout='constrained')
+ratios=np.logspace(-2,2,160)
+sensitivity_methods=['full_relevant_ec2','exact_fixed','partition_fixed','immediate_fixed']
+cost_curves=np.array([summary[m]['executions']['mean']+ratios*summary[m]['questions']['mean']
+                      for m in sensitivity_methods])
+bootstrap_curves=np.array([boot[m]['executions'][:,None]+ratios*boot[m]['questions'][:,None]
+                          for m in sensitivity_methods])
+cost_min=cost_curves.min(axis=0)
+bootstrap_min=bootstrap_curves.min(axis=0)
+for k,(m,style,label) in enumerate(zip(sensitivity_methods,['-','--',':','-.'],
+                                      ['Full relevant EC2','Exact bound','Partition bound','Immediate witness'])):
     j=STRICT.index(m)
-    costs=summary[m]['executions']['mean']+ratios*summary[m]['questions']['mean']
-    bc=boot[m]['executions'][:,None]+ratios*boot[m]['questions'][:,None]
-    lo,hi=np.quantile(bc,[.025,.975],axis=0)
-    ax.plot(ratios,costs,color=POLICY_COLOR[j],linestyle=style,label=LABEL[m])
-    ax.fill_between(ratios,lo,hi,color=POLICY_COLOR[j],alpha=.10)
-ax.set(xscale='log',xlabel='Question / execution cost, c',ylabel='E + cQ',ylim=(0,None))
-ax.legend(frameon=False,fontsize=6.5,loc='upper left')
+    costs=cost_curves[k]-cost_min
+    lo,hi=np.quantile(bootstrap_curves[k]-bootstrap_min,[.025,.975],axis=0)
+    ax.plot(ratios,costs,color=POLICY_COLOR[j],linestyle=style,label=label)
+    ax.fill_between(ratios,lo,hi,color=POLICY_COLOR[j],alpha=.10,linewidth=0)
+cross=(summary['exact_fixed']['executions']['mean']-summary['immediate_fixed']['executions']['mean'])/(summary['immediate_fixed']['questions']['mean']-summary['exact_fixed']['questions']['mean'])
+ax.axvline(cross,color='#7A7E83',ls=(0,(2,2)),lw=.65)
+ax.text(cross*.88,.52,f'$c={cross:.2f}$',rotation=90,ha='right',va='bottom',fontsize=7.5)
+ax.set(xscale='log',xlabel='Question / execution cost, $c$',
+       ylabel='Excess cost, $C_c-\\min C_c$',ylim=(0,None))
+ax.yaxis.set_major_locator(MaxNLocator(4));grid(ax)
+fig.legend(*ax.get_legend_handles_labels(),frameon=False,fontsize=7.5,
+           loc='outside upper center',ncol=2)
 save(fig,'cost_sensitivity')
 
-# Paired effects are case averages; three panels retain the task families.
+# Paired task differences: show every seed and the uncertainty of its mean.
 families = ['top_region','customer_count','threshold_count']
-fig, ax = plt.subplots(1,3,figsize=(7.1,2.7),layout='constrained',sharey=True)
-paired = []
-for a,family in zip(ax,families):
-    points = []
+fig,axes=plt.subplots(1,3,figsize=(7.1,2.4),sharey=True)
+fig.subplots_adjust(left=.075,right=.985,bottom=.19,top=.85,wspace=.12)
+paired=[]
+for a,family,letter in zip(axes,families,'abc'):
+    points=[]
     for seed in seeds:
-        arow = next(r for r in fresh if r['family']==family and r['seed']==seed and r['method']=='exact_fixed')
-        brow = next(r for r in fresh if r['family']==family and r['seed']==seed and r['method']=='immediate_witness')
-        delta = arow['executions']-brow['executions']; points.append(delta)
+        arow=next(r for r in fresh if r['family']==family and r['seed']==seed and r['method']=='exact_fixed')
+        brow=next(r for r in fresh if r['family']==family and r['seed']==seed and r['method']=='immediate_witness')
+        delta=arow['executions']-brow['executions'];points.append(delta)
         paired.append({'family':family,'seed':seed,'delta_executions':delta})
-    jitter = np.random.default_rng(42).uniform(-.14,.14,len(points))
-    a.scatter(jitter,points,s=12,alpha=.65,color='#0072B2')
-    a.axhline(0,color='gray',linestyle='--',linewidth=.8)
-    ci = np.quantile(np.array(points)[sample].mean(axis=1),[.025,.975]); mean = np.mean(points)
-    a.errorbar(.32,mean,yerr=[[mean-ci[0]],[ci[1]-mean]],fmt='D',color='#D55E00',capsize=4)
-    a.set(xlim=(-.25,.55),xticks=[],title=family.replace('_',' ').title())
-ax[0].set_ylabel('Executions: exact fixed − immediate witness')
+    jitter=np.random.default_rng(42).uniform(-.13,.13,len(points))
+    a.scatter(jitter,points,s=14,alpha=.60,color=SELECTION_COLOR['exact'],
+              edgecolors='white',linewidths=.3,zorder=3)
+    a.axhline(0,color='#7A7E83',linestyle=(0,(3,2)),linewidth=.65)
+    ci=np.quantile(np.array(points)[sample].mean(axis=1),[.025,.975]);mean=np.mean(points)
+    a.errorbar(.39,mean,yerr=[[mean-ci[0]],[ci[1]-mean]],fmt='D',
+               color=SELECTION_COLOR['immediate'],capsize=3,elinewidth=.9,
+               markersize=4,zorder=4)
+    a.text(.96,.94,f'Mean {mean:+.2f}',transform=a.transAxes,ha='right',va='top',fontsize=8)
+    a.set(xlim=(-.24,.64),xticks=[0,.39],xticklabels=['40 seeds','Mean / 95% CI'])
+    panel(a,letter,FAMILY_LABEL[family]);grid(a)
+axes[0].set_ylabel('Executed worlds saved')
 save(fig,'paired_execution')
 
-# Descriptive stress heatmaps; repeated truth maps are not independent evidence.
-sf = ['constant','single_bit','nuisance_xor','rare_conjunction','threshold','intent_branch']
-fig, ax = plt.subplots(1,2,figsize=(7.1,4.1),layout='constrained')
-for a,key,title in zip(ax,['accuracy','irrelevant'],['(a) Wrong answers (%)','(b) Irrelevant questions (%)']):
-    matrix = []
+# White is zero failure; gray marks an undefined question-conditional rate.
+sf=['constant','single_bit','nuisance_xor','rare_conjunction','threshold','intent_branch']
+fig,axes=plt.subplots(1,2,figsize=(7.1,3.45),layout='constrained',
+                      gridspec_kw={'wspace':.04})
+failure_cmap=LinearSegmentedColormap.from_list('a2_failure',['#FFFFFF','#F3CEAE','#C56A3B','#7F3029'])
+failure_cmap.set_bad('#E6E8EB')
+for a,key,letter,title in zip(axes,['accuracy','irrelevant'],'ab',
+                              ['Wrong answers (%)','Irrelevant questions (%)']):
+    matrix=[]
     for m in METHODS:
-        row = []
+        row=[]
         for f in sf:
-            rr = [r for r in stress if r['method']==m and r['family']==f]
-            if key=='accuracy': value = 100*(1-np.mean([r[key] for r in rr]))
+            rr=[r for r in stress if r['method']==m and r['family']==f]
+            if key=='accuracy':value=100*(1-np.mean([r[key] for r in rr]))
             else:
-                denom = sum(r['questions'] for r in rr)
-                value = 100*sum(r[key] for r in rr)/denom if denom else np.nan
+                denom=sum(r['questions'] for r in rr)
+                value=100*sum(r[key] for r in rr)/denom if denom else np.nan
             row.append(value)
         matrix.append(row)
-    matrix = np.array(matrix)
-    im = a.imshow(matrix,vmin=0,vmax=100,cmap='cividis',aspect='auto')
+    matrix=np.array(matrix)
+    im=a.pcolormesh(np.arange(-.5,6,1),np.arange(-.5,10,1),
+                    np.ma.masked_invalid(matrix),vmin=0,vmax=100,cmap=failure_cmap,
+                    rasterized=False)
+    a.set(xlim=(-.5,5.5),ylim=(9.5,-.5))
     for y,x in np.ndindex(matrix.shape):
-        v = matrix[y,x]
-        a.text(x,y,'–' if np.isnan(v) else f'{v:.0f}',ha='center',va='center',fontsize=7,color='#555555' if np.isnan(v) else ('white' if v<55 else 'black'))
-    a.set(xticks=range(6),xticklabels=['Const.','Single','XOR','AND','Thresh.','Branch'],title=title)
-    a.tick_params(axis='x',labelrotation=45)
-    a.set_yticks(range(10),[LABEL[m] for m in METHODS] if a is ax[0] else ['']*10)
-fig.colorbar(im,ax=ax,shrink=.7,label='Percent')
+        v=matrix[y,x]
+        a.text(x,y,'–' if np.isnan(v) else f'{v:.0f}',ha='center',va='center',
+               fontsize=7.5,color='white' if v>=65 else INK)
+    a.set(xticks=range(6),xticklabels=['Const.','Single','XOR','AND','Thresh.','Branch'])
+    a.tick_params(length=0,axis='both',pad=4)
+    a.set_yticks(range(10),[LABEL[m] for m in METHODS] if a is axes[0] else ['']*10)
+    a.set_xticks(np.arange(-.5,6,1),minor=True);a.set_yticks(np.arange(-.5,10,1),minor=True)
+    a.tick_params(which='minor',length=0);a.grid(which='minor',color='#D7DADD',linewidth=.4)
+    a.axhline(2.5,color='#888D92',linewidth=.8)
+    panel(a,letter,title)
+colorbar=fig.colorbar(im,ax=axes,shrink=.82,pad=.02,aspect=28,
+                      ticks=[0,25,50,75,100],label='Rate (%)')
+colorbar.solids.set_rasterized(False)
 save(fig,'stress_panel')
 
 # Existing scaling evidence; no extrapolated enumeration times.
-scaling = json.loads((ROOT/'results/E007/scaling.json').read_text())['rows']
-ns = sorted({r['n_repairs'] for r in scaling})
-fig,ax = plt.subplots(1,2,figsize=(7.1,2.7),layout='constrained')
-for key,label,color,marker in [('compiled_seconds','Compiled score messages','#0072B2','o'),('enumerated_seconds','Explicit enumeration','#D55E00','s')]:
-    xx=[]; yy=[]; low=[]; high=[]
+scaling=json.loads((ROOT/'results/E007/scaling.json').read_text())['rows']
+ns=sorted({r['n_repairs'] for r in scaling})
+fig,axes=plt.subplots(1,2,figsize=(7.1,2.6),layout='constrained')
+for key,label,color,marker,style in [
+        ('compiled_seconds','Compiled messages',SELECTION_COLOR['immediate'],'o','-'),
+        ('enumerated_seconds','Explicit enumeration',SELECTION_COLOR['exact'],'s','--')]:
+    xx=[];yy=[];low=[];high=[]
     for n in ns:
         v=[r[key] for r in scaling if r['n_repairs']==n and key in r]
-        if v: xx.append(n); yy.append(np.median(v)); low.append(min(v)); high.append(max(v))
-    ax[0].plot(xx,yy,marker=marker,color=color,label=label)
-    ax[0].fill_between(xx,low,high,color=color,alpha=.15)
-ax[0].set(xscale='log',yscale='log',xlabel='Repair variables',ylabel='Seconds',title='(a) Root inference time')
-ax[0].legend(frameon=False)
-ax[1].plot(ns,[np.median([r['message_states'] for r in scaling if r['n_repairs']==n]) for n in ns],'o-',color='#0072B2',label='Materialized message states')
-ax[1].plot(ns,[2.**(n+1) for n in ns],'s--',color='#999999',label='Implicit possible worlds')
-ax[1].set(yscale='log',xlabel='Repair variables',ylabel='Count',title='(b) Declared affine-score family')
-ax[1].legend(frameon=False)
+        if v:xx.append(n);yy.append(np.median(v));low.append(min(v));high.append(max(v))
+    axes[0].plot(xx,yy,marker=marker,color=color,ls=style,label=label,
+                 markerfacecolor='white',markeredgewidth=.8)
+    axes[0].fill_between(xx,low,high,color=color,alpha=.15,linewidth=0)
+axes[0].set(xscale='log',yscale='log',xlabel='Repair variables',ylabel='Runtime (s)')
+axes[0].xaxis.set_major_locator(FixedLocator([8,16,32,64,128,256]))
+axes[0].xaxis.set_major_formatter(FuncFormatter(lambda x,_:f'{x:g}'))
+axes[0].xaxis.set_minor_locator(FixedLocator([]))
+panel(axes[0],'a','Root inference time')
+axes[0].legend(frameon=False,loc='lower right',fontsize=7.5);grid(axes[0])
+axes[1].plot(ns,[np.median([r['message_states'] for r in scaling if r['n_repairs']==n]) for n in ns],
+             'o-',color=SELECTION_COLOR['immediate'],label='Materialized states',markerfacecolor='white')
+axes[1].plot(ns,[2.**(n+1) for n in ns],'s--',color='#8B8D91',
+             label='Implicit worlds',markerfacecolor='white')
+axes[1].set(xscale='log',yscale='log',xlabel='Repair variables',ylabel='Count',
+            ylim=(1,1e80),yticks=[1,1e20,1e40,1e60,1e80])
+axes[1].xaxis.set_major_locator(FixedLocator([8,16,32,64,128,256]))
+axes[1].xaxis.set_major_formatter(FuncFormatter(lambda x,_:f'{x:g}'))
+axes[1].xaxis.set_minor_locator(FixedLocator([]))
+panel(axes[1],'b','Declared score family');grid(axes[1])
+axes[1].legend(frameon=False,loc='upper left',fontsize=7.5)
 save(fig,'structured_scaling')
 
 # Exact finite partial-map diagnostic; all worlds/labels below are artificial.
@@ -243,13 +335,26 @@ for partial in product((None,0,1),repeat=8):
         g[name]+=any(all(scores[q,r]>=0 for r in range(3) if r!=q) for q in eligible)
 bound_rows=[{'observed':k,**g,'exact_rate':g['exact']/g['states'],'partition_rate':g['partition']/g['states'],
              'mean_slack':g['slack_sum']/(6*g['states'])} for k,g in sorted(bound_groups.items())]
-fig,ax=plt.subplots(1,2,figsize=(7.1,2.7),layout='constrained')
-for key,label,color,marker in [('exact_rate','Exact four-cell','#D55E00','o'),('partition_rate','Partition relaxation','#0072B2','s')]:
-    ax[0].plot([r['observed'] for r in bound_rows],[100*r[key] for r in bound_rows],marker=marker,color=color,label=label)
-ax[0].set(xlabel='Observed labels out of 8',ylabel='States certifying a witnessed maximum (%)',title='(a) Action certificates',ylim=(-2,103))
-ax[0].legend(frameon=False)
-ax[1].plot([r['observed'] for r in bound_rows],[r['mean_slack'] for r in bound_rows],'o-',color='#009E73')
-ax[1].set(xlabel='Observed labels out of 8',ylabel='Mean lower-bound gap (edge-count units)',title='(b) Relaxation slack')
+fig,axes=plt.subplots(1,2,figsize=(7.1,2.45),layout='constrained')
+observed=np.array([r['observed'] for r in bound_rows])
+for j,(key,label,color,hatch) in enumerate([
+        ('exact_rate','Exact four-cell',SELECTION_COLOR['exact'],''),
+        ('partition_rate','Partition relaxation',SELECTION_COLOR['partition'],'///')]):
+    rates=np.array([100*r[key] for r in bound_rows])
+    axes[0].bar(observed+(j-.5)*.36,rates,width=.31,color=color,hatch=hatch,
+                edgecolor=INK,linewidth=.3,label=label)
+    axes[0].text(6+(j-.5)*.36,rates[6]+2,f'{rates[6]:.1f}',ha='center',fontsize=7.5)
+axes[0].set(xlabel='Observed labels (of 8)',ylabel='Certified states (%)',
+            xticks=range(9),ylim=(0,110),yticks=[0,25,50,75,100])
+panel(axes[0],'a','Action certificates');grid(axes[0])
+axes[0].legend(frameon=False,loc='upper left',fontsize=7.5)
+gap=[r['mean_slack'] for r in bound_rows]
+axes[1].plot(observed,gap,'o-',color=SELECTION_COLOR['partition'],markerfacecolor='white',markeredgewidth=.9)
+axes[1].fill_between(observed,0,gap,color=SELECTION_COLOR['partition'],alpha=.1,linewidth=0)
+axes[1].set(xlabel='Observed labels (of 8)',ylabel='Lower-bound gap (edge units)',
+            xticks=range(9),ylim=(0,None))
+axes[1].yaxis.set_major_locator(MaxNLocator(4))
+panel(axes[1],'b','Relaxation slack');grid(axes[1])
 save(fig,'bound_certificates')
 
 # Real-model results: purely cached measurements; no new API calls.
@@ -327,32 +432,50 @@ lines += [r'\bottomrule',r'\end{tabular}',
           r'\caption{Generation resources and candidate counts, recorded once per model. Generated, kept, and tokens are per-case means; kept counts compare observed/two-state pruning. SQL validity requires execution on both states and does not imply correctness. Latencies describe recorded generation calls. The same 155 calls per model serve all pruning rules and subgroup analyses.}',
           r'\label{tab:model-resources}',r'\end{table*}']
 (TABLE/'model-resources.tex').write_text('\n'.join(lines)+'\n')
-fig,axes=plt.subplots(2,3,figsize=(7.1,4.25),layout='constrained',sharey=True)
+fig,axes=plt.subplots(2,3,figsize=(7.1,3.65),sharey=True)
+fig.subplots_adjust(left=.075,right=.99,bottom=.115,top=.855,hspace=.47,wspace=.13)
 for row,(model,name) in enumerate([('doubao_seed2_lite','Doubao Lite'),('gpt5_6_sol_hydra','GPT Sol')]):
-    for col,(metric,title) in enumerate([('recall','Reference recall'),('precision','Reference precision'),('all_found','Full reference recovery')]):
+    for col,(metric,title) in enumerate([('recall','Recall'),('precision','Precision'),('all_found','Full recovery')]):
         ax=axes[row,col]
+        ax.axvspan(.56,1.44,color='#F2F3F5',zorder=0)
+        highs=[]
         for j,rule in enumerate(['observed','stable']):
             data=[model_strata[model][group]['rules'][rule][metric] for group,_,_ in stratum_defs]
             means=np.array([r['mean']*100 for r in data])
             low=np.array([r['ci95'][0]*100 for r in data]);high=np.array([r['ci95'][1]*100 for r in data])
-            ax.bar(np.arange(3)+(j-.5)*.34,means,width=.31,
-                   color=['#56B4E9','#D55E00'][j],hatch=['','//'][j],edgecolor='#333333',linewidth=.35,
-                   yerr=np.maximum(0,np.array([means-low,high-means])),error_kw={'elinewidth':.75,'capsize':1.8},
-                   label=['Observed-state','Two-state'][j])
-        ax.set(xticks=range(3),xticklabels=['All\n155','Two sig.\n53','One sig.\n102'],ylim=(0,105),
-               title='('+chr(97+row*3+col)+') '+title)
+            highs.append(high)
+            ax.bar(np.arange(3)+(j-.5)*.32,means,width=.275,
+                   color=PRUNE_COLOR[rule],hatch=['','///'][j],edgecolor=INK,linewidth=.3,
+                   yerr=np.maximum(0,np.array([means-low,high-means])),error_kw=ERROR_STYLE,
+                   label=['Observed-state pruning','Two-state pruning'][j])
+        tick_labels=(['All','Two sig.','One sig.'] if row==0 else
+                     ['All\n$n=155$','Two sig.\n$n=53$','One sig.\n$n=102$'])
+        ax.set(xticks=range(3),xticklabels=tick_labels,
+               ylim=(0,118),yticks=[0,25,50,75,100],xlim=(-.55,2.52))
+        panel(ax,chr(97+row*3+col),name+': '+title.lower())
+        if metric in ['recall','all_found']:
+            cohort=model_strata[model]['distinct']['rules']
+            delta=100*(cohort['stable'][metric]['mean']-cohort['observed'][metric]['mean'])
+            height=max(highs[0][1],highs[1][1])+5
+            ax.plot([.84,.84,1.16,1.16],[height-1.5,height,height,height-1.5],color=INK,lw=.55)
+            ax.text(1,height+2,f'+{delta:.1f} pp',ha='center',va='bottom',fontsize=7.5,
+                    color=PRUNE_COLOR['stable'])
         if metric=='all_found':
-            ax.text(1-.17,1.5,'0',ha='center',va='bottom',fontsize=7,color='#333333')
-        ax.tick_params(axis='x',labelsize=7)
-        ax.set_axisbelow(True);ax.grid(axis='y',linestyle=':',alpha=.22)
-        if col==0:ax.set_ylabel(name+'\nPercent')
-fig.legend(*axes[0,0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False)
+            ax.text(.84,2,'0',ha='center',va='bottom',fontsize=7.5,color=INK)
+        grid(ax)
+        if col==0:ax.set_ylabel('Score (%)')
+fig.legend(*axes[0,0].get_legend_handles_labels(),loc='upper center',
+           bbox_to_anchor=(.53,1.005),ncol=2,frameon=False)
 save(fig,'model_support')
 
 
-fig,ax=plt.subplots(1,2,figsize=(7.1,5.0),layout='constrained',sharey=True)
+# Paired database bars share row order, range, sample-count labels and legend.
+fig,axes=plt.subplots(1,2,figsize=(7.1,4.7),sharey=True)
+fig.subplots_adjust(left=.225,right=.985,bottom=.135,top=.93,wspace=.10)
 database_rows=[]
-for a,(model,rr) in zip(ax,models.items()):
+for a,(model,rr),letter in zip(axes,models.items(),'ab'):
+    for k in range(0,len(dbs),2):
+        a.axhspan(k-.48,k+.48,color='#F2F3F5',zorder=0)
     for j,rule in enumerate(['observed','stable']):
         means=[]
         for db in dbs:
@@ -361,29 +484,50 @@ for a,(model,rr) in zip(ax,models.items()):
             if rule=='stable':
                 delta=100*np.mean([r['metrics']['stable']['recall']-r['metrics']['observed']['recall'] for r in subset])
                 database_rows.append({'model':model,'db_id':db,'n':len(subset),'delta_recall_pp':float(delta)})
-        a.barh(np.arange(len(dbs))+(j-.5)*.36,means,height=.34,color=['#56B4E9','#D55E00'][j],
-               hatch=['','//'][j],edgecolor='#333333',linewidth=.25,label=['Observed-state','Two-state'][j])
-    a.set(xlabel='Reference recall (%)',xlim=(0,100),title='Doubao Lite' if model.startswith('doubao') else 'GPT Sol')
-    a.set_axisbelow(True);a.grid(axis='x',linestyle=':',alpha=.22)
-ax[0].set_yticks(range(len(dbs)),dbs,fontsize=6.5);ax[0].invert_yaxis()
-fig.legend(*ax[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False)
+        a.barh(np.arange(len(dbs))+(j-.5)*.36,means,height=.29,color=PRUNE_COLOR[rule],
+               hatch=['','///'][j],edgecolor=INK,linewidth=.25,
+               label=['Observed-state pruning','Two-state pruning'][j],zorder=3)
+    a.set(xlabel='Reference recall (%)',xlim=(0,103),xticks=[0,25,50,75,100])
+    panel(a,letter,'Doubao Lite' if model.startswith('doubao') else 'GPT Sol');grid(a,'x')
+    a.tick_params(axis='y',length=0,labelsize=7.5)
+db_counts={db:sum(r['db_id']==db for r in models['doubao_seed2_lite']) for db in dbs}
+axes[0].set_yticks(range(len(dbs)),[f'{db}  ({db_counts[db]})' for db in dbs])
+axes[0].set_ylim(len(dbs)-.5,-.5)
+fig.legend(*axes[0].get_legend_handles_labels(),loc='lower center',
+           bbox_to_anchor=(.57,-.005),ncol=2,frameon=False)
 save(fig,'database_support')
 
 audit=json.loads((ROOT/'results/E002/audit_status.json').read_text())
 summary2=json.loads((ROOT/'results/E002/summary.json').read_text())
-fig,ax=plt.subplots(1,2,figsize=(7.1,3),layout='constrained')
-categories=['All items','Eligible','Changed equality','Query errors','No eligible swap']
+fig,axes=plt.subplots(1,2,figsize=(7.1,2.75),layout='constrained',gridspec_kw={'wspace':.07})
+categories=['All items','Eligible swaps','Changed equality','Query errors','No eligible swap']
 counts=[summary2['n_total'],summary2['n_ok'],summary2['n_equal_then_different'],summary2['n_error'],summary2['n_no_distinct']]
-ax[0].barh(range(5),counts,color=['#999999','#0072B2','#D55E00','#CC79A7','#E69F00'])
-for y,n in enumerate(counts):ax[0].text(n+12,y,str(n),va='center',fontsize=8)
-ax[0].set_yticks(range(5),categories);ax[0].invert_yaxis();ax[0].set(xlim=(0,1450),xlabel='Items (nested counts)',title='(a) Audit denominators')
+axes[0].barh(range(5),counts,height=.60,
+             color=['#C8CDD2',PRUNE_COLOR['observed'],PRUNE_COLOR['stable'],'#CDA257','#CDA257'],
+             edgecolor=INK,linewidth=.3)
+for y,n in enumerate(counts):axes[0].text(n+20,y,f'{n:,}',va='center',fontsize=8)
+axes[0].axhline(2.6,color='#B6BBC0',lw=.5,ls=(0,(3,2)))
+axes[0].set_yticks(range(5),categories);axes[0].invert_yaxis()
+axes[0].set(xlim=(0,1490),xticks=[0,400,800,1200],xlabel='Items (nested counts)')
+axes[0].tick_params(axis='y',length=0)
+panel(axes[0],'a','Audit denominators');grid(axes[0],'x')
 effects=[]
 for db in sorted({r['db_id'] for r in audit}):
     rr=[r for r in audit if r['db_id']==db and r['status']=='ok']
     if rr:effects.append((db,100*sum(r['equal_observed'] and not r['equal_changed'] for r in rr)/len(rr),len(rr)))
 effects.sort(key=lambda x:x[1])
-ax[1].scatter(range(len(effects)),[e[1] for e in effects],s=[e[2]/3+12 for e in effects],color='#0072B2',alpha=.75)
-ax[1].set(xlabel='Databases, ordered by observed effect',ylabel='Equal → different (%)',ylim=(-3,103),title='(b) Controlled-swap heterogeneity')
+rank=np.arange(1,len(effects)+1)
+axes[1].vlines(rank,0,[e[1] for e in effects],color='#D6D0DF',lw=.8)
+axes[1].scatter(rank,[e[1] for e in effects],s=[e[2]/3+12 for e in effects],
+                color=PRUNE_COLOR['stable'],edgecolors='white',linewidths=.45,zorder=3)
+axes[1].set(xlabel='Database rank (ordered by effect)',ylabel='Equal → different (%)',
+            xticks=[1,5,10,15,20],xlim=(.25,len(effects)+.75),ylim=(0,108),yticks=[0,25,50,75,100])
+sizes=sorted({min(e[2] for e in effects),int(np.median([e[2] for e in effects])),max(e[2] for e in effects)})
+handles=[axes[1].scatter([],[],s=n/3+12,color=PRUNE_COLOR['stable'],edgecolors='white',
+                         linewidths=.45,label=str(n)) for n in sizes]
+axes[1].legend(handles=handles,title='Eligible cases',title_fontsize=7.5,fontsize=7.5,
+               loc='upper left',ncol=len(handles),columnspacing=.5,handletextpad=.25,frameon=False)
+panel(axes[1],'b','Controlled-swap heterogeneity');grid(axes[1])
 save(fig,'repair_audit')
 
 paired_delta=seed_values['exact_fixed']['executions']-seed_values['immediate_witness']['executions']
