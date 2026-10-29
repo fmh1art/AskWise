@@ -1,0 +1,20 @@
+@inproceedings{min-etal-2020-ambigqa,
+    title = "{A}mbig{QA}: Answering Ambiguous Open-domain Questions",
+    author = "Min, Sewon  and
+      Michael, Julian  and
+      Hajishirzi, Hannaneh  and
+      Zettlemoyer, Luke",
+    editor = "Webber, Bonnie  and
+      Cohn, Trevor  and
+      He, Yulan  and
+      Liu, Yang",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing ({EMNLP})",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.emnlp-main.466/",
+    doi = "10.18653/v1/2020.emnlp-main.466",
+    pages = "5783--5797"
+}
+

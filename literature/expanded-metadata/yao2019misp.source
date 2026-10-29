@@ -1,0 +1,20 @@
+@inproceedings{yao-etal-2019-model,
+    title = "Model-based Interactive Semantic Parsing: A Unified Framework and A Text-to-{SQL} Case Study",
+    author = "Yao, Ziyu  and
+      Su, Yu  and
+      Sun, Huan  and
+      Yih, Wen-tau",
+    editor = "Inui, Kentaro  and
+      Jiang, Jing  and
+      Ng, Vincent  and
+      Wan, Xiaojun",
+    booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing ({EMNLP}-{IJCNLP})",
+    month = nov,
+    year = "2019",
+    address = "Hong Kong, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/D19-1547/",
+    doi = "10.18653/v1/D19-1547",
+    pages = "5447--5458"
+}
+

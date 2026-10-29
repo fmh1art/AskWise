@@ -1,0 +1,14 @@
+{
+  "title": "Cosette: An Automated Prover for SQL",
+  "authors": [
+    "Shumo Chu",
+    "Chenglong Wang",
+    "Konstantin Weitz",
+    "Alvin Cheung"
+  ],
+  "year": 2017,
+  "venue": "8th Biennial Conference on Innovative Data Systems Research (CIDR)",
+  "source": "https://www.cidrdb.org/cidr2017/papers/p51-chu-cidr17.pdf",
+  "pdf_sha256": "cc6fc09d1030a88d5468e4a3617d258e03d57627c4cb914191e8a9d83f1a1b9b",
+  "verification": "Title, complete author list, year and venue checked on original PDF first page."
+}

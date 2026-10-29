@@ -2,7 +2,7 @@
   "schema_version": 1,
   "topic": "A2: Ask only questions that change the answer",
   "phase": "algorithm-development",
-  "updated_at": "2026-10-29T04:04:49.328250+00:00",
+  "updated_at": "2026-10-29T04:42:08.340708+00:00",
   "active_hypotheses": [
     "Sound query structure may support cheaper correctness and relevance certificates; generic EC2 action certification has not beaten the simple execution-cost control"
   ],
@@ -17,7 +17,9 @@
     "E003 all 310 planned outcomes verified and manuscript updated",
     "E007 classical structured-inference control",
     "E008 strict relevance audit and exact binary comparison identity",
-    "E009 stronger bounds lose primary metric to immediate-witness control"
+    "E009 stronger bounds lose primary metric to immediate-witness control",
+    "E010: 120 fresh-seed tasks and 48 descriptive stress fixtures across ten configurations",
+    "Expanded paper: 10x10 main table, eight statistical figures, and 24 relevant references"
   ],
   "budget": {
     "wall_hours_limit": null,
@@ -43,7 +45,7 @@
     ]
   },
   "blockers": [],
-  "next_action": "Develop a substantive method under confirmed strict guarantees; decide structured aggregation scope, compare against immediate-witness and classical compiled inference, then freeze independent confirmation. Current algorithm gate has not passed.",
+  "next_action": "Continue substantive algorithm development under strict answer/relevance guarantees. Fresh E010 seeds confirm that exact EC2 action certification still costs more execution than immediate-witness control; presentation expansion is complete but the algorithm gate remains unmet.",
   "stop_reason": null,
   "acceptance": "ACL main-conference ALGORITHM paper; substantive method beyond EC2/query-driven cleaning required by user",
   "running_experiment": null,
@@ -57,5 +59,12 @@
     "primary_objective": "execution cost",
     "open_world_coverage": "not guaranteed",
     "error_budget": 0
-  }
+  },
+  "latest_user_steering": {
+    "date": "2026-10-29",
+    "source": "User messages in this session",
+    "request": "Strengthen main-paper presentation with a large table, more plots and citations; prefer reusing measurements for more metrics and fewer new experiments for fast iteration.",
+    "scope": "Presentation and evidence expansion; strict guarantees and substantive-algorithm acceptance remain unchanged."
+  },
+  "latest_evaluation": "results/E010/report.json"
 }

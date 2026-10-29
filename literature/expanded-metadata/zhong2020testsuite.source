@@ -1,0 +1,19 @@
+@inproceedings{zhong-etal-2020-semantic,
+    title = "Semantic Evaluation for Text-to-{SQL} with Distilled Test Suites",
+    author = "Zhong, Ruiqi  and
+      Yu, Tao  and
+      Klein, Dan",
+    editor = "Webber, Bonnie  and
+      Cohn, Trevor  and
+      He, Yulan  and
+      Liu, Yang",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing ({EMNLP})",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.emnlp-main.29/",
+    doi = "10.18653/v1/2020.emnlp-main.29",
+    pages = "396--411"
+}
+

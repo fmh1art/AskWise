@@ -1,0 +1,85 @@
+{
+  "retrieved_at": "2026-10-29T04:24:40.097697+00:00",
+  "records": [
+    {
+      "key": "golovin2011adaptive",
+      "status": "retrieved",
+      "source_url": "https://www.cs.cmu.edu/~dgolovin/bibtex.htm",
+      "previous_attempt": {
+        "source_url": "https://api.crossref.org/works/10.1613/jair.3278/transform/application/x-bibtex",
+        "error": "HTTPStatusError"
+      },
+      "sha256": "6789a52b7196f40466252189e1eee4477d3a15108a2dd34135d755d4493d005d"
+    },
+    {
+      "key": "altwaijry2013query",
+      "status": "retrieved",
+      "source_url": "https://api.crossref.org/works/10.14778/2556549.2556567/transform/application/x-bibtex",
+      "sha256": "0e689f311ef3f7ccc6b800c5f0a06e129c9fb84b366a198fcdafe1df88ddd526"
+    },
+    {
+      "key": "green2007provenance",
+      "status": "retrieved",
+      "source_url": "https://api.crossref.org/works/10.1145/1265530.1265535/transform/application/x-bibtex",
+      "sha256": "b036c0ba83b610237cc056f2d98c539b097792c595fdd1d44a3e45cb74c4ef65"
+    },
+    {
+      "key": "deshpande2016stochastic",
+      "status": "retrieved",
+      "source_url": "https://api.crossref.org/works/10.1145/2876506/transform/application/x-bibtex",
+      "sha256": "3328022ebe73bdc72f833396115f856373063a32ae4767c804d85edc544180bf"
+    },
+    {
+      "key": "he2024verieql",
+      "status": "retrieved",
+      "source_url": "https://api.crossref.org/works/10.1145/3649849/transform/application/x-bibtex",
+      "sha256": "8b937aee890eb560b49ac27a57e7e764b0c3c06a8cf3e0bc13aa4dc5514ce43b"
+    },
+    {
+      "key": "yao2019misp",
+      "status": "retrieved",
+      "source_url": "https://aclanthology.org/D19-1547.bib",
+      "sha256": "6653d5c5d1431d6420e7230c9ab612c9dfbef3b44fa763ff300ba38ad59e53e8"
+    },
+    {
+      "key": "elgohary2020feedback",
+      "status": "retrieved",
+      "source_url": "https://aclanthology.org/2020.acl-main.187.bib",
+      "sha256": "7d5280edb758b5faf5b6119bea95f9f32bc830be431eec7cbb4e52589f71d56c"
+    },
+    {
+      "key": "zhong2020testsuite",
+      "status": "retrieved",
+      "source_url": "https://aclanthology.org/2020.emnlp-main.29.bib",
+      "sha256": "f87fd33fde05387e3d93a078236c83f48fcfab0082851b2f86be3e123ed1b1a6"
+    },
+    {
+      "key": "yu2018spider",
+      "status": "retrieved",
+      "source_url": "https://aclanthology.org/D18-1425.bib",
+      "sha256": "e12a376218c1cb9f4a4bdcd916d560b88aae00b553f68a63a47ecf2ccf63c926"
+    },
+    {
+      "key": "min2020ambigqa",
+      "status": "retrieved",
+      "source_url": "https://aclanthology.org/2020.emnlp-main.466.bib",
+      "sha256": "a158dd643ecc2f33544c588615ff1dcd10e4f19fcf0416e4051f502ef69dcbc6"
+    },
+    {
+      "key": "javdani2014decision",
+      "status": "retrieved",
+      "source_url": "https://proceedings.mlr.press/v33/javdani14.html",
+      "sha256": "e87686bd0d0e4c6bc07c0af70a393317cba003bee5fb10e0a96a13e176012b82"
+    },
+    {
+      "key": "chu2017cosette",
+      "status": "verified_transcription",
+      "source_url": "https://www.cidrdb.org/cidr2017/papers/p51-chu-cidr17.pdf",
+      "previous_attempt": {
+        "source_url": "https://dblp.org/rec/conf/cidr/ChuWWC17.bib",
+        "error": "ValueError"
+      },
+      "sha256": "378e8d1d7300a8cf8dc6460f28c64f382df04e690217aef13e3d1a6fec8ea38c"
+    }
+  ]
+}

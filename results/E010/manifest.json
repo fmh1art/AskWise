@@ -1,0 +1,12 @@
+{
+  "protocol_sha256": "3e892cd2d003583c91cb0cce4654e628f3c993684b45df8dbbcb1cffc7c8c3b9",
+  "tasks": 168,
+  "fresh_sales_tasks": 120,
+  "stress_tasks": 48,
+  "policies": 10,
+  "hidden_worlds_per_task": 16,
+  "policy_episodes": 26880,
+  "api_requests": 0,
+  "elapsed_seconds": 9.368430951144546,
+  "per_task_sha256": "4fd8d2ff6e6328cd615ebca16b246b3af5a36abf37a0c6a097372252daf3b84b"
+}

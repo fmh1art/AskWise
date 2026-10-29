@@ -32,3 +32,12 @@ classical structured-inference baseline. E009's exact binary comparison bound
 beats an older relaxation but loses on execution cost to immediate-witness
 querying. These negative development results remain recorded. The substantive
 algorithm and independent confirmation gate have **not** been passed.
+
+
+E010 expands the evidence without new API calls: 120 fresh generated SQL tasks,
+48 descriptive stress fixtures, a ten-by-ten main table, and eight publication
+plots. Run scripts/run_e010.py and then scripts/report_e010.py with the project
+virtual environment. The report reuses the external E003 model cache and E007
+scaling measurements. See results/E010/analysis.md for denominators, provenance,
+and the remaining negative execution-cost result. The manuscript now cites 24
+relevant works with source metadata retained in literature/expanded-metadata.

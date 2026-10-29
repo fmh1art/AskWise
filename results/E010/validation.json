@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "tasks": 168,
+  "policy_episodes": 26880,
+  "strict_configurations_checked": 7,
+  "new_api_calls": 0,
+  "unique_cited_references": 24,
+  "figures": 8,
+  "main_table_shape": [
+    10,
+    10
+  ],
+  "model_table_shape": [
+    4,
+    10
+  ],
+  "source_hashes": "verified",
+  "metric_recomputation": "passed",
+  "test_suite": "17 passed in 6.15 seconds",
+  "paper": {
+    "pages": 13,
+    "pdf_sha256": "d1030ef1d25086e447e2e28dfbe29df13d0cd9389b4322eb36a6c99e7122e6b4",
+    "undefined_citations": false,
+    "overfull_boxes": false,
+    "bibtex_warnings": false
+  }
+}
