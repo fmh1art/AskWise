@@ -68,7 +68,7 @@
   "latest_user_steering": {
     "date": "2026-10-29",
     "source": "User messages in this session",
-    "request": "Unify all experimental plot styles with the current manuscript Figure 6 (model_support).",
+    "request": "Shorten captions following the user papers; move necessary nonduplicated details to corresponding prose.",
     "scope": "Authorized expanded working manuscript, not a final page-limit-compliant submission. Strict guarantees, substantive algorithm requirement and per-round resource constraints remain unchanged."
   },
   "latest_evaluation": "results/E010/report.json",
@@ -76,7 +76,7 @@
     "main_content_pages": 10,
     "total_pdf_pages": 17,
     "status": "expanded working draft for user trimming",
-    "validation": "results/E010/figure6-style-validation.json",
+    "validation": "results/E010/caption-validation.json",
     "figure_manifest": "results/E010/imagegen-figure-manifest.json",
     "plot_style_reference": "Figure 6: figures/model_support.pdf"
   }

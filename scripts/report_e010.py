@@ -130,7 +130,7 @@ for fi,family in enumerate(COHORTS):
         lines.append(name+' & '+label+' & '+' & '.join(cells)+r' \\')
     if fi<3:lines.append(r'\midrule')
 lines += [r'\bottomrule',r'\end{tabular}',
-          r'\caption{Execution and interaction costs under the same strict answer/relevance contract. Rows group three generated SQL families and their pooled mean; columns cross selection rule and acquisition order. $E$: executed worlds; $Q$: questions; $C_{10}=E+10Q$. Bold marks the smallest mean $E$ or $C_{10}$ within a row, including ties, not statistical significance. Candidate worlds are supplied and responses are simulated; this is not an LLM accuracy evaluation. Each family has 40 seeds and 16 hidden worlds per seed. Cluster intervals appear in Figure~\ref{fig:frontier}.}',
+          r'\caption{Execution and interaction costs under strict answer/relevance guarantees. Bold marks the lowest mean cost within each row.}',
           r'\label{tab:main-expanded}',r'\end{table*}']
 (TABLE/'main-expanded.tex').write_text('\n'.join(lines)+'\n')
 
@@ -156,7 +156,7 @@ for method in METHODS:
                   str(counts['unproved']) if counts['questions'] else '--',str(counts['uncertified'])]
     lines.append(LABEL[method]+' & '+' & '.join(cells)+r' \\')
 lines += [r'\bottomrule',r'\end{tabular}',
-          r'\caption{Retrospective contract audit of all ten configurations. Wrong: wrong returned answers; Irr.Q: irrelevant questions; Unpr.Q: questions without an observed local witness; No cert.: returns without complete known agreement. Entries are counts, with a dash when no questions were asked. Zero errors are expected from certificate-based stopping with supplied worlds and truthful responses; they are not a measured LLM success rate. Stress fixtures include repeated truth maps.}',
+          r'\caption{Contract violations across ten configurations (episode and question counts).}',
           r'\label{tab:contract-audit}',r'\end{table*}']
 (TABLE/'contract-audit.tex').write_text('\n'.join(lines)+'\n')
 
@@ -428,7 +428,7 @@ for mi,(model,name) in enumerate([('doubao_seed2_lite','Doubao Lite'),('gpt5_6_s
         lines.append((name if rule=='observed' else '')+' & '+label+' & '+' & '.join(cells)+r' \\')
     if mi==0:lines.append(r'\midrule')
 lines += [r'\bottomrule',r'\end{tabular}',
-          r'\caption{Actual model candidate recovery (\%). Rec.: reference recall; Prec.: reference precision; Full: complete reference recovery. Groups are defined by the number of distinct reference execution signatures across the same two data states, independently of either model. The 53 two-signature and 102 one-signature cases partition the 155 sampled cases; they are descriptive subgroups, not extra benchmarks. Both pruning rules use the same generation outputs. Resources are reported once per model in Table~\ref{tab:model-resources}.}',
+          r'\caption{Model candidate recovery (\%) by reference-signature stratum.}',
           r'\label{tab:model-expanded}',r'\end{table*}']
 (TABLE/'model-expanded.tex').write_text('\n'.join(lines)+'\n')
 lines=[r'\begin{table*}[!t]',r'\centering\small',r'\setlength{\tabcolsep}{5pt}',
@@ -438,7 +438,7 @@ for model,name in [('doubao_seed2_lite','Doubao Lite'),('gpt5_6_sol_hydra','GPT 
     a=model_summary[model]['observed'];b=model_summary[model]['stable']
     lines.append(name+f" & {a['n']} & {100*a['valid_sql_rate']:.2f} & {a['generated']:.2f} & {a['support_size']['mean']:.2f} / {b['support_size']['mean']:.2f} & {a['tokens_per_task']:.0f} & {a['latency_p50']:.2f} & {a['latency_p90']:.2f}"+r' \\')
 lines += [r'\bottomrule',r'\end{tabular}',
-          r'\caption{Generation resources and candidate counts, recorded once per model. Generated, kept, and tokens are per-case means; kept counts compare observed/two-state pruning. SQL validity requires execution on both states and does not imply correctness. Latencies describe recorded generation calls. The same 155 calls per model serve all pruning rules and subgroup analyses.}',
+          r'\caption{Candidate-generation resources and SQL validity, reported once per model.}',
           r'\label{tab:model-resources}',r'\end{table*}']
 (TABLE/'model-resources.tex').write_text('\n'.join(lines)+'\n')
 fig,axes=plt.subplots(2,3,figsize=(7.1,3.65),sharey=True)

@@ -53,7 +53,7 @@ bars, bold sans-serif labels, thin boxed axes and compact lower legends.
 Purple shades and line/marker styles distinguish multiple policies. Figure 6
 and the already matching database plot remain unchanged, as do all numeric
 results and tables. See
-results/E010/figure6-style-validation.json for current plot and compiled-PDF
+results/E010/caption-validation.json for current plot and compiled-PDF
 checks; earlier presentation validations describe historical versions.
 
 The manuscript expansion adds a single-column overview and a double-column
@@ -68,8 +68,10 @@ pages in total. It is an expanded working version for later trimming, not a
 page-limit-compliant submission. Existing measured outputs, tables and nine
 statistical plots remain unchanged; explanatory diagrams have a separate
 manifest. Current manuscript checks and selected-image provenance are in
-results/E010/figure6-style-validation.json, with illustration provenance in
+results/E010/caption-validation.json, with illustration provenance in
 results/E010/imagegen-figure-manifest.json. The preceding imagegen-figure-validation.json
 and manuscript-expansion-validation.json record earlier layouts. The user's complete A2
 requirements are also maintained in AutoResearchSkills at
 docs/requirements/a2-2026-10-29.md, with reusable guidance in the related Skills.
+
+Caption revision: all 16 active figure/table captions now use one or two concise sentences, following the supplied papers. Necessary definitions and reading conventions appear in the corresponding prose; repeated explanations were removed. Plot files and numerical results are unchanged.

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "scope": "caption editing and relocation of necessary definitions",
+  "captions_revised": 16,
+  "plot_files": "all 27 byte-identical",
+  "numeric_report": "byte-identical",
+  "table_changes": "captions only",
+  "pdf_pages": 17,
+  "main_content_pages": 10,
+  "pdf_sha256": "693838c04fce0af23ae29960d3e5f014935378f4487605e65e842795d62cd65d",
+  "latex_warnings": []
+}

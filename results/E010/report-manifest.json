@@ -5,7 +5,7 @@
     "experiments/E003-plan.json": "2bd8257c2230ef86d1122009c4ea861dbaaf6eb95b90d9e41d9ece8369424963",
     "results/E002/audit_status.json": "ff073a886e92641e68f2ef95260ad110189451d5eb31ceffa882184bc6c5aa9a",
     "results/E002/summary.json": "65f2536af684cb7ed242e8f73d7f7a213138903a89404c382257399b5b09e0f8",
-    "scripts/report_e010.py": "83fe43063885d9f39e4fa3130f55f796a81f91ff9bad3fa943767c28432fbefa"
+    "scripts/report_e010.py": "35dc2943beb72ad79265c05ee4defbeec9d27a17463b2447f2e84dee5858795f"
   },
   "model_cache_sha256": {
     "E003/doubao_seed2_lite/556.json": "b7f53d63fbc84544b7abece962d085a165a3208baec2a424a6bc2cc9c2e410d0",
@@ -320,10 +320,10 @@
     "E003/gpt5_6_sol_hydra/491.json": "93ca7bce385576dc11575767c46afe4fb31396aefcb90858e35551f2d82dd060"
   },
   "table_files": {
-    "tables/main-expanded.tex": "0210ac865515869f923cdc81e5f43120959e9e9470101e9605e4b856f4c2b77d",
-    "tables/model-expanded.tex": "df0b05f1153f7307c9d3539dfdabeefe317b803f60502926291c8cf34f487218",
-    "tables/contract-audit.tex": "3f15a81a6428aa5911ec9afb10896b45650c8426ea029ea3ba816e8200fcc59c",
-    "tables/model-resources.tex": "c43e17f84cab4a22a862df8f9c9234c0e576d6fd26d44ce18a344e9156d55e46"
+    "tables/main-expanded.tex": "e71e6414b3da7ff0c1c3d33c3a63930e25748b7b86edf3b55de5e171d14d2d05",
+    "tables/model-expanded.tex": "e997308523838c57a57fbdd16bdc7482f9a7687d03c1cebda1317ae46208af0b",
+    "tables/contract-audit.tex": "32452ec7c77bd2eb7855b448bc0047d9171e0f6f0be5c911188130f4b70811af",
+    "tables/model-resources.tex": "7625cf985515137222cc4caa1efa5191620080d294df165d517ca2cdeda76706"
   },
   "figure_files": {
     "figures/cost_frontier.pdf": "6920960972cb104e2fcccb5978bd27c15b2d4a7f0e631003bb8fc421c9d619fa",
