@@ -2,17 +2,17 @@
   "planned_per_model": 155,
   "models": {
     "doubao_seed2_lite": {
-      "completed": 113,
-      "verified_response": 113,
+      "completed": 155,
+      "verified_response": 155,
       "failed": 0
     },
     "gpt5_6_sol_hydra": {
-      "completed": 0,
-      "verified_response": 0,
+      "completed": 155,
+      "verified_response": 155,
       "failed": 0
     }
   },
   "source_databases_verified": 20,
   "secret_scan": "passed",
-  "complete": false
+  "complete": true
 }

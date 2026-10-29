@@ -1,0 +1,56 @@
+{
+  "planned_per_model": 155,
+  "models": {
+    "doubao_seed2_lite": {
+      "completed": 155,
+      "failed": 0,
+      "actual_models": [
+        "doubao-seed-2-0-lite-260428"
+      ],
+      "metrics": {
+        "stable_recall": 0.6774193548387096,
+        "observed_recall": 0.5903225806451613,
+        "stable_precision": 0.4801075268817205,
+        "observed_precision": 0.47365591397849466,
+        "stable_all_found": 0.6193548387096774,
+        "observed_all_found": 0.44516129032258067
+      },
+      "uncertainty": {
+        "unit": "database",
+        "n_clusters": 20,
+        "replicates": 2000,
+        "delta_recall_percentile95": [
+          0.046875,
+          0.128125
+        ]
+      },
+      "tokens": 310128
+    },
+    "gpt5_6_sol_hydra": {
+      "completed": 155,
+      "failed": 0,
+      "actual_models": [
+        "gpt-5.6-sol-2026-07-09"
+      ],
+      "metrics": {
+        "stable_recall": 0.6903225806451613,
+        "observed_recall": 0.5903225806451613,
+        "stable_precision": 0.5946236559139785,
+        "observed_precision": 0.5989247311827957,
+        "stable_all_found": 0.6387096774193548,
+        "observed_all_found": 0.43870967741935485
+      },
+      "uncertainty": {
+        "unit": "database",
+        "n_clusters": 20,
+        "replicates": 2000,
+        "delta_recall_percentile95": [
+          0.059356142241379306,
+          0.14139321468298102
+        ]
+      },
+      "tokens": 89063
+    }
+  },
+  "complete": true
+}

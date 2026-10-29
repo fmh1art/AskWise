@@ -13,7 +13,8 @@
     "E002 full column-synonym audit",
     "E004/E005 exact-action prototype development",
     "E006 joint-cost prototype and tiny exact planner",
-    "private code/paper remote repositories created"
+    "private code/paper remote repositories created",
+    "E003 all 310 planned outcomes verified and manuscript updated"
   ],
   "budget": {
     "wall_hours_limit": null,
@@ -38,16 +39,10 @@
     ]
   },
   "blockers": [],
-  "next_action": "Continue current E003 run; verify all 310 outcomes; finish novelty/algorithm investigation under chosen guarantee; do not claim research complete",
+  "next_action": "Resolve guarantee preference and continue substantive algorithm development; E003 completion is not research completion",
   "stop_reason": null,
   "acceptance": "ACL main-conference ALGORITHM paper; substantive method beyond EC2/query-driven cleaning required by user",
-  "running_experiment": {
-    "id": "E003",
-    "plan": "experiments/E003-plan.json",
-    "progress": "/data01/fanmeihao-data/A2-research/E003/progress.json",
-    "runner": "scripts/run_e003.py",
-    "timeout_hours": 24
-  },
+  "running_experiment": null,
   "open_decisions": [
     "User preference for strict conditional guarantees versus small probabilistic error pending"
   ]
