@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-29",
+  "status": "passed",
+  "scope": "Unify experimental plots with the current manuscript Figure 6",
+  "style_reference": "A2-paper/figures/model_support.pdf",
+  "style_reference_sha256": "2668ed7491403b3509c7f1a5c896282c1e8e3e43b164ca61dd4707c74bf02a0b",
+  "figure6_unchanged": "all PDF/SVG/PNG files byte-identical",
+  "already_matching_database_plot": "all three files unchanged",
+  "changed_figures": 7,
+  "changed_export_files": [
+    "figures/cost_frontier.pdf",
+    "figures/cost_frontier.svg",
+    "figures/cost_frontier.png",
+    "figures/cost_sensitivity.pdf",
+    "figures/cost_sensitivity.svg",
+    "figures/cost_sensitivity.png",
+    "figures/paired_execution.pdf",
+    "figures/paired_execution.svg",
+    "figures/paired_execution.png",
+    "figures/stress_panel.pdf",
+    "figures/stress_panel.svg",
+    "figures/stress_panel.png",
+    "figures/structured_scaling.pdf",
+    "figures/structured_scaling.svg",
+    "figures/structured_scaling.png",
+    "figures/bound_certificates.pdf",
+    "figures/bound_certificates.svg",
+    "figures/bound_certificates.png",
+    "figures/repair_audit.pdf",
+    "figures/repair_audit.svg",
+    "figures/repair_audit.png"
+  ],
+  "preserved_export_files": [
+    "figures/model_support.pdf",
+    "figures/model_support.svg",
+    "figures/model_support.png",
+    "figures/database_support.pdf",
+    "figures/database_support.svg",
+    "figures/database_support.png"
+  ],
+  "style": {
+    "primary": "#4C1190",
+    "pale": "#DDD0EF",
+    "hatch": "//////",
+    "font": "DejaVu Sans",
+    "legends": "compact lower boxes",
+    "multi_policy_encoding": "purple shades, acquisition hatches and line styles",
+    "heatmap": "white-to-purple; undefined gray"
+  },
+  "palette_check": {
+    "status": "passed",
+    "scope": "visible SVG fill/stroke colors are neutral or purple",
+    "ignored_zero_area_error_cap_fill_attributes": 428,
+    "note": "Open horizontal error-cap segments have no fill area; their visible strokes are checked."
+  },
+  "numeric_report": "byte-identical to previous commit",
+  "generated_tables_unchanged": 4,
+  "source_measurement_hashes_verified": 5,
+  "cached_model_output_hashes_verified": 310,
+  "new_api_calls": 0,
+  "new_policy_runs": 0,
+  "official_style": "original hashes verified",
+  "generated_illustrations": "both unchanged",
+  "paper": {
+    "pages": 17,
+    "main_content_pages": 10,
+    "figure_pages": {
+      "cost_frontier": 7,
+      "cost_sensitivity": 8,
+      "bound_certificates": 9,
+      "model_support": 10,
+      "paired_execution": 14,
+      "stress_panel": 14,
+      "structured_scaling": 14,
+      "repair_audit": 15,
+      "database_support": 15
+    },
+    "pdf_sha256": "17988acf2d9f4f8a45310d8544658d91f1d23b9c4aee724b7bafcb24a7fd9351",
+    "latex_warnings_and_overfull_boxes": []
+  },
+  "visual_review": [
+    "seven changed standalone plots",
+    "compiled pages 7-9 and 14-15",
+    "main cost figure in grayscale"
+  ],
+  "comparison_code_commit": "480444d771e30c797b7a597908b714e559eb4c45",
+  "comparison_paper_commit": "6f34f7d4f8323fc3afa1992a098851519c2bb354",
+  "manifest": "results/E010/report-manifest.json",
+  "previous_validation": "results/E010/reference-style-validation.json",
+  "scientific_acceptance": "unchanged; substantive algorithm gate remains open"
+}

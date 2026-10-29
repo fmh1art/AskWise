@@ -30,9 +30,9 @@ LABEL = {'anchor':'Anchor answer', 'ask_all':'Ungated ask-all', 'full_ec2':'Full
          'immediate_witness':'Immediate / witness'}
 COLORS = ['#999999','#555555','#56B4E9','#0072B2','#E69F00','#D55E00','#CC79A7','#882255','#009E73','#332288']
 MARKERS = ['x','+','s','D','^','v','<','>','o','P']
-# AutoPrep Fig. 8 / DeepPrep Fig. 6: sans-serif labels, bold headings,
-# purple solid/hatched pairs, boxed axes and a compact lower shared legend.
-# BatchER Fig. 7 informs marker/line distinctions and light interval bands.
+# The current manuscript's Figure 6 is the visual reference for every plot:
+# sans-serif bold labels, purple solid/hatched pairs, thin boxed axes and
+# compact lower legends. Keep its exact palette and rendering unchanged.
 plt.rcParams.update({'font.family':'DejaVu Sans','mathtext.fontset':'dejavusans',
                      'font.size':9,'axes.labelsize':9,'axes.titlesize':9.5,
                      'legend.fontsize':8,'xtick.labelsize':8,'ytick.labelsize':8,
@@ -53,10 +53,10 @@ plt.rcParams.update({'font.family':'DejaVu Sans','mathtext.fontset':'dejavusans'
                      'pdf.fonttype':42,'ps.fonttype':42,'svg.fonttype':'none',
                      'svg.hashsalt':'a2-publication-figures',
                      'axes.spines.top':True,'axes.spines.right':True})
-SELECTION_COLOR={'full':'#6B8EB5','exact':'#5A189A',
-                 'partition':'#C78547','immediate':'#27826F'}
 PRUNE_COLOR={'observed':'#DDD0EF','stable':'#4C1190'}
 PRUNE_HATCH={'observed':'//////','stable':''}
+SELECTION_COLOR={'full':'#BEA5D7','exact':PRUNE_COLOR['stable'],
+                 'partition':'#9A77BB','immediate':'#74479D'}
 INK='#292929'
 ERROR_STYLE={'elinewidth':.65,'capsize':1.5,'capthick':.65,'ecolor':INK}
 def grid(ax,axis='y'):
@@ -163,7 +163,7 @@ lines += [r'\bottomrule',r'\end{tabular}',
 # Multiple task clusters; color encodes selection, hatch acquisition.
 POLICY_COLOR=[SELECTION_COLOR[k] for k in
               ['full','exact','exact','partition','partition','immediate','immediate']]
-POLICY_HATCH=['','','///','','///','','///']
+POLICY_HATCH=['','',PRUNE_HATCH['observed'],'',PRUNE_HATCH['observed'],'',PRUNE_HATCH['observed']]
 fig,axes=plt.subplots(2,2,figsize=(7.1,3.95))
 fig.subplots_adjust(left=.075,right=.985,bottom=.24,top=.92,hspace=.62,wspace=.28)
 x=np.arange(4)
@@ -192,8 +192,9 @@ selection_handles=[Patch(facecolor=SELECTION_COLOR[k],edgecolor=INK,linewidth=.3
                                    ('partition','Partition bound'),('immediate','Immediate witness')]]
 fig.legend(handles=selection_handles,loc='lower center',bbox_to_anchor=(.53,.078),
            ncol=4)
-acquisition_handles=[Patch(facecolor='white',edgecolor=INK,linewidth=.4,hatch=h,label=label)
-                     for h,label in [('', 'Fixed acquisition'),('///','Witness acquisition')]]
+acquisition_handles=[Patch(facecolor=color,edgecolor=PRUNE_COLOR['stable'],linewidth=.4,hatch=h,label=label)
+                     for color,h,label in [(PRUNE_COLOR['stable'],'', 'Fixed acquisition'),
+                                           (PRUNE_COLOR['observed'],PRUNE_HATCH['observed'],'Witness acquisition')]]
 fig.legend(handles=acquisition_handles,loc='lower center',bbox_to_anchor=(.53,.005),
            ncol=2)
 save(fig,'cost_frontier')
@@ -223,7 +224,7 @@ ax.set(xscale='log',xlabel='Question / execution cost, $c$',
        ylabel='Excess cost, $C_c-\\min C_c$',ylim=(0,None))
 ax.yaxis.set_major_locator(MaxNLocator(4));grid(ax)
 fig.legend(*ax.get_legend_handles_labels(),frameon=True,fontsize=7.5,
-           loc='outside upper center',ncol=2)
+           loc='outside lower center',ncol=2)
 save(fig,'cost_sensitivity')
 
 # Paired task differences: show every seed and the uncertainty of its mean.
@@ -239,12 +240,12 @@ for a,family,letter in zip(axes,families,'abc'):
         delta=arow['executions']-brow['executions'];points.append(delta)
         paired.append({'family':family,'seed':seed,'delta_executions':delta})
     jitter=np.random.default_rng(42).uniform(-.13,.13,len(points))
-    a.scatter(jitter,points,s=14,alpha=.65,color=SELECTION_COLOR['exact'],
-              edgecolors='white',linewidths=.3,zorder=3)
+    a.scatter(jitter,points,s=14,alpha=.95,color=PRUNE_COLOR['observed'],
+              edgecolors=PRUNE_COLOR['stable'],linewidths=.5,zorder=3)
     a.axhline(0,color='#7A7E83',linestyle=(0,(3,2)),linewidth=.65)
     ci=np.quantile(np.array(points)[sample].mean(axis=1),[.025,.975]);mean=np.mean(points)
     a.errorbar(.39,mean,yerr=[[mean-ci[0]],[ci[1]-mean]],fmt='D',
-               color=SELECTION_COLOR['immediate'],capsize=3,elinewidth=.9,
+               color=PRUNE_COLOR['stable'],capsize=3,elinewidth=.9,
                markersize=4,zorder=4)
     a.text(.96,.94,f'Mean {mean:+.2f}',transform=a.transAxes,ha='right',va='top',fontsize=8)
     a.set(xlim=(-.24,.64),xticks=[0,.39],xticklabels=['40 seeds','Mean + CI'])
@@ -256,7 +257,8 @@ save(fig,'paired_execution')
 sf=['constant','single_bit','nuisance_xor','rare_conjunction','threshold','intent_branch']
 fig,axes=plt.subplots(1,2,figsize=(7.1,3.45),layout='constrained',
                       gridspec_kw={'wspace':.04})
-failure_cmap=LinearSegmentedColormap.from_list('a2_failure',['#FFFFFF','#F3CEAE','#C56A3B','#7F3029'])
+failure_cmap=LinearSegmentedColormap.from_list('a2_failure',
+               ['#FFFFFF',PRUNE_COLOR['observed'],'#9665BF',PRUNE_COLOR['stable']])
 failure_cmap.set_bad('#E6E8EB')
 for a,key,letter,title in zip(axes,['accuracy','irrelevant'],'ab',
                               ['Wrong answers (%)','Irrelevant questions (%)']):
@@ -297,8 +299,8 @@ scaling=json.loads((ROOT/'results/E007/scaling.json').read_text())['rows']
 ns=sorted({r['n_repairs'] for r in scaling})
 fig,axes=plt.subplots(1,2,figsize=(7.1,2.6),layout='constrained')
 for key,label,color,marker,style in [
-        ('compiled_seconds','Compiled messages',SELECTION_COLOR['immediate'],'o','-'),
-        ('enumerated_seconds','Explicit enumeration',SELECTION_COLOR['exact'],'s','--')]:
+        ('compiled_seconds','Compiled messages',PRUNE_COLOR['stable'],'o','-'),
+        ('enumerated_seconds','Explicit enumeration',SELECTION_COLOR['partition'],'s','--')]:
     xx=[];yy=[];low=[];high=[]
     for n in ns:
         v=[r[key] for r in scaling if r['n_repairs']==n and key in r]
@@ -311,10 +313,10 @@ axes[0].xaxis.set_major_locator(FixedLocator([8,16,32,64,128,256]))
 axes[0].xaxis.set_major_formatter(FuncFormatter(lambda x,_:f'{x:g}'))
 axes[0].xaxis.set_minor_locator(FixedLocator([]))
 panel(axes[0],'a','Root inference time')
-axes[0].legend(frameon=True,loc='lower right',fontsize=7.5);grid(axes[0])
+axes[0].legend(loc='upper center',bbox_to_anchor=(.5,-.31),fontsize=8);grid(axes[0])
 axes[1].plot(ns,[np.median([r['message_states'] for r in scaling if r['n_repairs']==n]) for n in ns],
-             'o-',color=SELECTION_COLOR['immediate'],label='Materialized states',markerfacecolor='white')
-axes[1].plot(ns,[2.**(n+1) for n in ns],'s--',color='#8B8D91',
+             'o-',color=PRUNE_COLOR['stable'],label='Materialized states',markerfacecolor='white')
+axes[1].plot(ns,[2.**(n+1) for n in ns],'s--',color=SELECTION_COLOR['partition'],
              label='Implicit worlds',markerfacecolor='white')
 axes[1].set(xscale='log',yscale='log',xlabel='Repair variables',ylabel='Count',
             ylim=(1,1e80),yticks=[1,1e20,1e40,1e60,1e80])
@@ -322,7 +324,7 @@ axes[1].xaxis.set_major_locator(FixedLocator([8,16,32,64,128,256]))
 axes[1].xaxis.set_major_formatter(FuncFormatter(lambda x,_:f'{x:g}'))
 axes[1].xaxis.set_minor_locator(FixedLocator([]))
 panel(axes[1],'b','Declared score family');grid(axes[1])
-axes[1].legend(frameon=True,loc='upper left',fontsize=7.5)
+axes[1].legend(loc='upper center',bbox_to_anchor=(.5,-.31),fontsize=8)
 save(fig,'structured_scaling')
 
 # Exact finite partial-map diagnostic; all worlds/labels below are artificial.
@@ -345,19 +347,19 @@ bound_rows=[{'observed':k,**g,'exact_rate':g['exact']/g['states'],'partition_rat
 fig,axes=plt.subplots(1,2,figsize=(7.1,2.45),layout='constrained')
 observed=np.array([r['observed'] for r in bound_rows])
 for j,(key,label,color,hatch) in enumerate([
-        ('exact_rate','Exact four-cell',SELECTION_COLOR['exact'],''),
-        ('partition_rate','Partition relaxation',SELECTION_COLOR['partition'],'///')]):
+        ('exact_rate','Exact four-cell',PRUNE_COLOR['stable'],''),
+        ('partition_rate','Partition relaxation',PRUNE_COLOR['observed'],PRUNE_HATCH['observed'])]):
     rates=np.array([100*r[key] for r in bound_rows])
     axes[0].bar(observed+(j-.5)*.36,rates,width=.31,color=color,hatch=hatch,
-                edgecolor=INK,linewidth=.3,label=label)
+                edgecolor=PRUNE_COLOR['stable'],linewidth=.4,label=label)
     axes[0].text(6+(j-.5)*.36,rates[6]+2,f'{rates[6]:.1f}',ha='center',fontsize=7.5)
 axes[0].set(xlabel='Observed labels (of 8)',ylabel='Certified states (%)',
             xticks=range(9),ylim=(0,110),yticks=[0,25,50,75,100])
 panel(axes[0],'a','Action certificates');grid(axes[0])
-axes[0].legend(frameon=True,loc='upper left',fontsize=7.5)
+axes[0].legend(loc='upper center',bbox_to_anchor=(.5,-.32),fontsize=8,ncol=2)
 gap=[r['mean_slack'] for r in bound_rows]
-axes[1].plot(observed,gap,'o-',color=SELECTION_COLOR['partition'],markerfacecolor='white',markeredgewidth=.9)
-axes[1].fill_between(observed,0,gap,color=SELECTION_COLOR['partition'],alpha=.1,linewidth=0)
+axes[1].plot(observed,gap,'o-',color=PRUNE_COLOR['stable'],markerfacecolor='white',markeredgewidth=.9)
+axes[1].fill_between(observed,0,gap,color=PRUNE_COLOR['observed'],alpha=.6,linewidth=0)
 axes[1].set(xlabel='Observed labels (of 8)',ylabel='Lower-bound gap (edge units)',
             xticks=range(9),ylim=(0,None))
 axes[1].yaxis.set_major_locator(MaxNLocator(4))
@@ -510,8 +512,9 @@ fig,axes=plt.subplots(1,2,figsize=(7.1,2.75),layout='constrained',gridspec_kw={'
 categories=['All items','Eligible swaps','Changed equality','Query errors','No eligible swap']
 counts=[summary2['n_total'],summary2['n_ok'],summary2['n_equal_then_different'],summary2['n_error'],summary2['n_no_distinct']]
 axes[0].barh(range(5),counts,height=.60,
-             color=['#C8CDD2',PRUNE_COLOR['observed'],PRUNE_COLOR['stable'],'#CDA257','#CDA257'],
-             edgecolor=INK,linewidth=.3)
+             color=['#E6E8EB',PRUNE_COLOR['observed'],PRUNE_COLOR['stable'],PRUNE_COLOR['observed'],PRUNE_COLOR['observed']],
+             hatch=['',PRUNE_HATCH['observed'],'',PRUNE_HATCH['observed'],PRUNE_HATCH['observed']],
+             edgecolor=PRUNE_COLOR['stable'],linewidth=.4)
 for y,n in enumerate(counts):axes[0].text(n+20,y,f'{n:,}',va='center',fontsize=8)
 axes[0].axhline(2.6,color='#B6BBC0',lw=.5,ls=(0,(3,2)))
 axes[0].set_yticks(range(5),categories);axes[0].invert_yaxis()
@@ -524,7 +527,7 @@ for db in sorted({r['db_id'] for r in audit}):
     if rr:effects.append((db,100*sum(r['equal_observed'] and not r['equal_changed'] for r in rr)/len(rr),len(rr)))
 effects.sort(key=lambda x:x[1])
 rank=np.arange(1,len(effects)+1)
-axes[1].vlines(rank,0,[e[1] for e in effects],color='#D6D0DF',lw=.8)
+axes[1].vlines(rank,0,[e[1] for e in effects],color=PRUNE_COLOR['observed'],lw=.8)
 axes[1].scatter(rank,[e[1] for e in effects],s=[e[2]/3+12 for e in effects],
                 color=PRUNE_COLOR['stable'],edgecolors='white',linewidths=.45,zorder=3)
 axes[1].set(xlabel='Database rank (ordered by effect)',ylabel='Equal → different (%)',
@@ -532,8 +535,9 @@ axes[1].set(xlabel='Database rank (ordered by effect)',ylabel='Equal → differe
 sizes=sorted({min(e[2] for e in effects),int(np.median([e[2] for e in effects])),max(e[2] for e in effects)})
 handles=[axes[1].scatter([],[],s=n/3+12,color=PRUNE_COLOR['stable'],edgecolors='white',
                          linewidths=.45,label=str(n)) for n in sizes]
-axes[1].legend(handles=handles,title='Eligible cases',title_fontsize=7.5,fontsize=7.5,
-               loc='upper left',ncol=len(handles),columnspacing=.5,handletextpad=.25,frameon=True)
+axes[1].legend(handles=handles,title='Eligible cases',title_fontsize=8,fontsize=8,
+               loc='upper center',bbox_to_anchor=(.5,-.30),ncol=len(handles),
+               columnspacing=.8,handletextpad=.4)
 panel(axes[1],'b','Database variation');grid(axes[1])
 save(fig,'repair_audit')
 

@@ -47,12 +47,13 @@ literature/presentation-reference-notes.md for sources and interpretation.
 The manuscript cites 24 relevant scientific works; presentation references are
 recorded separately.
 
-The latest plot revision follows the user's published AutoPrep/DeepPrep figures:
-sans-serif type, bold headings, solid/pale-hatched bar pairs, purple model
-comparisons, and compact lower shared legends. All nine plots use consistent
-axes and uncertainty styling; line plots retain BatchER-inspired marker/line
-distinctions. Numeric results and tables are unchanged. See
-results/E010/reference-style-validation.json for current plot and compiled-PDF
+The latest plot revision uses the current manuscript Figure 6 as the user's
+chosen reference. All nine plots share its purple palette, solid/pale-hatched
+bars, bold sans-serif labels, thin boxed axes and compact lower legends.
+Purple shades and line/marker styles distinguish multiple policies. Figure 6
+and the already matching database plot remain unchanged, as do all numeric
+results and tables. See
+results/E010/figure6-style-validation.json for current plot and compiled-PDF
 checks; earlier presentation validations describe historical versions.
 
 The manuscript expansion adds a single-column overview and a double-column
@@ -67,7 +68,7 @@ pages in total. It is an expanded working version for later trimming, not a
 page-limit-compliant submission. Existing measured outputs, tables and nine
 statistical plots remain unchanged; explanatory diagrams have a separate
 manifest. Current manuscript checks and selected-image provenance are in
-results/E010/reference-style-validation.json, with illustration provenance in
+results/E010/figure6-style-validation.json, with illustration provenance in
 results/E010/imagegen-figure-manifest.json. The preceding imagegen-figure-validation.json
 and manuscript-expansion-validation.json record earlier layouts. The user's complete A2
 requirements are also maintained in AutoResearchSkills at
