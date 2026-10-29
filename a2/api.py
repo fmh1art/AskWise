@@ -16,8 +16,10 @@ class Client:
 
     def call(self, prompt, max_tokens=4096):
         cfg=self.config
-        payload={'model':cfg['llm_name'],'messages':[{'role':'user','content':prompt}], 'max_tokens':max_tokens}
         base=cfg['openai_base_url'].rstrip('/')
+        hydra='aidp.bytedance.net' in base
+        token_key='max_completion_tokens' if hydra else 'max_tokens'
+        payload={'model':cfg['llm_name'],'messages':[{'role':'user','content':prompt}], token_key:max_tokens}
         identity={'payload':payload,'endpoint_hash':hashlib.sha256(base.encode()).hexdigest(),'config_label':self.label}
         sig=hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()
         target=self.cache/(sig+'.json')
@@ -31,7 +33,7 @@ class Client:
             start=time.time()
             record={**identity,'signature':sig,'attempt':attempt,'started_at':start}
             try:
-                resp=httpx.post(base+'/chat/completions',headers=headers,params=params,json=payload,timeout=240)
+                resp=httpx.post(base+'/chat/completions',headers=headers,params=params,json=payload,timeout=240,trust_env=not hydra)
                 record['http_status']=resp.status_code
                 if resp.status_code==200:
                     data=resp.json()

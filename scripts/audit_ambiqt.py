@@ -9,6 +9,9 @@ OUT=Path('/data01/fanmeihao-data/A2-research/ambiqt-audit')
 OUT.mkdir(parents=True,exist_ok=True)
 
 def quote(s):return '"'+s.replace('"','""')+'"'
+def decode_text(raw):
+    try:return raw.decode('utf-8')
+    except UnicodeDecodeError:return raw
 def canonical(rows):
     # Include SQL types, retain duplicates, ignore order for the main endpoint.
     return tuple(sorted((tuple((type(v).__name__,repr(v)) for v in row) for row in rows)))
@@ -16,15 +19,17 @@ def build(item):
     source=UP/'db-content/database'/item['db_id']/(item['db_id']+'.sqlite')
     src=sqlite3.connect(f'file:{source}?mode=ro',uri=True)
     db=sqlite3.connect(':memory:');src.backup(db);src.close()
+    db.text_factory=decode_text
     db.execute('PRAGMA foreign_keys=OFF')
     targets=[]
     for table,mapping in sorted(item['extra_map'].items()):
+        mapping={k.casefold():v for k,v in mapping.items()}
         cols=[r[1] for r in db.execute(f'PRAGMA table_info({quote(table)})')]
         fields=[]
         for col in cols:
-            if col in mapping:
-                fields.extend(quote(col)+' AS '+quote(alias) for alias in mapping[col])
-                targets.append((table,mapping[col][1]))
+            if col.casefold() in mapping:
+                fields.extend(quote(col)+' AS '+quote(alias) for alias in mapping[col.casefold()])
+                targets.append((table,mapping[col.casefold()][1]))
             else: fields.append(quote(col))
         temp='_a2_'+table
         db.execute(f'CREATE TABLE {quote(temp)} AS SELECT '+','.join(fields)+f' FROM {quote(table)}')
@@ -52,7 +57,7 @@ def main():
             swap=None
             for table,col in targets:
                 deadline=time.monotonic()+3
-                vals=db.execute(f'SELECT rowid,{quote(col)} FROM {quote(table)} WHERE {quote(col)} IS NOT NULL ORDER BY rowid').fetchall()
+                vals=[v for v in db.execute(f'SELECT rowid,{quote(col)} FROM {quote(table)} WHERE {quote(col)} IS NOT NULL ORDER BY rowid').fetchall() if not isinstance(v[1],bytes)]
                 if not vals:continue
                 first=vals[0]
                 second=next((v for v in vals[1:] if type(v[1]) is type(first[1]) and v[1]!=first[1]),None)
@@ -84,7 +89,7 @@ def main():
       'n_equal_observed':sum(r.get('equal_observed',False) for r in records),
       'n_equal_then_different':sum(r['equal_observed'] and not r['equal_changed'] for r in ok),
       'n_invariant_all':sum(r['invariant_all'] for r in ok),'input_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
-      'methods':{m:{k:sum(r['methods'][m][k] for r in ok)/len(ok) for k in ['correct','questions']} for m in ok[0]['methods']} if ok else {'n_total':len(items),'n_ok':0}
+      'methods':{m:{k:sum(r['methods'][m][k] for r in ok)/len(ok) for k in ['correct','questions']} for m in ok[0]['methods']}} if ok else {'n_total':len(items),'n_ok':0}
     dest=ROOT/'results/E002';dest.mkdir(parents=True,exist_ok=True)
     (dest/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     (dest/'audit_status.json').write_text(json.dumps([{k:v for k,v in r.items() if k not in ['methods','swap']} for r in records],indent=2)+'\n')
