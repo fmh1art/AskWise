@@ -1,0 +1,19 @@
+{
+  "model": "gpt-5.6-sol-2026-07-09",
+  "usage": {
+    "completion_tokens": 1708,
+    "prompt_tokens": 319,
+    "total_tokens": 2027,
+    "completion_tokens_details": {
+      "audio_tokens": 0,
+      "reasoning_tokens": 1024
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "cache_write_tokens": 0
+    }
+  },
+  "signature": "36fe4062d02c0a7e081164c5e1381075ffe704c6e20063cfaceb39e5f1c7e0ed",
+  "text": "**Fatal threats.** Correctness is only established relative to an oracle-supplied, complete 16-world universe. Missing intents or repairs can turn a supposedly irrelevant clarification into an answer-changing one; CircleClar’s model-realizable support may measure support within a model but cannot certify that omitted worlds are impossible. Local single-assumption checks are also unsound under cross-axis interactions. For example:\n\n| row | status | amount |\n|---|---|---:|\n| 1 | completed | 100 |\n| 2 | pending | 0 |\n\nLet the intent be either “sum all sales” or “sum completed sales,” and let the repair be either “0 is literal” or “pending 0 should be 50.” On the observed database, both intents return 100 and AIR-style observed-result pruning can merge them. After the repair, they return 150 and 100. Thus intent relevance depends on the repair, while repair relevance depends on the intent. Testing either axis only at the observed/default setting misses this interaction.\n\nThe evaluation additionally assumes generated tasks, oracle candidates, and truthful deterministic feedback. Real users may answer “unknown,” give noisy or partial responses, reject the offered alternatives, or introduce a missing hypothesis. In those cases, finite deterministic EC2 guarantees do not transfer. Candidate execution is also treated as free: materializing repairs and executing every intent across many worlds may dominate clarification cost.\n\n**Selection heuristic.** The current results do not justify a new selection heuristic. Full-world EC2 is essentially optimal—1.80792 versus 1.80667 questions—and both are correct within the supplied universe. The local method’s 1.70583 questions is purchased with 98.9792% accuracy, while observed-database pruning is both more expensive at 2.02458 questions and less accurate at 98.875%. Question counts at unequal error rates are not comparable; methods should be evaluated at matched accuracy or with an explicit error/abstention penalty. Since EC2 already handles finite equivalence-class determination, placing joint intent–repair worlds into its hypothesis set is not itself an algorithmic novelty.\n\nA fair comparison should use identical candidates, priors, clarification sets, response models, and stopping criteria. AIR’s observed-database execution and deduplication should be evaluated both in its intended setting and as preprocessing to EC2, without treating observed equivalence as sound across repaired worlds. Report paired uncertainty, execution count and latency, repair-materialization cost, user burden, final-answer error, and abstention.\n\n**Discriminative direction.** Study coverage-aware, budgeted clarification under incomplete candidates and uncertain responses. Factorially vary candidate recall, interaction frequency, execution budget, and rates of “unknown” or noisy feedback; include held-out intents/repairs not available to the selector. Compare full EC2, EC2 with only sound joint-world equivalence reduction, AIR-style observed pruning, local checks, and exact optimization on tractable instances. The key test is whether a method achieves a better compute–question–error–abstention frontier at matched risk, especially when it must detect inadequate coverage and expand or abstain. A novel contribution could arise from that open-world or execution-budget problem, but no novelty for a new finite-universe selection heuristic is presently defensible."
+}

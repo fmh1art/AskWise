@@ -1,0 +1,7202 @@
+[
+  {
+    "family": "top_region",
+    "seed": 0,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.031082555651664734
+  },
+  {
+    "family": "top_region",
+    "seed": 0,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.031992399133741856
+  },
+  {
+    "family": "top_region",
+    "seed": 0,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.04679300868883729
+  },
+  {
+    "family": "top_region",
+    "seed": 1,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0335924387909472
+  },
+  {
+    "family": "top_region",
+    "seed": 1,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.034359189216047525
+  },
+  {
+    "family": "top_region",
+    "seed": 1,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04878564504906535
+  },
+  {
+    "family": "top_region",
+    "seed": 2,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.625,
+    "seconds": 0.03672189777716994
+  },
+  {
+    "family": "top_region",
+    "seed": 2,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.625,
+    "seconds": 0.03753745136782527
+  },
+  {
+    "family": "top_region",
+    "seed": 2,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 2.625,
+    "seconds": 0.051804469898343086
+  },
+  {
+    "family": "top_region",
+    "seed": 3,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03369235107675195
+  },
+  {
+    "family": "top_region",
+    "seed": 3,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03302351525053382
+  },
+  {
+    "family": "top_region",
+    "seed": 3,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04904487309977412
+  },
+  {
+    "family": "top_region",
+    "seed": 4,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.03613524092361331
+  },
+  {
+    "family": "top_region",
+    "seed": 4,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03365283599123359
+  },
+  {
+    "family": "top_region",
+    "seed": 4,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.06318010110408068
+  },
+  {
+    "family": "top_region",
+    "seed": 5,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03352298587560654
+  },
+  {
+    "family": "top_region",
+    "seed": 5,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032980031333863735
+  },
+  {
+    "family": "top_region",
+    "seed": 5,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04886452900245786
+  },
+  {
+    "family": "top_region",
+    "seed": 6,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033729420974850655
+  },
+  {
+    "family": "top_region",
+    "seed": 6,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032883926294744015
+  },
+  {
+    "family": "top_region",
+    "seed": 6,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04889919189736247
+  },
+  {
+    "family": "top_region",
+    "seed": 7,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03357453132048249
+  },
+  {
+    "family": "top_region",
+    "seed": 7,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03298785490915179
+  },
+  {
+    "family": "top_region",
+    "seed": 7,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04895443096756935
+  },
+  {
+    "family": "top_region",
+    "seed": 8,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.25,
+    "seconds": 0.03528065513819456
+  },
+  {
+    "family": "top_region",
+    "seed": 8,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 2.25,
+    "seconds": 0.03516316693276167
+  },
+  {
+    "family": "top_region",
+    "seed": 8,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.25,
+    "seconds": 0.05233061499893665
+  },
+  {
+    "family": "top_region",
+    "seed": 9,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03370171179994941
+  },
+  {
+    "family": "top_region",
+    "seed": 9,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03295080503448844
+  },
+  {
+    "family": "top_region",
+    "seed": 9,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04879498900845647
+  },
+  {
+    "family": "top_region",
+    "seed": 10,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.25,
+    "seconds": 0.03555645514279604
+  },
+  {
+    "family": "top_region",
+    "seed": 10,
+    "acquisition": "random",
+    "executions": 15.125,
+    "questions": 2.25,
+    "seconds": 0.03449687687680125
+  },
+  {
+    "family": "top_region",
+    "seed": 10,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.25,
+    "seconds": 0.052553707268089056
+  },
+  {
+    "family": "top_region",
+    "seed": 11,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03362496895715594
+  },
+  {
+    "family": "top_region",
+    "seed": 11,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033798343036323786
+  },
+  {
+    "family": "top_region",
+    "seed": 11,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048997133038938046
+  },
+  {
+    "family": "top_region",
+    "seed": 12,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03366206679493189
+  },
+  {
+    "family": "top_region",
+    "seed": 12,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033158290665596724
+  },
+  {
+    "family": "top_region",
+    "seed": 12,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04914457397535443
+  },
+  {
+    "family": "top_region",
+    "seed": 13,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03358107199892402
+  },
+  {
+    "family": "top_region",
+    "seed": 13,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03320596273988485
+  },
+  {
+    "family": "top_region",
+    "seed": 13,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04905429296195507
+  },
+  {
+    "family": "top_region",
+    "seed": 14,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03358133602887392
+  },
+  {
+    "family": "top_region",
+    "seed": 14,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032900515012443066
+  },
+  {
+    "family": "top_region",
+    "seed": 14,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048989111091941595
+  },
+  {
+    "family": "top_region",
+    "seed": 15,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033466539811342955
+  },
+  {
+    "family": "top_region",
+    "seed": 15,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032924619037657976
+  },
+  {
+    "family": "top_region",
+    "seed": 15,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0490021756850183
+  },
+  {
+    "family": "top_region",
+    "seed": 16,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.035955701023340225
+  },
+  {
+    "family": "top_region",
+    "seed": 16,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 1.5,
+    "seconds": 0.03427558531984687
+  },
+  {
+    "family": "top_region",
+    "seed": 16,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.05283085163682699
+  },
+  {
+    "family": "top_region",
+    "seed": 17,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.03513141022995114
+  },
+  {
+    "family": "top_region",
+    "seed": 17,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.03657238697633147
+  },
+  {
+    "family": "top_region",
+    "seed": 17,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.052380052860826254
+  },
+  {
+    "family": "top_region",
+    "seed": 18,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.5,
+    "seconds": 0.03581869788467884
+  },
+  {
+    "family": "top_region",
+    "seed": 18,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.5,
+    "seconds": 0.037403928115963936
+  },
+  {
+    "family": "top_region",
+    "seed": 18,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.5,
+    "seconds": 0.05106456810608506
+  },
+  {
+    "family": "top_region",
+    "seed": 19,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03362961811944842
+  },
+  {
+    "family": "top_region",
+    "seed": 19,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03300440963357687
+  },
+  {
+    "family": "top_region",
+    "seed": 19,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.05123355891555548
+  },
+  {
+    "family": "top_region",
+    "seed": 20,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03367245802655816
+  },
+  {
+    "family": "top_region",
+    "seed": 20,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03291037026792765
+  },
+  {
+    "family": "top_region",
+    "seed": 20,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0496184560470283
+  },
+  {
+    "family": "top_region",
+    "seed": 21,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 1.875,
+    "seconds": 0.03587446315214038
+  },
+  {
+    "family": "top_region",
+    "seed": 21,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03608681680634618
+  },
+  {
+    "family": "top_region",
+    "seed": 21,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 1.875,
+    "seconds": 0.0515026580542326
+  },
+  {
+    "family": "top_region",
+    "seed": 22,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.03626135038211942
+  },
+  {
+    "family": "top_region",
+    "seed": 22,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.03676393302157521
+  },
+  {
+    "family": "top_region",
+    "seed": 22,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.053428635001182556
+  },
+  {
+    "family": "top_region",
+    "seed": 23,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03385015297681093
+  },
+  {
+    "family": "top_region",
+    "seed": 23,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03304390795528889
+  },
+  {
+    "family": "top_region",
+    "seed": 23,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04928666586056352
+  },
+  {
+    "family": "top_region",
+    "seed": 24,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0344217992387712
+  },
+  {
+    "family": "top_region",
+    "seed": 24,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03493667300790548
+  },
+  {
+    "family": "top_region",
+    "seed": 24,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.05032055173069239
+  },
+  {
+    "family": "top_region",
+    "seed": 25,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03384511126205325
+  },
+  {
+    "family": "top_region",
+    "seed": 25,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03338058199733496
+  },
+  {
+    "family": "top_region",
+    "seed": 25,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049204740673303604
+  },
+  {
+    "family": "top_region",
+    "seed": 26,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 3.125,
+    "seconds": 0.03699862211942673
+  },
+  {
+    "family": "top_region",
+    "seed": 26,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 3.125,
+    "seconds": 0.037957622203975916
+  },
+  {
+    "family": "top_region",
+    "seed": 26,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 3.125,
+    "seconds": 0.05435356264933944
+  },
+  {
+    "family": "top_region",
+    "seed": 27,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03382214903831482
+  },
+  {
+    "family": "top_region",
+    "seed": 27,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03390340693295002
+  },
+  {
+    "family": "top_region",
+    "seed": 27,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049271020106971264
+  },
+  {
+    "family": "top_region",
+    "seed": 28,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03438459523022175
+  },
+  {
+    "family": "top_region",
+    "seed": 28,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033797340001910925
+  },
+  {
+    "family": "top_region",
+    "seed": 28,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049986353144049644
+  },
+  {
+    "family": "top_region",
+    "seed": 29,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03567172307521105
+  },
+  {
+    "family": "top_region",
+    "seed": 29,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03630962176248431
+  },
+  {
+    "family": "top_region",
+    "seed": 29,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.05296969320625067
+  },
+  {
+    "family": "top_region",
+    "seed": 30,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03344518691301346
+  },
+  {
+    "family": "top_region",
+    "seed": 30,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 1.5,
+    "seconds": 0.03247538302093744
+  },
+  {
+    "family": "top_region",
+    "seed": 30,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 1.5,
+    "seconds": 0.05074925208464265
+  },
+  {
+    "family": "top_region",
+    "seed": 31,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03367839381098747
+  },
+  {
+    "family": "top_region",
+    "seed": 31,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03328303899616003
+  },
+  {
+    "family": "top_region",
+    "seed": 31,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04919625073671341
+  },
+  {
+    "family": "top_region",
+    "seed": 32,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03373692324385047
+  },
+  {
+    "family": "top_region",
+    "seed": 32,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03322372492402792
+  },
+  {
+    "family": "top_region",
+    "seed": 32,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04913746565580368
+  },
+  {
+    "family": "top_region",
+    "seed": 33,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033860437106341124
+  },
+  {
+    "family": "top_region",
+    "seed": 33,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.034653733018785715
+  },
+  {
+    "family": "top_region",
+    "seed": 33,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04907578323036432
+  },
+  {
+    "family": "top_region",
+    "seed": 34,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03383922390639782
+  },
+  {
+    "family": "top_region",
+    "seed": 34,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03412338579073548
+  },
+  {
+    "family": "top_region",
+    "seed": 34,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0491999089717865
+  },
+  {
+    "family": "top_region",
+    "seed": 35,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03627474419772625
+  },
+  {
+    "family": "top_region",
+    "seed": 35,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04074729001149535
+  },
+  {
+    "family": "top_region",
+    "seed": 35,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048882648814469576
+  },
+  {
+    "family": "top_region",
+    "seed": 36,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 1.75,
+    "seconds": 0.03474505105987191
+  },
+  {
+    "family": "top_region",
+    "seed": 36,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.03622904606163502
+  },
+  {
+    "family": "top_region",
+    "seed": 36,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.05239326134324074
+  },
+  {
+    "family": "top_region",
+    "seed": 37,
+    "acquisition": "fixed",
+    "executions": 13.625,
+    "questions": 1.75,
+    "seconds": 0.02954292530193925
+  },
+  {
+    "family": "top_region",
+    "seed": 37,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 1.75,
+    "seconds": 0.031505953054875135
+  },
+  {
+    "family": "top_region",
+    "seed": 37,
+    "acquisition": "comparison",
+    "executions": 13.625,
+    "questions": 1.75,
+    "seconds": 0.04476367309689522
+  },
+  {
+    "family": "top_region",
+    "seed": 38,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 1.5,
+    "seconds": 0.0337700629606843
+  },
+  {
+    "family": "top_region",
+    "seed": 38,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 1.5,
+    "seconds": 0.03461542585864663
+  },
+  {
+    "family": "top_region",
+    "seed": 38,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 1.5,
+    "seconds": 0.05086241941899061
+  },
+  {
+    "family": "top_region",
+    "seed": 39,
+    "acquisition": "fixed",
+    "executions": 13.75,
+    "questions": 1.875,
+    "seconds": 0.02953426307067275
+  },
+  {
+    "family": "top_region",
+    "seed": 39,
+    "acquisition": "random",
+    "executions": 15.125,
+    "questions": 1.875,
+    "seconds": 0.034952421206980944
+  },
+  {
+    "family": "top_region",
+    "seed": 39,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 1.875,
+    "seconds": 0.05055660707876086
+  },
+  {
+    "family": "top_region",
+    "seed": 40,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03358818031847477
+  },
+  {
+    "family": "top_region",
+    "seed": 40,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03314615320414305
+  },
+  {
+    "family": "top_region",
+    "seed": 40,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04893262777477503
+  },
+  {
+    "family": "top_region",
+    "seed": 41,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033645180985331535
+  },
+  {
+    "family": "top_region",
+    "seed": 41,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03305772412568331
+  },
+  {
+    "family": "top_region",
+    "seed": 41,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04917464405298233
+  },
+  {
+    "family": "top_region",
+    "seed": 42,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03603401593863964
+  },
+  {
+    "family": "top_region",
+    "seed": 42,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03642228990793228
+  },
+  {
+    "family": "top_region",
+    "seed": 42,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.05250259907916188
+  },
+  {
+    "family": "top_region",
+    "seed": 43,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.035313162952661514
+  },
+  {
+    "family": "top_region",
+    "seed": 43,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.03592938371002674
+  },
+  {
+    "family": "top_region",
+    "seed": 43,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.05224153306335211
+  },
+  {
+    "family": "top_region",
+    "seed": 44,
+    "acquisition": "fixed",
+    "executions": 14.25,
+    "questions": 1.75,
+    "seconds": 0.03154027508571744
+  },
+  {
+    "family": "top_region",
+    "seed": 44,
+    "acquisition": "random",
+    "executions": 14.25,
+    "questions": 1.75,
+    "seconds": 0.0318940500728786
+  },
+  {
+    "family": "top_region",
+    "seed": 44,
+    "acquisition": "comparison",
+    "executions": 14.25,
+    "questions": 1.75,
+    "seconds": 0.04701521806418896
+  },
+  {
+    "family": "top_region",
+    "seed": 45,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03370549902319908
+  },
+  {
+    "family": "top_region",
+    "seed": 45,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033627298660576344
+  },
+  {
+    "family": "top_region",
+    "seed": 45,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.050833772867918015
+  },
+  {
+    "family": "top_region",
+    "seed": 46,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03361512301489711
+  },
+  {
+    "family": "top_region",
+    "seed": 46,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033021911047399044
+  },
+  {
+    "family": "top_region",
+    "seed": 46,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04954648809507489
+  },
+  {
+    "family": "top_region",
+    "seed": 47,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03586418926715851
+  },
+  {
+    "family": "top_region",
+    "seed": 47,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 1.875,
+    "seconds": 0.03481363318860531
+  },
+  {
+    "family": "top_region",
+    "seed": 47,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.05302684288471937
+  },
+  {
+    "family": "top_region",
+    "seed": 48,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03364657983183861
+  },
+  {
+    "family": "top_region",
+    "seed": 48,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0338685130700469
+  },
+  {
+    "family": "top_region",
+    "seed": 48,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04954568576067686
+  },
+  {
+    "family": "top_region",
+    "seed": 49,
+    "acquisition": "fixed",
+    "executions": 15.125,
+    "questions": 1.875,
+    "seconds": 0.035713772755116224
+  },
+  {
+    "family": "top_region",
+    "seed": 49,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03700083959847689
+  },
+  {
+    "family": "top_region",
+    "seed": 49,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 1.875,
+    "seconds": 0.051061008125543594
+  },
+  {
+    "family": "top_region",
+    "seed": 50,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03385319886729121
+  },
+  {
+    "family": "top_region",
+    "seed": 50,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03327770531177521
+  },
+  {
+    "family": "top_region",
+    "seed": 50,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04921590304002166
+  },
+  {
+    "family": "top_region",
+    "seed": 51,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 2.25,
+    "seconds": 0.03487657615914941
+  },
+  {
+    "family": "top_region",
+    "seed": 51,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 2.25,
+    "seconds": 0.033713126089423895
+  },
+  {
+    "family": "top_region",
+    "seed": 51,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 2.25,
+    "seconds": 0.051610383205115795
+  },
+  {
+    "family": "top_region",
+    "seed": 52,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.034076379146426916
+  },
+  {
+    "family": "top_region",
+    "seed": 52,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032986755948513746
+  },
+  {
+    "family": "top_region",
+    "seed": 52,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049222304951399565
+  },
+  {
+    "family": "top_region",
+    "seed": 53,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033811578061431646
+  },
+  {
+    "family": "top_region",
+    "seed": 53,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03335397690534592
+  },
+  {
+    "family": "top_region",
+    "seed": 53,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0492804660461843
+  },
+  {
+    "family": "top_region",
+    "seed": 54,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 1.875,
+    "seconds": 0.03504336113110185
+  },
+  {
+    "family": "top_region",
+    "seed": 54,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03706066682934761
+  },
+  {
+    "family": "top_region",
+    "seed": 54,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 1.875,
+    "seconds": 0.05165482731536031
+  },
+  {
+    "family": "top_region",
+    "seed": 55,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03387992596253753
+  },
+  {
+    "family": "top_region",
+    "seed": 55,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03351534530520439
+  },
+  {
+    "family": "top_region",
+    "seed": 55,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04959588684141636
+  },
+  {
+    "family": "top_region",
+    "seed": 56,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.75,
+    "seconds": 0.03630457166582346
+  },
+  {
+    "family": "top_region",
+    "seed": 56,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 1.75,
+    "seconds": 0.033131349831819534
+  },
+  {
+    "family": "top_region",
+    "seed": 56,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.75,
+    "seconds": 0.0491224080324173
+  },
+  {
+    "family": "top_region",
+    "seed": 57,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03906129579991102
+  },
+  {
+    "family": "top_region",
+    "seed": 57,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03665152098983526
+  },
+  {
+    "family": "top_region",
+    "seed": 57,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.06104635773226619
+  },
+  {
+    "family": "top_region",
+    "seed": 58,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03641921514645219
+  },
+  {
+    "family": "top_region",
+    "seed": 58,
+    "acquisition": "random",
+    "executions": 15.125,
+    "questions": 1.875,
+    "seconds": 0.0339845260605216
+  },
+  {
+    "family": "top_region",
+    "seed": 58,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.0523403356783092
+  },
+  {
+    "family": "top_region",
+    "seed": 59,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.625,
+    "seconds": 0.03656582487747073
+  },
+  {
+    "family": "top_region",
+    "seed": 59,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.625,
+    "seconds": 0.03571264911442995
+  },
+  {
+    "family": "top_region",
+    "seed": 59,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.625,
+    "seconds": 0.053344101179391146
+  },
+  {
+    "family": "top_region",
+    "seed": 60,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.03090247418731451
+  },
+  {
+    "family": "top_region",
+    "seed": 60,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.03155763586983085
+  },
+  {
+    "family": "top_region",
+    "seed": 60,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.875,
+    "seconds": 0.044714008923619986
+  },
+  {
+    "family": "top_region",
+    "seed": 61,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03355957893654704
+  },
+  {
+    "family": "top_region",
+    "seed": 61,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03304546885192394
+  },
+  {
+    "family": "top_region",
+    "seed": 61,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049361641984432936
+  },
+  {
+    "family": "top_region",
+    "seed": 62,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03341353405267
+  },
+  {
+    "family": "top_region",
+    "seed": 62,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03281892416998744
+  },
+  {
+    "family": "top_region",
+    "seed": 62,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048778546042740345
+  },
+  {
+    "family": "top_region",
+    "seed": 63,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033494818955659866
+  },
+  {
+    "family": "top_region",
+    "seed": 63,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03297010622918606
+  },
+  {
+    "family": "top_region",
+    "seed": 63,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04886891599744558
+  },
+  {
+    "family": "top_region",
+    "seed": 64,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033457505982369184
+  },
+  {
+    "family": "top_region",
+    "seed": 64,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03297397214919329
+  },
+  {
+    "family": "top_region",
+    "seed": 64,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048835576977580786
+  },
+  {
+    "family": "top_region",
+    "seed": 65,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 2.25,
+    "seconds": 0.032705782912671566
+  },
+  {
+    "family": "top_region",
+    "seed": 65,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 2.25,
+    "seconds": 0.03500136313959956
+  },
+  {
+    "family": "top_region",
+    "seed": 65,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 2.25,
+    "seconds": 0.05085313878953457
+  },
+  {
+    "family": "top_region",
+    "seed": 66,
+    "acquisition": "fixed",
+    "executions": 14.375,
+    "questions": 2.625,
+    "seconds": 0.03263281984254718
+  },
+  {
+    "family": "top_region",
+    "seed": 66,
+    "acquisition": "random",
+    "executions": 14.25,
+    "questions": 2.625,
+    "seconds": 0.03213414270430803
+  },
+  {
+    "family": "top_region",
+    "seed": 66,
+    "acquisition": "comparison",
+    "executions": 14.375,
+    "questions": 2.625,
+    "seconds": 0.05023761000484228
+  },
+  {
+    "family": "top_region",
+    "seed": 67,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03336454601958394
+  },
+  {
+    "family": "top_region",
+    "seed": 67,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0328389429487288
+  },
+  {
+    "family": "top_region",
+    "seed": 67,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048813192173838615
+  },
+  {
+    "family": "top_region",
+    "seed": 68,
+    "acquisition": "fixed",
+    "executions": 14.375,
+    "questions": 1.875,
+    "seconds": 0.03308647917583585
+  },
+  {
+    "family": "top_region",
+    "seed": 68,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 1.875,
+    "seconds": 0.03417535591870546
+  },
+  {
+    "family": "top_region",
+    "seed": 68,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 1.875,
+    "seconds": 0.05025645485147834
+  },
+  {
+    "family": "top_region",
+    "seed": 69,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033393251709640026
+  },
+  {
+    "family": "top_region",
+    "seed": 69,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03295179083943367
+  },
+  {
+    "family": "top_region",
+    "seed": 69,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04873712081462145
+  },
+  {
+    "family": "top_region",
+    "seed": 70,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033625055104494095
+  },
+  {
+    "family": "top_region",
+    "seed": 70,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033871963154524565
+  },
+  {
+    "family": "top_region",
+    "seed": 70,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04889904521405697
+  },
+  {
+    "family": "top_region",
+    "seed": 71,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03352769045159221
+  },
+  {
+    "family": "top_region",
+    "seed": 71,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03273084433749318
+  },
+  {
+    "family": "top_region",
+    "seed": 71,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04883496090769768
+  },
+  {
+    "family": "top_region",
+    "seed": 72,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03355394396930933
+  },
+  {
+    "family": "top_region",
+    "seed": 72,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032784426119178534
+  },
+  {
+    "family": "top_region",
+    "seed": 72,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049300746992230415
+  },
+  {
+    "family": "top_region",
+    "seed": 73,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.25,
+    "seconds": 0.030856287572532892
+  },
+  {
+    "family": "top_region",
+    "seed": 73,
+    "acquisition": "random",
+    "executions": 14.625,
+    "questions": 2.25,
+    "seconds": 0.033432170283049345
+  },
+  {
+    "family": "top_region",
+    "seed": 73,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.25,
+    "seconds": 0.04716859897598624
+  },
+  {
+    "family": "top_region",
+    "seed": 74,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.75,
+    "seconds": 0.03291831910610199
+  },
+  {
+    "family": "top_region",
+    "seed": 74,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 2.75,
+    "seconds": 0.0343887759372592
+  },
+  {
+    "family": "top_region",
+    "seed": 74,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.75,
+    "seconds": 0.04960295790806413
+  },
+  {
+    "family": "top_region",
+    "seed": 75,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.035711294040083885
+  },
+  {
+    "family": "top_region",
+    "seed": 75,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.036312941927462816
+  },
+  {
+    "family": "top_region",
+    "seed": 75,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.05271079018712044
+  },
+  {
+    "family": "top_region",
+    "seed": 76,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0335044558160007
+  },
+  {
+    "family": "top_region",
+    "seed": 76,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03294254979118705
+  },
+  {
+    "family": "top_region",
+    "seed": 76,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04899755073711276
+  },
+  {
+    "family": "top_region",
+    "seed": 77,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.03582476265728474
+  },
+  {
+    "family": "top_region",
+    "seed": 77,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 1.5,
+    "seconds": 0.03415307216346264
+  },
+  {
+    "family": "top_region",
+    "seed": 77,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.05274724820628762
+  },
+  {
+    "family": "top_region",
+    "seed": 78,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.75,
+    "seconds": 0.033074015751481056
+  },
+  {
+    "family": "top_region",
+    "seed": 78,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 1.75,
+    "seconds": 0.03157949633896351
+  },
+  {
+    "family": "top_region",
+    "seed": 78,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.75,
+    "seconds": 0.04933840315788984
+  },
+  {
+    "family": "top_region",
+    "seed": 79,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0334354043006897
+  },
+  {
+    "family": "top_region",
+    "seed": 79,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032990713603794575
+  },
+  {
+    "family": "top_region",
+    "seed": 79,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04879208514466882
+  },
+  {
+    "family": "top_region",
+    "seed": 80,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033463416155427694
+  },
+  {
+    "family": "top_region",
+    "seed": 80,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0330909863114357
+  },
+  {
+    "family": "top_region",
+    "seed": 80,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048781637102365494
+  },
+  {
+    "family": "top_region",
+    "seed": 81,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03341436665505171
+  },
+  {
+    "family": "top_region",
+    "seed": 81,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03273990098387003
+  },
+  {
+    "family": "top_region",
+    "seed": 81,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049466066993772984
+  },
+  {
+    "family": "top_region",
+    "seed": 82,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 2.25,
+    "seconds": 0.032647063955664635
+  },
+  {
+    "family": "top_region",
+    "seed": 82,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.25,
+    "seconds": 0.032021273858845234
+  },
+  {
+    "family": "top_region",
+    "seed": 82,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 2.25,
+    "seconds": 0.04912853706628084
+  },
+  {
+    "family": "top_region",
+    "seed": 83,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 1.875,
+    "seconds": 0.035453617572784424
+  },
+  {
+    "family": "top_region",
+    "seed": 83,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.03696318902075291
+  },
+  {
+    "family": "top_region",
+    "seed": 83,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 1.875,
+    "seconds": 0.05068897223100066
+  },
+  {
+    "family": "top_region",
+    "seed": 84,
+    "acquisition": "fixed",
+    "executions": 14.125,
+    "questions": 1.75,
+    "seconds": 0.030700501054525375
+  },
+  {
+    "family": "top_region",
+    "seed": 84,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 1.75,
+    "seconds": 0.03112027095630765
+  },
+  {
+    "family": "top_region",
+    "seed": 84,
+    "acquisition": "comparison",
+    "executions": 13.625,
+    "questions": 1.75,
+    "seconds": 0.044553705025464296
+  },
+  {
+    "family": "top_region",
+    "seed": 85,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03342780517414212
+  },
+  {
+    "family": "top_region",
+    "seed": 85,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03340725274756551
+  },
+  {
+    "family": "top_region",
+    "seed": 85,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04878909885883331
+  },
+  {
+    "family": "top_region",
+    "seed": 86,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03335584839805961
+  },
+  {
+    "family": "top_region",
+    "seed": 86,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033148868940770626
+  },
+  {
+    "family": "top_region",
+    "seed": 86,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04874495090916753
+  },
+  {
+    "family": "top_region",
+    "seed": 87,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.030998724978417158
+  },
+  {
+    "family": "top_region",
+    "seed": 87,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.0321371671743691
+  },
+  {
+    "family": "top_region",
+    "seed": 87,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 1.875,
+    "seconds": 0.04776363633573055
+  },
+  {
+    "family": "top_region",
+    "seed": 88,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03359768120571971
+  },
+  {
+    "family": "top_region",
+    "seed": 88,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03332632267847657
+  },
+  {
+    "family": "top_region",
+    "seed": 88,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04880520375445485
+  },
+  {
+    "family": "top_region",
+    "seed": 89,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.75,
+    "seconds": 0.03446423215791583
+  },
+  {
+    "family": "top_region",
+    "seed": 89,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.75,
+    "seconds": 0.03510120511054993
+  },
+  {
+    "family": "top_region",
+    "seed": 89,
+    "acquisition": "comparison",
+    "executions": 15.125,
+    "questions": 2.75,
+    "seconds": 0.05139680905267596
+  },
+  {
+    "family": "top_region",
+    "seed": 90,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03343009762465954
+  },
+  {
+    "family": "top_region",
+    "seed": 90,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03288265783339739
+  },
+  {
+    "family": "top_region",
+    "seed": 90,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048961327876895666
+  },
+  {
+    "family": "top_region",
+    "seed": 91,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.036129712127149105
+  },
+  {
+    "family": "top_region",
+    "seed": 91,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.03798427665606141
+  },
+  {
+    "family": "top_region",
+    "seed": 91,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.5,
+    "seconds": 0.05308242980390787
+  },
+  {
+    "family": "top_region",
+    "seed": 92,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 1.75,
+    "seconds": 0.035186368972063065
+  },
+  {
+    "family": "top_region",
+    "seed": 92,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 1.75,
+    "seconds": 0.03434380469843745
+  },
+  {
+    "family": "top_region",
+    "seed": 92,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 1.75,
+    "seconds": 0.05016527138650417
+  },
+  {
+    "family": "top_region",
+    "seed": 93,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0335802398622036
+  },
+  {
+    "family": "top_region",
+    "seed": 93,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.033003651071339846
+  },
+  {
+    "family": "top_region",
+    "seed": 93,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048966593109071255
+  },
+  {
+    "family": "top_region",
+    "seed": 94,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03359435824677348
+  },
+  {
+    "family": "top_region",
+    "seed": 94,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0329172913916409
+  },
+  {
+    "family": "top_region",
+    "seed": 94,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04882870800793171
+  },
+  {
+    "family": "top_region",
+    "seed": 95,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03345988970249891
+  },
+  {
+    "family": "top_region",
+    "seed": 95,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03294904110953212
+  },
+  {
+    "family": "top_region",
+    "seed": 95,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04893395118415356
+  },
+  {
+    "family": "top_region",
+    "seed": 96,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.0335282520391047
+  },
+  {
+    "family": "top_region",
+    "seed": 96,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.032986460253596306
+  },
+  {
+    "family": "top_region",
+    "seed": 96,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.048985357861965895
+  },
+  {
+    "family": "top_region",
+    "seed": 97,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03343438496813178
+  },
+  {
+    "family": "top_region",
+    "seed": 97,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03308627288788557
+  },
+  {
+    "family": "top_region",
+    "seed": 97,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04892359208315611
+  },
+  {
+    "family": "top_region",
+    "seed": 98,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03354865778237581
+  },
+  {
+    "family": "top_region",
+    "seed": 98,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03299560118466616
+  },
+  {
+    "family": "top_region",
+    "seed": 98,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.049934989772737026
+  },
+  {
+    "family": "top_region",
+    "seed": 99,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.035508411936461926
+  },
+  {
+    "family": "top_region",
+    "seed": 99,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 1.875,
+    "seconds": 0.034582065884023905
+  },
+  {
+    "family": "top_region",
+    "seed": 99,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 1.875,
+    "seconds": 0.05191139690577984
+  },
+  {
+    "family": "customer_count",
+    "seed": 0,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031045918352901936
+  },
+  {
+    "family": "customer_count",
+    "seed": 0,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03211117722094059
+  },
+  {
+    "family": "customer_count",
+    "seed": 0,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045113359577953815
+  },
+  {
+    "family": "customer_count",
+    "seed": 1,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031109904404729605
+  },
+  {
+    "family": "customer_count",
+    "seed": 1,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031262203585356474
+  },
+  {
+    "family": "customer_count",
+    "seed": 1,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04504089197143912
+  },
+  {
+    "family": "customer_count",
+    "seed": 2,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031075167004019022
+  },
+  {
+    "family": "customer_count",
+    "seed": 2,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03203406510874629
+  },
+  {
+    "family": "customer_count",
+    "seed": 2,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045085443183779716
+  },
+  {
+    "family": "customer_count",
+    "seed": 3,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031121340114623308
+  },
+  {
+    "family": "customer_count",
+    "seed": 3,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03211114602163434
+  },
+  {
+    "family": "customer_count",
+    "seed": 3,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.044985879212617874
+  },
+  {
+    "family": "customer_count",
+    "seed": 4,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.0311820600181818
+  },
+  {
+    "family": "customer_count",
+    "seed": 4,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03257352206856012
+  },
+  {
+    "family": "customer_count",
+    "seed": 4,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04529219726100564
+  },
+  {
+    "family": "customer_count",
+    "seed": 5,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031130291055887938
+  },
+  {
+    "family": "customer_count",
+    "seed": 5,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.030095797032117844
+  },
+  {
+    "family": "customer_count",
+    "seed": 5,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04506490798667073
+  },
+  {
+    "family": "customer_count",
+    "seed": 6,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031158111058175564
+  },
+  {
+    "family": "customer_count",
+    "seed": 6,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.029862205032259226
+  },
+  {
+    "family": "customer_count",
+    "seed": 6,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04518009815365076
+  },
+  {
+    "family": "customer_count",
+    "seed": 7,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03107010293751955
+  },
+  {
+    "family": "customer_count",
+    "seed": 7,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032203801441937685
+  },
+  {
+    "family": "customer_count",
+    "seed": 7,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045130624901503325
+  },
+  {
+    "family": "customer_count",
+    "seed": 8,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031114153098315
+  },
+  {
+    "family": "customer_count",
+    "seed": 8,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03224640805274248
+  },
+  {
+    "family": "customer_count",
+    "seed": 8,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04524780996143818
+  },
+  {
+    "family": "customer_count",
+    "seed": 9,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03124204697087407
+  },
+  {
+    "family": "customer_count",
+    "seed": 9,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.032112567219883204
+  },
+  {
+    "family": "customer_count",
+    "seed": 9,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04526143427938223
+  },
+  {
+    "family": "customer_count",
+    "seed": 10,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03210656484588981
+  },
+  {
+    "family": "customer_count",
+    "seed": 10,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.032077199313789606
+  },
+  {
+    "family": "customer_count",
+    "seed": 10,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04514305712655187
+  },
+  {
+    "family": "customer_count",
+    "seed": 11,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03138366620987654
+  },
+  {
+    "family": "customer_count",
+    "seed": 11,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.030424606055021286
+  },
+  {
+    "family": "customer_count",
+    "seed": 11,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04534846404567361
+  },
+  {
+    "family": "customer_count",
+    "seed": 12,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031206929124891758
+  },
+  {
+    "family": "customer_count",
+    "seed": 12,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03202930511906743
+  },
+  {
+    "family": "customer_count",
+    "seed": 12,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045109596103429794
+  },
+  {
+    "family": "customer_count",
+    "seed": 13,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031036789994686842
+  },
+  {
+    "family": "customer_count",
+    "seed": 13,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03208108898252249
+  },
+  {
+    "family": "customer_count",
+    "seed": 13,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04503086395561695
+  },
+  {
+    "family": "customer_count",
+    "seed": 14,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031024272087961435
+  },
+  {
+    "family": "customer_count",
+    "seed": 14,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.02970307320356369
+  },
+  {
+    "family": "customer_count",
+    "seed": 14,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04559365659952164
+  },
+  {
+    "family": "customer_count",
+    "seed": 15,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031010685954242945
+  },
+  {
+    "family": "customer_count",
+    "seed": 15,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03155912226065993
+  },
+  {
+    "family": "customer_count",
+    "seed": 15,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04536680644378066
+  },
+  {
+    "family": "customer_count",
+    "seed": 16,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03101349901407957
+  },
+  {
+    "family": "customer_count",
+    "seed": 16,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03189987502992153
+  },
+  {
+    "family": "customer_count",
+    "seed": 16,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04493423318490386
+  },
+  {
+    "family": "customer_count",
+    "seed": 17,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03101630276069045
+  },
+  {
+    "family": "customer_count",
+    "seed": 17,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03155186492949724
+  },
+  {
+    "family": "customer_count",
+    "seed": 17,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045099270064383745
+  },
+  {
+    "family": "customer_count",
+    "seed": 18,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03130857599899173
+  },
+  {
+    "family": "customer_count",
+    "seed": 18,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03150429530069232
+  },
+  {
+    "family": "customer_count",
+    "seed": 18,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04511797986924648
+  },
+  {
+    "family": "customer_count",
+    "seed": 19,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031161637045443058
+  },
+  {
+    "family": "customer_count",
+    "seed": 19,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031915569212287664
+  },
+  {
+    "family": "customer_count",
+    "seed": 19,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04532270412892103
+  },
+  {
+    "family": "customer_count",
+    "seed": 20,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031143065076321363
+  },
+  {
+    "family": "customer_count",
+    "seed": 20,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.0315085737966001
+  },
+  {
+    "family": "customer_count",
+    "seed": 20,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045042434707283974
+  },
+  {
+    "family": "customer_count",
+    "seed": 21,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031276720110327005
+  },
+  {
+    "family": "customer_count",
+    "seed": 21,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.029997981619089842
+  },
+  {
+    "family": "customer_count",
+    "seed": 21,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04511765204370022
+  },
+  {
+    "family": "customer_count",
+    "seed": 22,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031218621879816055
+  },
+  {
+    "family": "customer_count",
+    "seed": 22,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.029959410894662142
+  },
+  {
+    "family": "customer_count",
+    "seed": 22,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04505190113559365
+  },
+  {
+    "family": "customer_count",
+    "seed": 23,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031252391170710325
+  },
+  {
+    "family": "customer_count",
+    "seed": 23,
+    "acquisition": "random",
+    "executions": 13.75,
+    "questions": 2.5,
+    "seconds": 0.030859753023833036
+  },
+  {
+    "family": "customer_count",
+    "seed": 23,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04511972703039646
+  },
+  {
+    "family": "customer_count",
+    "seed": 24,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03110212692990899
+  },
+  {
+    "family": "customer_count",
+    "seed": 24,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.0322971879504621
+  },
+  {
+    "family": "customer_count",
+    "seed": 24,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045113423839211464
+  },
+  {
+    "family": "customer_count",
+    "seed": 25,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031129175797104836
+  },
+  {
+    "family": "customer_count",
+    "seed": 25,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032722871750593185
+  },
+  {
+    "family": "customer_count",
+    "seed": 25,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04519362607970834
+  },
+  {
+    "family": "customer_count",
+    "seed": 26,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03104921616613865
+  },
+  {
+    "family": "customer_count",
+    "seed": 26,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03220334695652127
+  },
+  {
+    "family": "customer_count",
+    "seed": 26,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04523830721154809
+  },
+  {
+    "family": "customer_count",
+    "seed": 27,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031030196230858564
+  },
+  {
+    "family": "customer_count",
+    "seed": 27,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03230052161961794
+  },
+  {
+    "family": "customer_count",
+    "seed": 27,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04511178517714143
+  },
+  {
+    "family": "customer_count",
+    "seed": 28,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031069498043507338
+  },
+  {
+    "family": "customer_count",
+    "seed": 28,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031705074943602085
+  },
+  {
+    "family": "customer_count",
+    "seed": 28,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04526473907753825
+  },
+  {
+    "family": "customer_count",
+    "seed": 29,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03113521635532379
+  },
+  {
+    "family": "customer_count",
+    "seed": 29,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03184759523719549
+  },
+  {
+    "family": "customer_count",
+    "seed": 29,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04511625226587057
+  },
+  {
+    "family": "customer_count",
+    "seed": 30,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031013586092740297
+  },
+  {
+    "family": "customer_count",
+    "seed": 30,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.02999356994405389
+  },
+  {
+    "family": "customer_count",
+    "seed": 30,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.0451029809191823
+  },
+  {
+    "family": "customer_count",
+    "seed": 31,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.0310774901881814
+  },
+  {
+    "family": "customer_count",
+    "seed": 31,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03203488187864423
+  },
+  {
+    "family": "customer_count",
+    "seed": 31,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04514527413994074
+  },
+  {
+    "family": "customer_count",
+    "seed": 32,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031140878796577454
+  },
+  {
+    "family": "customer_count",
+    "seed": 32,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03224738594144583
+  },
+  {
+    "family": "customer_count",
+    "seed": 32,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04505332699045539
+  },
+  {
+    "family": "customer_count",
+    "seed": 33,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03184564271941781
+  },
+  {
+    "family": "customer_count",
+    "seed": 33,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03200135985389352
+  },
+  {
+    "family": "customer_count",
+    "seed": 33,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04508741898462176
+  },
+  {
+    "family": "customer_count",
+    "seed": 34,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031365187373012304
+  },
+  {
+    "family": "customer_count",
+    "seed": 34,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031511187087744474
+  },
+  {
+    "family": "customer_count",
+    "seed": 34,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045049437787383795
+  },
+  {
+    "family": "customer_count",
+    "seed": 35,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031128990929573774
+  },
+  {
+    "family": "customer_count",
+    "seed": 35,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03241211175918579
+  },
+  {
+    "family": "customer_count",
+    "seed": 35,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045128573663532734
+  },
+  {
+    "family": "customer_count",
+    "seed": 36,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03114518942311406
+  },
+  {
+    "family": "customer_count",
+    "seed": 36,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03226370131596923
+  },
+  {
+    "family": "customer_count",
+    "seed": 36,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04509907402098179
+  },
+  {
+    "family": "customer_count",
+    "seed": 37,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03117651678621769
+  },
+  {
+    "family": "customer_count",
+    "seed": 37,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.029838624875992537
+  },
+  {
+    "family": "customer_count",
+    "seed": 37,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04524730611592531
+  },
+  {
+    "family": "customer_count",
+    "seed": 38,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03118536714464426
+  },
+  {
+    "family": "customer_count",
+    "seed": 38,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.029816356021910906
+  },
+  {
+    "family": "customer_count",
+    "seed": 38,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04514200799167156
+  },
+  {
+    "family": "customer_count",
+    "seed": 39,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031104587018489838
+  },
+  {
+    "family": "customer_count",
+    "seed": 39,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03158320393413305
+  },
+  {
+    "family": "customer_count",
+    "seed": 39,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04525712784379721
+  },
+  {
+    "family": "customer_count",
+    "seed": 40,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03208027780056
+  },
+  {
+    "family": "customer_count",
+    "seed": 40,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031681258231401443
+  },
+  {
+    "family": "customer_count",
+    "seed": 40,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04527692776173353
+  },
+  {
+    "family": "customer_count",
+    "seed": 41,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031227396801114082
+  },
+  {
+    "family": "customer_count",
+    "seed": 41,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.0317835402674973
+  },
+  {
+    "family": "customer_count",
+    "seed": 41,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04529798403382301
+  },
+  {
+    "family": "customer_count",
+    "seed": 42,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031240133102983236
+  },
+  {
+    "family": "customer_count",
+    "seed": 42,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03279739385470748
+  },
+  {
+    "family": "customer_count",
+    "seed": 42,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.0451382608152926
+  },
+  {
+    "family": "customer_count",
+    "seed": 43,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031280424911528826
+  },
+  {
+    "family": "customer_count",
+    "seed": 43,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.030369261745363474
+  },
+  {
+    "family": "customer_count",
+    "seed": 43,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04517923295497894
+  },
+  {
+    "family": "customer_count",
+    "seed": 44,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03164953039959073
+  },
+  {
+    "family": "customer_count",
+    "seed": 44,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031452497001737356
+  },
+  {
+    "family": "customer_count",
+    "seed": 44,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045137536246329546
+  },
+  {
+    "family": "customer_count",
+    "seed": 45,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031700067687779665
+  },
+  {
+    "family": "customer_count",
+    "seed": 45,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031705853063613176
+  },
+  {
+    "family": "customer_count",
+    "seed": 45,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045734931249171495
+  },
+  {
+    "family": "customer_count",
+    "seed": 46,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031164966989308596
+  },
+  {
+    "family": "customer_count",
+    "seed": 46,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03214185172691941
+  },
+  {
+    "family": "customer_count",
+    "seed": 46,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04506778623908758
+  },
+  {
+    "family": "customer_count",
+    "seed": 47,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03121314663439989
+  },
+  {
+    "family": "customer_count",
+    "seed": 47,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.029910399112850428
+  },
+  {
+    "family": "customer_count",
+    "seed": 47,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045127795077860355
+  },
+  {
+    "family": "customer_count",
+    "seed": 48,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031206139363348484
+  },
+  {
+    "family": "customer_count",
+    "seed": 48,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.0321614621207118
+  },
+  {
+    "family": "customer_count",
+    "seed": 48,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045154192950576544
+  },
+  {
+    "family": "customer_count",
+    "seed": 49,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031057036947458982
+  },
+  {
+    "family": "customer_count",
+    "seed": 49,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03213192569091916
+  },
+  {
+    "family": "customer_count",
+    "seed": 49,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04510623402893543
+  },
+  {
+    "family": "customer_count",
+    "seed": 50,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03112470405176282
+  },
+  {
+    "family": "customer_count",
+    "seed": 50,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031711765099316835
+  },
+  {
+    "family": "customer_count",
+    "seed": 50,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04519183561205864
+  },
+  {
+    "family": "customer_count",
+    "seed": 51,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03116278164088726
+  },
+  {
+    "family": "customer_count",
+    "seed": 51,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03142205718904734
+  },
+  {
+    "family": "customer_count",
+    "seed": 51,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.044964978005737066
+  },
+  {
+    "family": "customer_count",
+    "seed": 52,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.030963956378400326
+  },
+  {
+    "family": "customer_count",
+    "seed": 52,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03166051674634218
+  },
+  {
+    "family": "customer_count",
+    "seed": 52,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045019777957350016
+  },
+  {
+    "family": "customer_count",
+    "seed": 53,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031035068910568953
+  },
+  {
+    "family": "customer_count",
+    "seed": 53,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032594637013971806
+  },
+  {
+    "family": "customer_count",
+    "seed": 53,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04512761207297444
+  },
+  {
+    "family": "customer_count",
+    "seed": 54,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031067906878888607
+  },
+  {
+    "family": "customer_count",
+    "seed": 54,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031578433234244585
+  },
+  {
+    "family": "customer_count",
+    "seed": 54,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04504252318292856
+  },
+  {
+    "family": "customer_count",
+    "seed": 55,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03169992798939347
+  },
+  {
+    "family": "customer_count",
+    "seed": 55,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.029822456184774637
+  },
+  {
+    "family": "customer_count",
+    "seed": 55,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.0449700653553009
+  },
+  {
+    "family": "customer_count",
+    "seed": 56,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03117925813421607
+  },
+  {
+    "family": "customer_count",
+    "seed": 56,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.029868068173527718
+  },
+  {
+    "family": "customer_count",
+    "seed": 56,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04518180899322033
+  },
+  {
+    "family": "customer_count",
+    "seed": 57,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031070183031260967
+  },
+  {
+    "family": "customer_count",
+    "seed": 57,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032062487211078405
+  },
+  {
+    "family": "customer_count",
+    "seed": 57,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.0450744996778667
+  },
+  {
+    "family": "customer_count",
+    "seed": 58,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031209907960146666
+  },
+  {
+    "family": "customer_count",
+    "seed": 58,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.029987725894898176
+  },
+  {
+    "family": "customer_count",
+    "seed": 58,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04509970312938094
+  },
+  {
+    "family": "customer_count",
+    "seed": 59,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03104239096865058
+  },
+  {
+    "family": "customer_count",
+    "seed": 59,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.030066946987062693
+  },
+  {
+    "family": "customer_count",
+    "seed": 59,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045145655050873756
+  },
+  {
+    "family": "customer_count",
+    "seed": 60,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031159764621406794
+  },
+  {
+    "family": "customer_count",
+    "seed": 60,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.02982945181429386
+  },
+  {
+    "family": "customer_count",
+    "seed": 60,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045022663194686174
+  },
+  {
+    "family": "customer_count",
+    "seed": 61,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031244497746229172
+  },
+  {
+    "family": "customer_count",
+    "seed": 61,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.030103839933872223
+  },
+  {
+    "family": "customer_count",
+    "seed": 61,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04522240813821554
+  },
+  {
+    "family": "customer_count",
+    "seed": 62,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03137450898066163
+  },
+  {
+    "family": "customer_count",
+    "seed": 62,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03196274396032095
+  },
+  {
+    "family": "customer_count",
+    "seed": 62,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04526558704674244
+  },
+  {
+    "family": "customer_count",
+    "seed": 63,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031263499055057764
+  },
+  {
+    "family": "customer_count",
+    "seed": 63,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031595388893038034
+  },
+  {
+    "family": "customer_count",
+    "seed": 63,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04540024837478995
+  },
+  {
+    "family": "customer_count",
+    "seed": 64,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03146688221022487
+  },
+  {
+    "family": "customer_count",
+    "seed": 64,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031930601224303246
+  },
+  {
+    "family": "customer_count",
+    "seed": 64,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045588224194943905
+  },
+  {
+    "family": "customer_count",
+    "seed": 65,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031478666700422764
+  },
+  {
+    "family": "customer_count",
+    "seed": 65,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032985761761665344
+  },
+  {
+    "family": "customer_count",
+    "seed": 65,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045693997759371996
+  },
+  {
+    "family": "customer_count",
+    "seed": 66,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03151939809322357
+  },
+  {
+    "family": "customer_count",
+    "seed": 66,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031814745627343655
+  },
+  {
+    "family": "customer_count",
+    "seed": 66,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04545659804716706
+  },
+  {
+    "family": "customer_count",
+    "seed": 67,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031435355078428984
+  },
+  {
+    "family": "customer_count",
+    "seed": 67,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031998415011912584
+  },
+  {
+    "family": "customer_count",
+    "seed": 67,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.046488501131534576
+  },
+  {
+    "family": "customer_count",
+    "seed": 68,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03167895972728729
+  },
+  {
+    "family": "customer_count",
+    "seed": 68,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.03054992388933897
+  },
+  {
+    "family": "customer_count",
+    "seed": 68,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04536684509366751
+  },
+  {
+    "family": "customer_count",
+    "seed": 69,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031446465756744146
+  },
+  {
+    "family": "customer_count",
+    "seed": 69,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032599872909486294
+  },
+  {
+    "family": "customer_count",
+    "seed": 69,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04520742688328028
+  },
+  {
+    "family": "customer_count",
+    "seed": 70,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03214571764692664
+  },
+  {
+    "family": "customer_count",
+    "seed": 70,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03211222914978862
+  },
+  {
+    "family": "customer_count",
+    "seed": 70,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04520633118227124
+  },
+  {
+    "family": "customer_count",
+    "seed": 71,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03135249810293317
+  },
+  {
+    "family": "customer_count",
+    "seed": 71,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.030335356015712023
+  },
+  {
+    "family": "customer_count",
+    "seed": 71,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04536712495610118
+  },
+  {
+    "family": "customer_count",
+    "seed": 72,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031223174650222063
+  },
+  {
+    "family": "customer_count",
+    "seed": 72,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032065981067717075
+  },
+  {
+    "family": "customer_count",
+    "seed": 72,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045401663053780794
+  },
+  {
+    "family": "customer_count",
+    "seed": 73,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03123838407918811
+  },
+  {
+    "family": "customer_count",
+    "seed": 73,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.0317172659561038
+  },
+  {
+    "family": "customer_count",
+    "seed": 73,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04643379105255008
+  },
+  {
+    "family": "customer_count",
+    "seed": 74,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031164149288088083
+  },
+  {
+    "family": "customer_count",
+    "seed": 74,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032483262941241264
+  },
+  {
+    "family": "customer_count",
+    "seed": 74,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04575182497501373
+  },
+  {
+    "family": "customer_count",
+    "seed": 75,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031402265187352896
+  },
+  {
+    "family": "customer_count",
+    "seed": 75,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031873973086476326
+  },
+  {
+    "family": "customer_count",
+    "seed": 75,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045353543013334274
+  },
+  {
+    "family": "customer_count",
+    "seed": 76,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03126033814623952
+  },
+  {
+    "family": "customer_count",
+    "seed": 76,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.032515477389097214
+  },
+  {
+    "family": "customer_count",
+    "seed": 76,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04519200278446078
+  },
+  {
+    "family": "customer_count",
+    "seed": 77,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031184065155684948
+  },
+  {
+    "family": "customer_count",
+    "seed": 77,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.029868734069168568
+  },
+  {
+    "family": "customer_count",
+    "seed": 77,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045185656286776066
+  },
+  {
+    "family": "customer_count",
+    "seed": 78,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031234994996339083
+  },
+  {
+    "family": "customer_count",
+    "seed": 78,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.03016315121203661
+  },
+  {
+    "family": "customer_count",
+    "seed": 78,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04509883187711239
+  },
+  {
+    "family": "customer_count",
+    "seed": 79,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031100193969905376
+  },
+  {
+    "family": "customer_count",
+    "seed": 79,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031734406016767025
+  },
+  {
+    "family": "customer_count",
+    "seed": 79,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04500715294852853
+  },
+  {
+    "family": "customer_count",
+    "seed": 80,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03128183213993907
+  },
+  {
+    "family": "customer_count",
+    "seed": 80,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.029963733162730932
+  },
+  {
+    "family": "customer_count",
+    "seed": 80,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045187002047896385
+  },
+  {
+    "family": "customer_count",
+    "seed": 81,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03122126590460539
+  },
+  {
+    "family": "customer_count",
+    "seed": 81,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03195614879950881
+  },
+  {
+    "family": "customer_count",
+    "seed": 81,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04517556820064783
+  },
+  {
+    "family": "customer_count",
+    "seed": 82,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031502339988946915
+  },
+  {
+    "family": "customer_count",
+    "seed": 82,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.03023079177364707
+  },
+  {
+    "family": "customer_count",
+    "seed": 82,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045703886076807976
+  },
+  {
+    "family": "customer_count",
+    "seed": 83,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.0312439720146358
+  },
+  {
+    "family": "customer_count",
+    "seed": 83,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.030053297989070415
+  },
+  {
+    "family": "customer_count",
+    "seed": 83,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04529726877808571
+  },
+  {
+    "family": "customer_count",
+    "seed": 84,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03132241033017635
+  },
+  {
+    "family": "customer_count",
+    "seed": 84,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.0326260831207037
+  },
+  {
+    "family": "customer_count",
+    "seed": 84,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04526830604299903
+  },
+  {
+    "family": "customer_count",
+    "seed": 85,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03114271303638816
+  },
+  {
+    "family": "customer_count",
+    "seed": 85,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03273272095248103
+  },
+  {
+    "family": "customer_count",
+    "seed": 85,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045410043094307184
+  },
+  {
+    "family": "customer_count",
+    "seed": 86,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031177299097180367
+  },
+  {
+    "family": "customer_count",
+    "seed": 86,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03195053106173873
+  },
+  {
+    "family": "customer_count",
+    "seed": 86,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045319105964154005
+  },
+  {
+    "family": "customer_count",
+    "seed": 87,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031642801128327847
+  },
+  {
+    "family": "customer_count",
+    "seed": 87,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.032210296019911766
+  },
+  {
+    "family": "customer_count",
+    "seed": 87,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04534610966220498
+  },
+  {
+    "family": "customer_count",
+    "seed": 88,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03120855614542961
+  },
+  {
+    "family": "customer_count",
+    "seed": 88,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03118725400418043
+  },
+  {
+    "family": "customer_count",
+    "seed": 88,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.0451985877007246
+  },
+  {
+    "family": "customer_count",
+    "seed": 89,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031451306771487
+  },
+  {
+    "family": "customer_count",
+    "seed": 89,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03164845844730735
+  },
+  {
+    "family": "customer_count",
+    "seed": 89,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04516480676829815
+  },
+  {
+    "family": "customer_count",
+    "seed": 90,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03126304782927036
+  },
+  {
+    "family": "customer_count",
+    "seed": 90,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03230512095615268
+  },
+  {
+    "family": "customer_count",
+    "seed": 90,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045311129186302423
+  },
+  {
+    "family": "customer_count",
+    "seed": 91,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03125099092721939
+  },
+  {
+    "family": "customer_count",
+    "seed": 91,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.032578432001173496
+  },
+  {
+    "family": "customer_count",
+    "seed": 91,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04537127399817109
+  },
+  {
+    "family": "customer_count",
+    "seed": 92,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03128346800804138
+  },
+  {
+    "family": "customer_count",
+    "seed": 92,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03168192179873586
+  },
+  {
+    "family": "customer_count",
+    "seed": 92,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04520061006769538
+  },
+  {
+    "family": "customer_count",
+    "seed": 93,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031140576116740704
+  },
+  {
+    "family": "customer_count",
+    "seed": 93,
+    "acquisition": "random",
+    "executions": 13.625,
+    "questions": 2.5,
+    "seconds": 0.030194249004125595
+  },
+  {
+    "family": "customer_count",
+    "seed": 93,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04511231603100896
+  },
+  {
+    "family": "customer_count",
+    "seed": 94,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031221020966768265
+  },
+  {
+    "family": "customer_count",
+    "seed": 94,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03176707727834582
+  },
+  {
+    "family": "customer_count",
+    "seed": 94,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04518109606578946
+  },
+  {
+    "family": "customer_count",
+    "seed": 95,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03128462238237262
+  },
+  {
+    "family": "customer_count",
+    "seed": 95,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.03005578275769949
+  },
+  {
+    "family": "customer_count",
+    "seed": 95,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04520336212590337
+  },
+  {
+    "family": "customer_count",
+    "seed": 96,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03123972099274397
+  },
+  {
+    "family": "customer_count",
+    "seed": 96,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03141159191727638
+  },
+  {
+    "family": "customer_count",
+    "seed": 96,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04534919001162052
+  },
+  {
+    "family": "customer_count",
+    "seed": 97,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031285467091947794
+  },
+  {
+    "family": "customer_count",
+    "seed": 97,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.03150739800184965
+  },
+  {
+    "family": "customer_count",
+    "seed": 97,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045127048157155514
+  },
+  {
+    "family": "customer_count",
+    "seed": 98,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031178688164800406
+  },
+  {
+    "family": "customer_count",
+    "seed": 98,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.032183786388486624
+  },
+  {
+    "family": "customer_count",
+    "seed": 98,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.045150982681661844
+  },
+  {
+    "family": "customer_count",
+    "seed": 99,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031099819112569094
+  },
+  {
+    "family": "customer_count",
+    "seed": 99,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.5,
+    "seconds": 0.031084865797311068
+  },
+  {
+    "family": "customer_count",
+    "seed": 99,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04553902801126242
+  },
+  {
+    "family": "threshold_count",
+    "seed": 0,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03469855524599552
+  },
+  {
+    "family": "threshold_count",
+    "seed": 0,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03494407422840595
+  },
+  {
+    "family": "threshold_count",
+    "seed": 0,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.05024412414059043
+  },
+  {
+    "family": "threshold_count",
+    "seed": 1,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03707085084170103
+  },
+  {
+    "family": "threshold_count",
+    "seed": 1,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03716238588094711
+  },
+  {
+    "family": "threshold_count",
+    "seed": 1,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.0535882250405848
+  },
+  {
+    "family": "threshold_count",
+    "seed": 2,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.03278712788596749
+  },
+  {
+    "family": "threshold_count",
+    "seed": 2,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.033572215121239424
+  },
+  {
+    "family": "threshold_count",
+    "seed": 2,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.050744152162224054
+  },
+  {
+    "family": "threshold_count",
+    "seed": 3,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03263824712485075
+  },
+  {
+    "family": "threshold_count",
+    "seed": 3,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.033099993132054806
+  },
+  {
+    "family": "threshold_count",
+    "seed": 3,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.05002033989876509
+  },
+  {
+    "family": "threshold_count",
+    "seed": 4,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.03334371093660593
+  },
+  {
+    "family": "threshold_count",
+    "seed": 4,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.03714475827291608
+  },
+  {
+    "family": "threshold_count",
+    "seed": 4,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05302038602530956
+  },
+  {
+    "family": "threshold_count",
+    "seed": 5,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.03343888884410262
+  },
+  {
+    "family": "threshold_count",
+    "seed": 5,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 3.0,
+    "seconds": 0.03781429212540388
+  },
+  {
+    "family": "threshold_count",
+    "seed": 5,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 3.0,
+    "seconds": 0.05024356488138437
+  },
+  {
+    "family": "threshold_count",
+    "seed": 6,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.0,
+    "seconds": 0.03293825080618262
+  },
+  {
+    "family": "threshold_count",
+    "seed": 6,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03598901303485036
+  },
+  {
+    "family": "threshold_count",
+    "seed": 6,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.05130103975534439
+  },
+  {
+    "family": "threshold_count",
+    "seed": 7,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03224953077733517
+  },
+  {
+    "family": "threshold_count",
+    "seed": 7,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03256195830181241
+  },
+  {
+    "family": "threshold_count",
+    "seed": 7,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.04848858201876283
+  },
+  {
+    "family": "threshold_count",
+    "seed": 8,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03243105299770832
+  },
+  {
+    "family": "threshold_count",
+    "seed": 8,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.5,
+    "seconds": 0.03463474474847317
+  },
+  {
+    "family": "threshold_count",
+    "seed": 8,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.048919386230409145
+  },
+  {
+    "family": "threshold_count",
+    "seed": 9,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.030667457729578018
+  },
+  {
+    "family": "threshold_count",
+    "seed": 9,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.03144716192036867
+  },
+  {
+    "family": "threshold_count",
+    "seed": 9,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.0,
+    "seconds": 0.0447286949492991
+  },
+  {
+    "family": "threshold_count",
+    "seed": 10,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.035524715669453144
+  },
+  {
+    "family": "threshold_count",
+    "seed": 10,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03708282532170415
+  },
+  {
+    "family": "threshold_count",
+    "seed": 10,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05318657588213682
+  },
+  {
+    "family": "threshold_count",
+    "seed": 11,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 3.5,
+    "seconds": 0.03530868561938405
+  },
+  {
+    "family": "threshold_count",
+    "seed": 11,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 3.5,
+    "seconds": 0.035595846362411976
+  },
+  {
+    "family": "threshold_count",
+    "seed": 11,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 3.5,
+    "seconds": 0.05298714293166995
+  },
+  {
+    "family": "threshold_count",
+    "seed": 12,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.033084230963140726
+  },
+  {
+    "family": "threshold_count",
+    "seed": 12,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.5,
+    "seconds": 0.035351754166185856
+  },
+  {
+    "family": "threshold_count",
+    "seed": 12,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.04894640715792775
+  },
+  {
+    "family": "threshold_count",
+    "seed": 13,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.028445770032703876
+  },
+  {
+    "family": "threshold_count",
+    "seed": 13,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.029205371160060167
+  },
+  {
+    "family": "threshold_count",
+    "seed": 13,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04395253211259842
+  },
+  {
+    "family": "threshold_count",
+    "seed": 14,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03549898322671652
+  },
+  {
+    "family": "threshold_count",
+    "seed": 14,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03647358622401953
+  },
+  {
+    "family": "threshold_count",
+    "seed": 14,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.053109484259039164
+  },
+  {
+    "family": "threshold_count",
+    "seed": 15,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.030958130955696106
+  },
+  {
+    "family": "threshold_count",
+    "seed": 15,
+    "acquisition": "random",
+    "executions": 14.125,
+    "questions": 2.0,
+    "seconds": 0.03117375075817108
+  },
+  {
+    "family": "threshold_count",
+    "seed": 15,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.0,
+    "seconds": 0.0449373098090291
+  },
+  {
+    "family": "threshold_count",
+    "seed": 16,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.031168171670287848
+  },
+  {
+    "family": "threshold_count",
+    "seed": 16,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03212465066462755
+  },
+  {
+    "family": "threshold_count",
+    "seed": 16,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.5,
+    "seconds": 0.04513575229793787
+  },
+  {
+    "family": "threshold_count",
+    "seed": 17,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.03459226060658693
+  },
+  {
+    "family": "threshold_count",
+    "seed": 17,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 3.0,
+    "seconds": 0.03680118219926953
+  },
+  {
+    "family": "threshold_count",
+    "seed": 17,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.05144331092014909
+  },
+  {
+    "family": "threshold_count",
+    "seed": 18,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03340943576768041
+  },
+  {
+    "family": "threshold_count",
+    "seed": 18,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03420674055814743
+  },
+  {
+    "family": "threshold_count",
+    "seed": 18,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.05045492202043533
+  },
+  {
+    "family": "threshold_count",
+    "seed": 19,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03344309004023671
+  },
+  {
+    "family": "threshold_count",
+    "seed": 19,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.5,
+    "seconds": 0.03188589867204428
+  },
+  {
+    "family": "threshold_count",
+    "seed": 19,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.05044920602813363
+  },
+  {
+    "family": "threshold_count",
+    "seed": 20,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03544526966288686
+  },
+  {
+    "family": "threshold_count",
+    "seed": 20,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03586439974606037
+  },
+  {
+    "family": "threshold_count",
+    "seed": 20,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.0524576879106462
+  },
+  {
+    "family": "threshold_count",
+    "seed": 21,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.028629040345549583
+  },
+  {
+    "family": "threshold_count",
+    "seed": 21,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.02896944899111986
+  },
+  {
+    "family": "threshold_count",
+    "seed": 21,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.044034549966454506
+  },
+  {
+    "family": "threshold_count",
+    "seed": 22,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.034746012184768915
+  },
+  {
+    "family": "threshold_count",
+    "seed": 22,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 3.0,
+    "seconds": 0.037431424017995596
+  },
+  {
+    "family": "threshold_count",
+    "seed": 22,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.0517150410450995
+  },
+  {
+    "family": "threshold_count",
+    "seed": 23,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.033781399950385094
+  },
+  {
+    "family": "threshold_count",
+    "seed": 23,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.03537947591394186
+  },
+  {
+    "family": "threshold_count",
+    "seed": 23,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.053509964141994715
+  },
+  {
+    "family": "threshold_count",
+    "seed": 24,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03235982032492757
+  },
+  {
+    "family": "threshold_count",
+    "seed": 24,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.5,
+    "seconds": 0.030815328005701303
+  },
+  {
+    "family": "threshold_count",
+    "seed": 24,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.04871348012238741
+  },
+  {
+    "family": "threshold_count",
+    "seed": 25,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03302880376577377
+  },
+  {
+    "family": "threshold_count",
+    "seed": 25,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03354589594528079
+  },
+  {
+    "family": "threshold_count",
+    "seed": 25,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.049344321712851524
+  },
+  {
+    "family": "threshold_count",
+    "seed": 26,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.03494731616228819
+  },
+  {
+    "family": "threshold_count",
+    "seed": 26,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 3.0,
+    "seconds": 0.037526382599025965
+  },
+  {
+    "family": "threshold_count",
+    "seed": 26,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.05195250967517495
+  },
+  {
+    "family": "threshold_count",
+    "seed": 27,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03238196298480034
+  },
+  {
+    "family": "threshold_count",
+    "seed": 27,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03341433824971318
+  },
+  {
+    "family": "threshold_count",
+    "seed": 27,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.048868542071431875
+  },
+  {
+    "family": "threshold_count",
+    "seed": 28,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03327546315267682
+  },
+  {
+    "family": "threshold_count",
+    "seed": 28,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03249420411884785
+  },
+  {
+    "family": "threshold_count",
+    "seed": 28,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04865304194390774
+  },
+  {
+    "family": "threshold_count",
+    "seed": 29,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.03408523788675666
+  },
+  {
+    "family": "threshold_count",
+    "seed": 29,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03791226912289858
+  },
+  {
+    "family": "threshold_count",
+    "seed": 29,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.05301060667261481
+  },
+  {
+    "family": "threshold_count",
+    "seed": 30,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.03332067374140024
+  },
+  {
+    "family": "threshold_count",
+    "seed": 30,
+    "acquisition": "random",
+    "executions": 14.625,
+    "questions": 2.5,
+    "seconds": 0.03351300163194537
+  },
+  {
+    "family": "threshold_count",
+    "seed": 30,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.050174353178590536
+  },
+  {
+    "family": "threshold_count",
+    "seed": 31,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03312194673344493
+  },
+  {
+    "family": "threshold_count",
+    "seed": 31,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03269601287320256
+  },
+  {
+    "family": "threshold_count",
+    "seed": 31,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.05001200316473842
+  },
+  {
+    "family": "threshold_count",
+    "seed": 32,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.032042811159044504
+  },
+  {
+    "family": "threshold_count",
+    "seed": 32,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03249632986262441
+  },
+  {
+    "family": "threshold_count",
+    "seed": 32,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.0501899472437799
+  },
+  {
+    "family": "threshold_count",
+    "seed": 33,
+    "acquisition": "fixed",
+    "executions": 14.25,
+    "questions": 3.5,
+    "seconds": 0.031697602942585945
+  },
+  {
+    "family": "threshold_count",
+    "seed": 33,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 3.5,
+    "seconds": 0.03488969802856445
+  },
+  {
+    "family": "threshold_count",
+    "seed": 33,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 3.5,
+    "seconds": 0.05005278391763568
+  },
+  {
+    "family": "threshold_count",
+    "seed": 34,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03333586594089866
+  },
+  {
+    "family": "threshold_count",
+    "seed": 34,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.5,
+    "seconds": 0.03981911577284336
+  },
+  {
+    "family": "threshold_count",
+    "seed": 34,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.05012872442603111
+  },
+  {
+    "family": "threshold_count",
+    "seed": 35,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.03402021899819374
+  },
+  {
+    "family": "threshold_count",
+    "seed": 35,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.03313506534323096
+  },
+  {
+    "family": "threshold_count",
+    "seed": 35,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.050447237212210894
+  },
+  {
+    "family": "threshold_count",
+    "seed": 36,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.032758133951574564
+  },
+  {
+    "family": "threshold_count",
+    "seed": 36,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 3.0,
+    "seconds": 0.036627881694585085
+  },
+  {
+    "family": "threshold_count",
+    "seed": 36,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 3.0,
+    "seconds": 0.04996307194232941
+  },
+  {
+    "family": "threshold_count",
+    "seed": 37,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.0,
+    "seconds": 0.03223337512463331
+  },
+  {
+    "family": "threshold_count",
+    "seed": 37,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.036334739066660404
+  },
+  {
+    "family": "threshold_count",
+    "seed": 37,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.05054573714733124
+  },
+  {
+    "family": "threshold_count",
+    "seed": 38,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.032764884643256664
+  },
+  {
+    "family": "threshold_count",
+    "seed": 38,
+    "acquisition": "random",
+    "executions": 14.25,
+    "questions": 1.5,
+    "seconds": 0.03125797538086772
+  },
+  {
+    "family": "threshold_count",
+    "seed": 38,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.04920005984604359
+  },
+  {
+    "family": "threshold_count",
+    "seed": 39,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.03282565716654062
+  },
+  {
+    "family": "threshold_count",
+    "seed": 39,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03604385303333402
+  },
+  {
+    "family": "threshold_count",
+    "seed": 39,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.0504910983145237
+  },
+  {
+    "family": "threshold_count",
+    "seed": 40,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.0334753249771893
+  },
+  {
+    "family": "threshold_count",
+    "seed": 40,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.03279448999091983
+  },
+  {
+    "family": "threshold_count",
+    "seed": 40,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.0530603276565671
+  },
+  {
+    "family": "threshold_count",
+    "seed": 41,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03320546820759773
+  },
+  {
+    "family": "threshold_count",
+    "seed": 41,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.03289177315309644
+  },
+  {
+    "family": "threshold_count",
+    "seed": 41,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 0.0,
+    "seconds": 0.04854852892458439
+  },
+  {
+    "family": "threshold_count",
+    "seed": 42,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.03425190504640341
+  },
+  {
+    "family": "threshold_count",
+    "seed": 42,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.038045944180339575
+  },
+  {
+    "family": "threshold_count",
+    "seed": 42,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.050986775662750006
+  },
+  {
+    "family": "threshold_count",
+    "seed": 43,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.035483201034367085
+  },
+  {
+    "family": "threshold_count",
+    "seed": 43,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.037755900993943214
+  },
+  {
+    "family": "threshold_count",
+    "seed": 43,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05306069506332278
+  },
+  {
+    "family": "threshold_count",
+    "seed": 44,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03543738508597016
+  },
+  {
+    "family": "threshold_count",
+    "seed": 44,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03856602078303695
+  },
+  {
+    "family": "threshold_count",
+    "seed": 44,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05326623283326626
+  },
+  {
+    "family": "threshold_count",
+    "seed": 45,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 1.0,
+    "seconds": 0.0301202442497015
+  },
+  {
+    "family": "threshold_count",
+    "seed": 45,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 1.0,
+    "seconds": 0.0306751886382699
+  },
+  {
+    "family": "threshold_count",
+    "seed": 45,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.043972196988761425
+  },
+  {
+    "family": "threshold_count",
+    "seed": 46,
+    "acquisition": "fixed",
+    "executions": 15.125,
+    "questions": 4.0,
+    "seconds": 0.03483255486935377
+  },
+  {
+    "family": "threshold_count",
+    "seed": 46,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 4.0,
+    "seconds": 0.037093177903443575
+  },
+  {
+    "family": "threshold_count",
+    "seed": 46,
+    "acquisition": "comparison",
+    "executions": 15.125,
+    "questions": 4.0,
+    "seconds": 0.05171049386262894
+  },
+  {
+    "family": "threshold_count",
+    "seed": 47,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03251500194892287
+  },
+  {
+    "family": "threshold_count",
+    "seed": 47,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.5,
+    "seconds": 0.03618156909942627
+  },
+  {
+    "family": "threshold_count",
+    "seed": 47,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.049123122822493315
+  },
+  {
+    "family": "threshold_count",
+    "seed": 48,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.0308824242092669
+  },
+  {
+    "family": "threshold_count",
+    "seed": 48,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.031876994762569666
+  },
+  {
+    "family": "threshold_count",
+    "seed": 48,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.0,
+    "seconds": 0.04498963197693229
+  },
+  {
+    "family": "threshold_count",
+    "seed": 49,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.0,
+    "seconds": 0.03227521711960435
+  },
+  {
+    "family": "threshold_count",
+    "seed": 49,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.0370152429677546
+  },
+  {
+    "family": "threshold_count",
+    "seed": 49,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.05056237615644932
+  },
+  {
+    "family": "threshold_count",
+    "seed": 50,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.03317285003140569
+  },
+  {
+    "family": "threshold_count",
+    "seed": 50,
+    "acquisition": "random",
+    "executions": 15.125,
+    "questions": 2.5,
+    "seconds": 0.03537347121164203
+  },
+  {
+    "family": "threshold_count",
+    "seed": 50,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.04957942897453904
+  },
+  {
+    "family": "threshold_count",
+    "seed": 51,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.03312685992568731
+  },
+  {
+    "family": "threshold_count",
+    "seed": 51,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.03362835571169853
+  },
+  {
+    "family": "threshold_count",
+    "seed": 51,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.0501056220382452
+  },
+  {
+    "family": "threshold_count",
+    "seed": 52,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032504396978765726
+  },
+  {
+    "family": "threshold_count",
+    "seed": 52,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.5,
+    "seconds": 0.036962172947824
+  },
+  {
+    "family": "threshold_count",
+    "seed": 52,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.049276936799287796
+  },
+  {
+    "family": "threshold_count",
+    "seed": 53,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.035334798973053694
+  },
+  {
+    "family": "threshold_count",
+    "seed": 53,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03611566312611103
+  },
+  {
+    "family": "threshold_count",
+    "seed": 53,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05247968202456832
+  },
+  {
+    "family": "threshold_count",
+    "seed": 54,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.030997368041425943
+  },
+  {
+    "family": "threshold_count",
+    "seed": 54,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.03169845975935459
+  },
+  {
+    "family": "threshold_count",
+    "seed": 54,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.0,
+    "seconds": 0.0448472541756928
+  },
+  {
+    "family": "threshold_count",
+    "seed": 55,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03315017884597182
+  },
+  {
+    "family": "threshold_count",
+    "seed": 55,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.034015371929854155
+  },
+  {
+    "family": "threshold_count",
+    "seed": 55,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.050142209976911545
+  },
+  {
+    "family": "threshold_count",
+    "seed": 56,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.03496023826301098
+  },
+  {
+    "family": "threshold_count",
+    "seed": 56,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 3.0,
+    "seconds": 0.036522554233670235
+  },
+  {
+    "family": "threshold_count",
+    "seed": 56,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.05196774983778596
+  },
+  {
+    "family": "threshold_count",
+    "seed": 57,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.032111837062984705
+  },
+  {
+    "family": "threshold_count",
+    "seed": 57,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.0324004958383739
+  },
+  {
+    "family": "threshold_count",
+    "seed": 57,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.048524961806833744
+  },
+  {
+    "family": "threshold_count",
+    "seed": 58,
+    "acquisition": "fixed",
+    "executions": 14.125,
+    "questions": 3.5,
+    "seconds": 0.031724875792860985
+  },
+  {
+    "family": "threshold_count",
+    "seed": 58,
+    "acquisition": "random",
+    "executions": 14.625,
+    "questions": 3.5,
+    "seconds": 0.03383215004578233
+  },
+  {
+    "family": "threshold_count",
+    "seed": 58,
+    "acquisition": "comparison",
+    "executions": 14.625,
+    "questions": 3.5,
+    "seconds": 0.049726203083992004
+  },
+  {
+    "family": "threshold_count",
+    "seed": 59,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.03475532215088606
+  },
+  {
+    "family": "threshold_count",
+    "seed": 59,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.034648123662918806
+  },
+  {
+    "family": "threshold_count",
+    "seed": 59,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.050666994880884886
+  },
+  {
+    "family": "threshold_count",
+    "seed": 60,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 1.0,
+    "seconds": 0.030070641078054905
+  },
+  {
+    "family": "threshold_count",
+    "seed": 60,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.03052366804331541
+  },
+  {
+    "family": "threshold_count",
+    "seed": 60,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04409376811236143
+  },
+  {
+    "family": "threshold_count",
+    "seed": 61,
+    "acquisition": "fixed",
+    "executions": 14.125,
+    "questions": 3.0,
+    "seconds": 0.031540002673864365
+  },
+  {
+    "family": "threshold_count",
+    "seed": 61,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.035379717126488686
+  },
+  {
+    "family": "threshold_count",
+    "seed": 61,
+    "acquisition": "comparison",
+    "executions": 14.625,
+    "questions": 3.0,
+    "seconds": 0.049715750850737095
+  },
+  {
+    "family": "threshold_count",
+    "seed": 62,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.02876773616299033
+  },
+  {
+    "family": "threshold_count",
+    "seed": 62,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.03035059617832303
+  },
+  {
+    "family": "threshold_count",
+    "seed": 62,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.044139702804386616
+  },
+  {
+    "family": "threshold_count",
+    "seed": 63,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03280091192573309
+  },
+  {
+    "family": "threshold_count",
+    "seed": 63,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03240867285057902
+  },
+  {
+    "family": "threshold_count",
+    "seed": 63,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.04852356482297182
+  },
+  {
+    "family": "threshold_count",
+    "seed": 64,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.0,
+    "seconds": 0.03356009628623724
+  },
+  {
+    "family": "threshold_count",
+    "seed": 64,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03643450886011124
+  },
+  {
+    "family": "threshold_count",
+    "seed": 64,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.05181873124092817
+  },
+  {
+    "family": "threshold_count",
+    "seed": 65,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03281763708218932
+  },
+  {
+    "family": "threshold_count",
+    "seed": 65,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.033429107163101435
+  },
+  {
+    "family": "threshold_count",
+    "seed": 65,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.05009695794433355
+  },
+  {
+    "family": "threshold_count",
+    "seed": 66,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.0,
+    "seconds": 0.03235254902392626
+  },
+  {
+    "family": "threshold_count",
+    "seed": 66,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.03527224715799093
+  },
+  {
+    "family": "threshold_count",
+    "seed": 66,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.051820994820445776
+  },
+  {
+    "family": "threshold_count",
+    "seed": 67,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.028418706264346838
+  },
+  {
+    "family": "threshold_count",
+    "seed": 67,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.028892786242067814
+  },
+  {
+    "family": "threshold_count",
+    "seed": 67,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04420181689783931
+  },
+  {
+    "family": "threshold_count",
+    "seed": 68,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.028800816275179386
+  },
+  {
+    "family": "threshold_count",
+    "seed": 68,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.029309996869415045
+  },
+  {
+    "family": "threshold_count",
+    "seed": 68,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04435229580849409
+  },
+  {
+    "family": "threshold_count",
+    "seed": 69,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.033647777047008276
+  },
+  {
+    "family": "threshold_count",
+    "seed": 69,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.5,
+    "seconds": 0.03850475000217557
+  },
+  {
+    "family": "threshold_count",
+    "seed": 69,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.050075655337423086
+  },
+  {
+    "family": "threshold_count",
+    "seed": 70,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.03109320206567645
+  },
+  {
+    "family": "threshold_count",
+    "seed": 70,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.032160904724150896
+  },
+  {
+    "family": "threshold_count",
+    "seed": 70,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.0,
+    "seconds": 0.045263877138495445
+  },
+  {
+    "family": "threshold_count",
+    "seed": 71,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03219276899471879
+  },
+  {
+    "family": "threshold_count",
+    "seed": 71,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.5,
+    "seconds": 0.030944605357944965
+  },
+  {
+    "family": "threshold_count",
+    "seed": 71,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.048649913631379604
+  },
+  {
+    "family": "threshold_count",
+    "seed": 72,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.032886417116969824
+  },
+  {
+    "family": "threshold_count",
+    "seed": 72,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03314429195597768
+  },
+  {
+    "family": "threshold_count",
+    "seed": 72,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.04937316803261638
+  },
+  {
+    "family": "threshold_count",
+    "seed": 73,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032620145939290524
+  },
+  {
+    "family": "threshold_count",
+    "seed": 73,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.5,
+    "seconds": 0.03641622420400381
+  },
+  {
+    "family": "threshold_count",
+    "seed": 73,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.04919119784608483
+  },
+  {
+    "family": "threshold_count",
+    "seed": 74,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.035937764681875706
+  },
+  {
+    "family": "threshold_count",
+    "seed": 74,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03883737092837691
+  },
+  {
+    "family": "threshold_count",
+    "seed": 74,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05340274889022112
+  },
+  {
+    "family": "threshold_count",
+    "seed": 75,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03343656798824668
+  },
+  {
+    "family": "threshold_count",
+    "seed": 75,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 2.5,
+    "seconds": 0.03645659191533923
+  },
+  {
+    "family": "threshold_count",
+    "seed": 75,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.05036752764135599
+  },
+  {
+    "family": "threshold_count",
+    "seed": 76,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.03338833898305893
+  },
+  {
+    "family": "threshold_count",
+    "seed": 76,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 2.5,
+    "seconds": 0.0361091447994113
+  },
+  {
+    "family": "threshold_count",
+    "seed": 76,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.04975208826363087
+  },
+  {
+    "family": "threshold_count",
+    "seed": 77,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.032802267000079155
+  },
+  {
+    "family": "threshold_count",
+    "seed": 77,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.0337545545771718
+  },
+  {
+    "family": "threshold_count",
+    "seed": 77,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.05059327697381377
+  },
+  {
+    "family": "threshold_count",
+    "seed": 78,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03251302195712924
+  },
+  {
+    "family": "threshold_count",
+    "seed": 78,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.5,
+    "seconds": 0.0348198227584362
+  },
+  {
+    "family": "threshold_count",
+    "seed": 78,
+    "acquisition": "comparison",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.04930092394351959
+  },
+  {
+    "family": "threshold_count",
+    "seed": 79,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.028549733106046915
+  },
+  {
+    "family": "threshold_count",
+    "seed": 79,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.02948369598016143
+  },
+  {
+    "family": "threshold_count",
+    "seed": 79,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04403009731322527
+  },
+  {
+    "family": "threshold_count",
+    "seed": 80,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03302904777228832
+  },
+  {
+    "family": "threshold_count",
+    "seed": 80,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03352169319987297
+  },
+  {
+    "family": "threshold_count",
+    "seed": 80,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.049676256254315376
+  },
+  {
+    "family": "threshold_count",
+    "seed": 81,
+    "acquisition": "fixed",
+    "executions": 14.25,
+    "questions": 3.5,
+    "seconds": 0.03200623393058777
+  },
+  {
+    "family": "threshold_count",
+    "seed": 81,
+    "acquisition": "random",
+    "executions": 14.625,
+    "questions": 3.5,
+    "seconds": 0.03461625287309289
+  },
+  {
+    "family": "threshold_count",
+    "seed": 81,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 3.5,
+    "seconds": 0.050555536057800055
+  },
+  {
+    "family": "threshold_count",
+    "seed": 82,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.034174846950918436
+  },
+  {
+    "family": "threshold_count",
+    "seed": 82,
+    "acquisition": "random",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.035403789952397346
+  },
+  {
+    "family": "threshold_count",
+    "seed": 82,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.0512032532133162
+  },
+  {
+    "family": "threshold_count",
+    "seed": 83,
+    "acquisition": "fixed",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.03511113999411464
+  },
+  {
+    "family": "threshold_count",
+    "seed": 83,
+    "acquisition": "random",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.03590724291279912
+  },
+  {
+    "family": "threshold_count",
+    "seed": 83,
+    "acquisition": "comparison",
+    "executions": 15.5,
+    "questions": 3.0,
+    "seconds": 0.05207107309252024
+  },
+  {
+    "family": "threshold_count",
+    "seed": 84,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03537672897800803
+  },
+  {
+    "family": "threshold_count",
+    "seed": 84,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03571961773559451
+  },
+  {
+    "family": "threshold_count",
+    "seed": 84,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05231109680607915
+  },
+  {
+    "family": "threshold_count",
+    "seed": 85,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.035639626905322075
+  },
+  {
+    "family": "threshold_count",
+    "seed": 85,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.037426946219056845
+  },
+  {
+    "family": "threshold_count",
+    "seed": 85,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05322534404695034
+  },
+  {
+    "family": "threshold_count",
+    "seed": 86,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.030996407847851515
+  },
+  {
+    "family": "threshold_count",
+    "seed": 86,
+    "acquisition": "random",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.03187358984723687
+  },
+  {
+    "family": "threshold_count",
+    "seed": 86,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 2.0,
+    "seconds": 0.045025837142020464
+  },
+  {
+    "family": "threshold_count",
+    "seed": 87,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.0,
+    "seconds": 0.03296211315318942
+  },
+  {
+    "family": "threshold_count",
+    "seed": 87,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.035882120952010155
+  },
+  {
+    "family": "threshold_count",
+    "seed": 87,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.050699436105787754
+  },
+  {
+    "family": "threshold_count",
+    "seed": 88,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03285781014710665
+  },
+  {
+    "family": "threshold_count",
+    "seed": 88,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 1.5,
+    "seconds": 0.03305299486964941
+  },
+  {
+    "family": "threshold_count",
+    "seed": 88,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.04933273093774915
+  },
+  {
+    "family": "threshold_count",
+    "seed": 89,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.02854826208204031
+  },
+  {
+    "family": "threshold_count",
+    "seed": 89,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.030706580728292465
+  },
+  {
+    "family": "threshold_count",
+    "seed": 89,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04474453767761588
+  },
+  {
+    "family": "threshold_count",
+    "seed": 90,
+    "acquisition": "fixed",
+    "executions": 14.75,
+    "questions": 2.0,
+    "seconds": 0.032404372934252024
+  },
+  {
+    "family": "threshold_count",
+    "seed": 90,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.0372998439706862
+  },
+  {
+    "family": "threshold_count",
+    "seed": 90,
+    "acquisition": "comparison",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.05206390796229243
+  },
+  {
+    "family": "threshold_count",
+    "seed": 91,
+    "acquisition": "fixed",
+    "executions": 15.25,
+    "questions": 2.0,
+    "seconds": 0.03373029502108693
+  },
+  {
+    "family": "threshold_count",
+    "seed": 91,
+    "acquisition": "random",
+    "executions": 14.75,
+    "questions": 2.0,
+    "seconds": 0.034889956936240196
+  },
+  {
+    "family": "threshold_count",
+    "seed": 91,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05365260690450668
+  },
+  {
+    "family": "threshold_count",
+    "seed": 92,
+    "acquisition": "fixed",
+    "executions": 14.125,
+    "questions": 3.5,
+    "seconds": 0.03188470099121332
+  },
+  {
+    "family": "threshold_count",
+    "seed": 92,
+    "acquisition": "random",
+    "executions": 14.625,
+    "questions": 3.5,
+    "seconds": 0.03562995512038469
+  },
+  {
+    "family": "threshold_count",
+    "seed": 92,
+    "acquisition": "comparison",
+    "executions": 14.625,
+    "questions": 3.5,
+    "seconds": 0.04999730410054326
+  },
+  {
+    "family": "threshold_count",
+    "seed": 93,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.029348164796829224
+  },
+  {
+    "family": "threshold_count",
+    "seed": 93,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.029330536723136902
+  },
+  {
+    "family": "threshold_count",
+    "seed": 93,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04393615573644638
+  },
+  {
+    "family": "threshold_count",
+    "seed": 94,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03746937494724989
+  },
+  {
+    "family": "threshold_count",
+    "seed": 94,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03711526235565543
+  },
+  {
+    "family": "threshold_count",
+    "seed": 94,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05404274398460984
+  },
+  {
+    "family": "threshold_count",
+    "seed": 95,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.033156136982142925
+  },
+  {
+    "family": "threshold_count",
+    "seed": 95,
+    "acquisition": "random",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.03423477429896593
+  },
+  {
+    "family": "threshold_count",
+    "seed": 95,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 3.0,
+    "seconds": 0.05071605136618018
+  },
+  {
+    "family": "threshold_count",
+    "seed": 96,
+    "acquisition": "fixed",
+    "executions": 14.5,
+    "questions": 2.5,
+    "seconds": 0.03338900301605463
+  },
+  {
+    "family": "threshold_count",
+    "seed": 96,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.5,
+    "seconds": 0.039337242022156715
+  },
+  {
+    "family": "threshold_count",
+    "seed": 96,
+    "acquisition": "comparison",
+    "executions": 14.75,
+    "questions": 2.5,
+    "seconds": 0.05070318095386028
+  },
+  {
+    "family": "threshold_count",
+    "seed": 97,
+    "acquisition": "fixed",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.02865111967548728
+  },
+  {
+    "family": "threshold_count",
+    "seed": 97,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.02908861730247736
+  },
+  {
+    "family": "threshold_count",
+    "seed": 97,
+    "acquisition": "comparison",
+    "executions": 14.0,
+    "questions": 1.0,
+    "seconds": 0.04406630294397473
+  },
+  {
+    "family": "threshold_count",
+    "seed": 98,
+    "acquisition": "fixed",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03606940805912018
+  },
+  {
+    "family": "threshold_count",
+    "seed": 98,
+    "acquisition": "random",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.03762538684532046
+  },
+  {
+    "family": "threshold_count",
+    "seed": 98,
+    "acquisition": "comparison",
+    "executions": 16.0,
+    "questions": 2.0,
+    "seconds": 0.05261377198621631
+  },
+  {
+    "family": "threshold_count",
+    "seed": 99,
+    "acquisition": "fixed",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.03226095903664827
+  },
+  {
+    "family": "threshold_count",
+    "seed": 99,
+    "acquisition": "random",
+    "executions": 14.0,
+    "questions": 1.5,
+    "seconds": 0.030687535647302866
+  },
+  {
+    "family": "threshold_count",
+    "seed": 99,
+    "acquisition": "comparison",
+    "executions": 15.0,
+    "questions": 1.5,
+    "seconds": 0.0485854079015553
+  }
+]

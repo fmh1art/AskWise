@@ -1,0 +1,230 @@
+{
+  "all": {
+    "none": {
+      "accuracy": 0.38458333333333333,
+      "questions": 0.0,
+      "n_tasks": 300
+    },
+    "ask_all": {
+      "accuracy": 1.0,
+      "questions": 4.0,
+      "n_tasks": 300
+    },
+    "fixed": {
+      "accuracy": 1.0,
+      "questions": 2.185,
+      "n_tasks": 300
+    },
+    "random": {
+      "accuracy": 1.0,
+      "questions": 2.49,
+      "n_tasks": 300
+    },
+    "world_entropy": {
+      "accuracy": 1.0,
+      "questions": 2.185,
+      "n_tasks": 300
+    },
+    "answer_entropy": {
+      "accuracy": 1.0,
+      "questions": 1.8079166666666666,
+      "n_tasks": 300
+    },
+    "ec2": {
+      "accuracy": 1.0,
+      "questions": 1.8079166666666666,
+      "n_tasks": 300
+    },
+    "local": {
+      "accuracy": 0.9897916666666666,
+      "questions": 1.7058333333333333,
+      "n_tasks": 300
+    },
+    "observed_then_repair": {
+      "accuracy": 0.98875,
+      "questions": 2.024583333333333,
+      "n_tasks": 300
+    },
+    "repair_first": {
+      "accuracy": 1.0,
+      "questions": 2.935416666666667,
+      "n_tasks": 300
+    },
+    "optimal": {
+      "accuracy": 1.0,
+      "questions": 1.8066666666666666,
+      "n_tasks": 300
+    }
+  },
+  "top_region": {
+    "none": {
+      "accuracy": 0.850625,
+      "questions": 0.0,
+      "n_tasks": 100
+    },
+    "ask_all": {
+      "accuracy": 1.0,
+      "questions": 4.0,
+      "n_tasks": 100
+    },
+    "fixed": {
+      "accuracy": 1.0,
+      "questions": 1.21,
+      "n_tasks": 100
+    },
+    "random": {
+      "accuracy": 1.0,
+      "questions": 1.165,
+      "n_tasks": 100
+    },
+    "world_entropy": {
+      "accuracy": 1.0,
+      "questions": 1.21,
+      "n_tasks": 100
+    },
+    "answer_entropy": {
+      "accuracy": 1.0,
+      "questions": 0.86875,
+      "n_tasks": 100
+    },
+    "ec2": {
+      "accuracy": 1.0,
+      "questions": 0.86875,
+      "n_tasks": 100
+    },
+    "local": {
+      "accuracy": 0.969375,
+      "questions": 0.5625,
+      "n_tasks": 100
+    },
+    "observed_then_repair": {
+      "accuracy": 0.96625,
+      "questions": 0.84875,
+      "n_tasks": 100
+    },
+    "repair_first": {
+      "accuracy": 1.0,
+      "questions": 1.11625,
+      "n_tasks": 100
+    },
+    "optimal": {
+      "accuracy": 1.0,
+      "questions": 0.865,
+      "n_tasks": 100
+    }
+  },
+  "customer_count": {
+    "none": {
+      "accuracy": 0.0625,
+      "questions": 0.0,
+      "n_tasks": 100
+    },
+    "ask_all": {
+      "accuracy": 1.0,
+      "questions": 4.0,
+      "n_tasks": 100
+    },
+    "fixed": {
+      "accuracy": 1.0,
+      "questions": 2.5,
+      "n_tasks": 100
+    },
+    "random": {
+      "accuracy": 1.0,
+      "questions": 3.2,
+      "n_tasks": 100
+    },
+    "world_entropy": {
+      "accuracy": 1.0,
+      "questions": 2.5,
+      "n_tasks": 100
+    },
+    "answer_entropy": {
+      "accuracy": 1.0,
+      "questions": 2.5,
+      "n_tasks": 100
+    },
+    "ec2": {
+      "accuracy": 1.0,
+      "questions": 2.5,
+      "n_tasks": 100
+    },
+    "local": {
+      "accuracy": 1.0,
+      "questions": 2.5,
+      "n_tasks": 100
+    },
+    "observed_then_repair": {
+      "accuracy": 1.0,
+      "questions": 2.5,
+      "n_tasks": 100
+    },
+    "repair_first": {
+      "accuracy": 1.0,
+      "questions": 4.0,
+      "n_tasks": 100
+    },
+    "optimal": {
+      "accuracy": 1.0,
+      "questions": 2.5,
+      "n_tasks": 100
+    }
+  },
+  "threshold_count": {
+    "none": {
+      "accuracy": 0.240625,
+      "questions": 0.0,
+      "n_tasks": 100
+    },
+    "ask_all": {
+      "accuracy": 1.0,
+      "questions": 4.0,
+      "n_tasks": 100
+    },
+    "fixed": {
+      "accuracy": 1.0,
+      "questions": 2.845,
+      "n_tasks": 100
+    },
+    "random": {
+      "accuracy": 1.0,
+      "questions": 3.105,
+      "n_tasks": 100
+    },
+    "world_entropy": {
+      "accuracy": 1.0,
+      "questions": 2.845,
+      "n_tasks": 100
+    },
+    "answer_entropy": {
+      "accuracy": 1.0,
+      "questions": 2.055,
+      "n_tasks": 100
+    },
+    "ec2": {
+      "accuracy": 1.0,
+      "questions": 2.055,
+      "n_tasks": 100
+    },
+    "local": {
+      "accuracy": 1.0,
+      "questions": 2.055,
+      "n_tasks": 100
+    },
+    "observed_then_repair": {
+      "accuracy": 1.0,
+      "questions": 2.725,
+      "n_tasks": 100
+    },
+    "repair_first": {
+      "accuracy": 1.0,
+      "questions": 3.69,
+      "n_tasks": 100
+    },
+    "optimal": {
+      "accuracy": 1.0,
+      "questions": 2.055,
+      "n_tasks": 100
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "topic": "A2: Ask only questions that change the answer",
+  "phase": "algorithm-development",
+  "updated_at": "2026-10-29T03:16:15.507254+00:00",
+  "active_hypotheses": [
+    "Joint internal counterfactual execution and external clarification can improve cost with certified stopping when answer classes are initially unknown"
+  ],
+  "completed_milestones": [
+    "remote skills synchronized",
+    "official ACL template obtained and compiled",
+    "E001 synthetic study",
+    "E002 full column-synonym audit",
+    "E004/E005 exact-action prototype development",
+    "E006 joint-cost prototype and tiny exact planner",
+    "private code/paper remote repositories created"
+  ],
+  "budget": {
+    "wall_hours_limit": null,
+    "gpu_hours_limit": null,
+    "api_cost_limit": null,
+    "currency": null,
+    "wall_hours_used": 0,
+    "gpu_hours_used": 0,
+    "api_cost_used": 0,
+    "api_limit_status": "explicitly unlimited by user 2026-10-29",
+    "per_round_wall_hours_target": 24
+  },
+  "authorization": {
+    "scope": "end-to-end A2 research and private code/LaTeX repositories",
+    "compute": [
+      "gpt5_6_sol_hydra.yaml",
+      "doubao_seed2_lite.yaml"
+    ],
+    "external_sync": [
+      "private research repositories",
+      "AutoResearchSkills"
+    ]
+  },
+  "blockers": [],
+  "next_action": "Continue current E003 run; verify all 310 outcomes; finish novelty/algorithm investigation under chosen guarantee; do not claim research complete",
+  "stop_reason": null,
+  "acceptance": "ACL main-conference ALGORITHM paper; substantive method beyond EC2/query-driven cleaning required by user",
+  "running_experiment": {
+    "id": "E003",
+    "plan": "experiments/E003-plan.json",
+    "progress": "/data01/fanmeihao-data/A2-research/E003/progress.json",
+    "runner": "scripts/run_e003.py",
+    "timeout_hours": 24
+  },
+  "open_decisions": [
+    "User preference for strict conditional guarantees versus small probabilistic error pending"
+  ]
+}

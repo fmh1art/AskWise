@@ -1,0 +1,62 @@
+[
+  {
+    "name": "ambiqt",
+    "url": "https://aclanthology.org/2023.emnlp-main.436.pdf",
+    "status": 200,
+    "bytes": 465186
+  },
+  {
+    "name": "ambiqt",
+    "url": "https://aclanthology.org/2023.emnlp-main.436.bib",
+    "status": 200,
+    "bytes": 682
+  },
+  {
+    "name": "disambiguate",
+    "url": "https://aclanthology.org/2025.findings-acl.863.pdf",
+    "status": 200,
+    "bytes": 362093
+  },
+  {
+    "name": "disambiguate",
+    "url": "https://aclanthology.org/2025.findings-acl.863.bib",
+    "status": 200,
+    "bytes": 746
+  },
+  {
+    "name": "practiq",
+    "url": "https://aclanthology.org/2025.naacl-long.13.pdf",
+    "status": 200,
+    "bytes": 877185
+  },
+  {
+    "name": "practiq",
+    "url": "https://aclanthology.org/2025.naacl-long.13.bib",
+    "status": 200,
+    "bytes": 1032
+  },
+  {
+    "name": "ec2",
+    "url": "https://proceedings.neurips.cc/paper/2010/file/1e6e0a04d20f50967c64dac2d639a577-Paper.pdf",
+    "status": 200,
+    "bytes": 432992
+  },
+  {
+    "name": "cleaning",
+    "url": "https://i.cs.hku.hk/~ckcheng/papers/icde13-uncertain.pdf",
+    "status": 200,
+    "bytes": 1341669
+  },
+  {
+    "name": "cleaning",
+    "url": "https://api.crossref.org/works/10.1109/ICDE.2013.6544820/transform/application/x-bibtex",
+    "status": 200,
+    "bytes": 386
+  },
+  {
+    "name": "sphinteract",
+    "url": "https://www.vldb.org/pvldb/vol18/p1145-zhao.pdf",
+    "status": 200,
+    "bytes": 1611440
+  }
+]

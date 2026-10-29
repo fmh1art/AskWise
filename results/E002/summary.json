@@ -1,0 +1,44 @@
+{
+  "n_total": 1240,
+  "n_ok": 1206,
+  "n_error": 20,
+  "n_no_distinct": 14,
+  "n_equal_observed": 1220,
+  "n_equal_then_different": 424,
+  "n_invariant_all": 782,
+  "input_sha256": "c0fbcfbad99999ec79182679483a32add40b90242850fe2703352bd49b828c9b",
+  "methods": {
+    "none": {
+      "correct": 0.912106135986733,
+      "questions": 0.0
+    },
+    "ask_all": {
+      "correct": 1.0,
+      "questions": 2.0
+    },
+    "fixed": {
+      "correct": 1.0,
+      "questions": 0.527363184079602
+    },
+    "repair_first": {
+      "correct": 1.0,
+      "questions": 0.527363184079602
+    },
+    "ec2": {
+      "correct": 1.0,
+      "questions": 0.527363184079602
+    },
+    "optimal": {
+      "correct": 1.0,
+      "questions": 0.527363184079602
+    },
+    "local": {
+      "correct": 0.912106135986733,
+      "questions": 0.0
+    },
+    "observed_then_repair": {
+      "correct": 0.912106135986733,
+      "questions": 0.0
+    }
+  }
+}

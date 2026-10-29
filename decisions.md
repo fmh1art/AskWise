@@ -1,0 +1,15 @@
+# Decisions
+
+Append dated decisions, evidence, and alternatives.
+
+## 2026-10-29
+- User confirmed ACL main-conference submission quality, unlimited total API budget, target <=24 hours per experimental round.
+- AIR execution-based pruning and EC2 equivalence-class determination directly overlap naive A2 novelty.
+- E001: EC2 1.8079167 vs exact optimal 1.8066667 questions. Do not develop a new question-order heuristic without stronger evidence.
+- Pursue repair-stable answer equivalence and candidate coverage as provisional research questions, not established contributions.
+
+## 2026-10-29 algorithm requirement confirmed
+User explicitly prefers an algorithm paper and requires substantive novelty beyond EC2/query-driven cleaning. A benchmark or empirical-only paper does not satisfy acceptance. Investigate joint internal execution and external clarification with initially unknown answer classes; novelty remains unverified.
+
+## E004/E005 algorithm development evidence
+Independent-edge EC2 action certification: fixed 15.3946, random 15.2654, comparison 15.3913 executions (full upfront 16). Partition-consistent star bounds: fixed 15.0404, random 15.0050, comparison 14.9000. All user-question traces match complete EC2 in these development runs. Exact fidelity tests exhaust all 256 Boolean functions over 8 worlds. The reductions are modest and policy overhead is nonzero; do not claim wall-clock or main-conference algorithmic success. Next: investigate structural certificates or genuinely joint-cost policies, plus closest lazy/active-evaluation literature.

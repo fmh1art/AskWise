@@ -1,0 +1,16 @@
+{
+  "model": "doubao-seed-2-0-lite-260428",
+  "usage": {
+    "completion_tokens": 1824,
+    "prompt_tokens": 384,
+    "total_tokens": 2208,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1278
+    }
+  },
+  "signature": "db339a8f7ba6ae1ef302b26c1c1dd17454eabda0a514c095b78f9e673544de9d",
+  "text": "### Fatal Unaddressed Threats\n1. The 300 synthetic tasks use 100% complete, pre-enumerated candidate coverage, so no reported metrics account for the common real-world case where a user’s true intent is missing from the candidate pool: all tested methods will incorrectly return a nearest-matching candidate with no fallback, a failure mode entirely unrepresented in the reported 98%+ accuracy scores.\n2. All current runs zero out the cost of executing candidate SQL on the database, a required step for AIR’s observed-database pruning: for unindexed production databases, this step can carry 10–100x the latency cost of a single clarifying user question, making AIR’s reported 2.02 cost per step a dramatic undercount relative to EC2’s schema-based equivalence class checks that require no database calls.\n3. Truthful simulated feedback eliminates well-documented real user misresponse rates (~12–15% for intent clarifying yes/no questions), so the low 1.70583 question cost for single-assumption checks does not account for cascading error that would drop real-world accuracy far below the reported 98.979%.\n\n### Heuristic Justification\nA new selection heuristic is not justified on the current testbed: full-world EC2 and the exact optimal method have a statistically indistinguishable performance gap of <0.0013 questions per task, meaning there is no measurable unexploited improvement over the 2010 EC2 baseline on the measured question-count cost axis.\n\n### Valid Discriminative Experimental Direction\nThe only meaningful retained research path adds three jointly measured axes to the existing test suite: controlled incomplete candidate coverage rates, normalized candidate SQL execution cost, and real human user response noise, to fairly compare pre-execution equivalence pruning (EC2) against post-execution result pruning (AIR) under realistic deployment conditions.\nConcrete differentiating example: For a sales query intent \"return 2024 Q3 laptop transactions over $1000\", two semantically identical candidate SQLs written with different filter orderings are considered distinct by AIR, which executes both against the sales DB to confirm their outputs are identical, incurring two expensive full-table scan costs. EC2’s 2010 equivalence class checker merges the two candidates via schema and predicate analysis without any database calls, a cost difference the current testbed completely ignores.\n\nNo novelty can currently be defended: the current setup cannot produce a measurable advantage of any new method over established EC2, as all differentiating cost and failure axes are omitted."
+}

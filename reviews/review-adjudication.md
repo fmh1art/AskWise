@@ -1,0 +1,7 @@
+# Adjudication of model suggestions
+
+2026-10-29: Doubao design review received. Its recommendation to measure candidate coverage and execution costs is relevant. Its purported 10–100x latency ratio and 12–15% human error rate have no verified source and are rejected. It incorrectly calls EC2 a schema-based SQL equivalence checker; EC2 takes the partition as input and does not establish SQL equivalence. It calls our observed-data ablation AIR, although we explicitly did not reproduce AIR. Its phrase "statistically indistinguishable" is unsupported without an uncertainty analysis. None of these statements may enter the paper as facts.
+
+The review is advisory evidence only. The retained decision is based on E001's computed costs, not model agreement.
+
+Algorithm ideation: Doubao's claimed |intent classes| + |repair classes| execution bound is false: a 2×2 answer matrix with only its bottom-right entry differing defeats checks on one row and one column. It also assumes LLM-certified universal SQL equivalence without evidence, supplies unsupported redundancy percentages and expected speedups, and substitutes unrequested APIs. These are rejected. GPT's proposal labels the mass of separated disagreement pairs as an EC2 expected cut; the actual EC2 cut additionally includes same-outcome pairs removed when another response occurs. Neither proposal establishes algorithmic novelty. E004 instead derives exact EC2 coefficient-difference bounds and verifies action traces exhaustively. Its novelty and advantage remain open.

@@ -1,0 +1,17 @@
+{
+  "fixed": {
+    "executions": 15.040416666666667,
+    "questions": 1.8079166666666666,
+    "seconds": 0.03271057462319732
+  },
+  "random": {
+    "executions": 15.005,
+    "questions": 1.8079166666666666,
+    "seconds": 0.03327414339563499
+  },
+  "comparison": {
+    "executions": 14.9,
+    "questions": 1.8079166666666666,
+    "seconds": 0.048326345888587335
+  }
+}

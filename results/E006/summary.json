@@ -1,0 +1,111 @@
+{
+  "summary": {
+    "0.1": {
+      "ask_first": {
+        "cost": 1.4,
+        "questions": 4.0,
+        "executions": 1.0
+      },
+      "witness_split": {
+        "cost": 8.694041666666667,
+        "questions": 2.419583333333333,
+        "executions": 8.452083333333333
+      },
+      "certificate": {
+        "cost": 8.694041666666667,
+        "questions": 2.419583333333333,
+        "executions": 8.452083333333333
+      }
+    },
+    "1": {
+      "ask_first": {
+        "cost": 5.0,
+        "questions": 4.0,
+        "executions": 1.0
+      },
+      "witness_split": {
+        "cost": 10.871666666666666,
+        "questions": 2.419583333333333,
+        "executions": 8.452083333333333
+      },
+      "certificate": {
+        "cost": 10.871666666666666,
+        "questions": 2.419583333333333,
+        "executions": 8.452083333333333
+      }
+    },
+    "10": {
+      "ask_first": {
+        "cost": 41.0,
+        "questions": 4.0,
+        "executions": 1.0
+      },
+      "witness_split": {
+        "cost": 32.64791666666667,
+        "questions": 2.419583333333333,
+        "executions": 8.452083333333333
+      },
+      "certificate": {
+        "cost": 31.660833333333333,
+        "questions": 2.2470833333333333,
+        "executions": 9.19
+      }
+    }
+  },
+  "tiny_exact": [
+    {
+      "question_cost": 0.1,
+      "optima": {
+        "False": {
+          "expected_cost": 1.2000000000000002,
+          "states": 129
+        },
+        "True": {
+          "expected_cost": 3.5,
+          "states": 121
+        }
+      },
+      "policies": {
+        "ask_first": 1.2,
+        "witness_split": 3.5,
+        "certificate": 3.5
+      }
+    },
+    {
+      "question_cost": 1,
+      "optima": {
+        "False": {
+          "expected_cost": 3.0,
+          "states": 129
+        },
+        "True": {
+          "expected_cost": 4.625,
+          "states": 121
+        }
+      },
+      "policies": {
+        "ask_first": 3.0,
+        "witness_split": 4.625,
+        "certificate": 4.625
+      }
+    },
+    {
+      "question_cost": 10,
+      "optima": {
+        "False": {
+          "expected_cost": 15.875,
+          "states": 129
+        },
+        "True": {
+          "expected_cost": 15.875,
+          "states": 121
+        }
+      },
+      "policies": {
+        "ask_first": 21.0,
+        "witness_split": 15.875,
+        "certificate": 16.5
+      }
+    }
+  ]
+}
