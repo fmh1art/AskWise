@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "scope": "image-generated explanatory figures and manuscript integration; no new empirical runs",
+  "paper_pages": 17,
+  "main_content_pages": 10,
+  "key_pages": {
+    "overview": 1,
+    "framework": 4,
+    "conclusion": 10,
+    "limitations": 11
+  },
+  "visual_review": [
+    "selected PNGs: text, example arithmetic and control-flow arrows",
+    "final compiled page 1: overview at single-column width",
+    "final compiled page 4: framework at double-column width",
+    "final compiled page 10: conclusion and unchanged model-results plot"
+  ],
+  "embedded_images": {
+    "overview": [
+      {
+        "pixels": [
+          1254,
+          1254
+        ],
+        "rectangles_pt": [
+          [
+            306.1419982910156,
+            219.90277099609375,
+            524.4132080078125,
+            438.17401123046875
+          ]
+        ]
+      }
+    ],
+    "framework": [
+      {
+        "pixels": [
+          1983,
+          793
+        ],
+        "rectangles_pt": [
+          [
+            70.86599731445312,
+            70.86900329589844,
+            524.39794921875,
+            252.23602294921875
+          ]
+        ]
+      }
+    ]
+  },
+  "scientific_checks": [
+    "pending 0 yields common answer 100; pending 50 leaves answers 100 and 150",
+    "return requires all surviving answers known and equal",
+    "relevance requires observed one-coordinate disagreement",
+    "immediate and certified policies are alternatives",
+    "not-yet-certified fallback originates at Certified before Ask",
+    "clarification filters survivors; execution caches answers; both update current evidence"
+  ],
+  "statistical_figures_unchanged": 9,
+  "statistical_figure_files_hash_checked": 27,
+  "generated_tables_unchanged": 4,
+  "frozen_report": "report.json, per_task.json and report-manifest.json byte-identical to previous commit",
+  "source_files_hash_checked": 6,
+  "official_style": "original source hashes verified",
+  "latex_warning_and_overfull_lines": [],
+  "underfull_box_diagnostic_count": 45,
+  "underfull_note": "TeX spacing diagnostics remain; no overfull boxes or undefined-reference warnings. Relevant final pages visually reviewed.",
+  "image_model_calls": 5,
+  "new_experimental_api_calls": 0,
+  "new_policy_runs": 0,
+  "paper_pdf_sha256": "37ca55c9da6549afbd669b2c9c40c5223e5bdd79b4ba4cca0dcb1fd847ef5b3c",
+  "figure_manifest": "results/E010/imagegen-figure-manifest.json",
+  "previous_layout_validation": "results/E010/manuscript-expansion-validation.json",
+  "source_hashes": {
+    "main.tex": "2e92220f1d627fe686620c221aacb8079da625523c5d7026ce8ac533c25f88aa",
+    "sections/introduction.tex": "83078ed569ce130f43152d007e49f748c2eecd27c55b35c120ee8b26ac3c711c",
+    "sections/algorithm-development.tex": "1c06eb489c6a717ea24e0568ef727d3d2effec0f883d3cf242b75a968972f074",
+    "sections/experiments.tex": "8606c60e67394043c51ffd19cdf18f71c96c4186c6dfbc24e3d08c216a045909",
+    "sections/appendix.tex": "38ac8f47f91b462e0de07b70173faf6906db20b597c54dab98970f9fcb0d65b5"
+  },
+  "page_limit_status": "User-authorized ten-page expanded draft, not submission-compliant"
+}

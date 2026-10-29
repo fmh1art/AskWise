@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-29",
+  "kind": "explanatory image-model illustrations, not empirical results",
+  "tool": "built-in image_gen.imagegen",
+  "model_identifier": null,
+  "model_identifier_note": "Underlying model identifier was not disclosed by tool result.",
+  "image_model_calls": 5,
+  "new_experimental_api_calls": 0,
+  "new_policy_runs": 0,
+  "prompt_root": "A2-paper/figures/prompts",
+  "generation_note": "Prompts and selected PNGs are archived; model sampling is not pixel-reproducible.",
+  "calls": [
+    {
+      "prompt": "overview-imagegen.txt",
+      "prompt_sha256": "438386d5bc9ba4f01567574293505bb61312557827e7a9f0d2154c52ee3f501a",
+      "output_basename": "exec-f491e616-d511-4a59-9895-5f7a29dba535.png",
+      "output_sha256": "e8401b9a7da0eb98698b8ad162548cf3ff6a127ba47c05efe5ca2e7086cad39d",
+      "reference_basename": null,
+      "status": "superseded: simplify for single-column readability"
+    },
+    {
+      "prompt": "algorithm-framework-imagegen.txt",
+      "prompt_sha256": "2e3f069d620c5406bd3e9b8c6871e5a3c6f3211bb6f1d2b207ad76ba1790b67a",
+      "output_basename": "exec-7e7fe249-119d-44a6-87ce-756729f6b570.png",
+      "output_sha256": "f46787f49856af010f4b55c31a2dac61062ee89b8c838d8aaa1d9bde063be70a",
+      "reference_basename": null,
+      "status": "rejected: incorrect certification fallback origin"
+    },
+    {
+      "prompt": "algorithm-framework-imagegen-edit-01.txt",
+      "prompt_sha256": "fe32487b68b2a8cce67991f1ec58661e7e3de2b944d2268bdb2208446db05189",
+      "output_basename": "exec-ec6d71f1-44e8-4620-8190-7e497b3233ae.png",
+      "output_sha256": "3f003eb5cb2cd7bb965d54e3784bf9c5d73f00012422b197a843ff99ecd05e67",
+      "reference_basename": "exec-7e7fe249-119d-44a6-87ce-756729f6b570.png",
+      "status": "corrected routing; superseded for legibility"
+    },
+    {
+      "prompt": "overview-imagegen-edit-01.txt",
+      "prompt_sha256": "991b46b962e117b8e1cb587702100be32786fcc557628f399d973fe03eaf1c47",
+      "output_basename": "exec-c95c20b2-110f-4161-a05b-1b6a2c0f4ad9.png",
+      "output_sha256": "f68d1e87bbd9c20362f31385815c1da5d0a944fd726e7c974edafecc0eedecb1",
+      "reference_basename": "exec-f491e616-d511-4a59-9895-5f7a29dba535.png",
+      "status": "selected"
+    },
+    {
+      "prompt": "algorithm-framework-imagegen-edit-02.txt",
+      "prompt_sha256": "c3e54f5ead7d4dcfe70424881aa7b70a8983ba1074c5f5e23796628a847eb962",
+      "output_basename": "exec-5f079ee2-9647-45be-ae2b-9d4872583da9.png",
+      "output_sha256": "0761293e4f33ecc0e12188b3dc4197f38846e1a50180096a7e25033175baec26",
+      "reference_basename": "exec-ec6d71f1-44e8-4620-8190-7e497b3233ae.png",
+      "status": "selected"
+    }
+  ],
+  "selected_assets": {
+    "figures/overview-imagegen.png": {
+      "sha256": "f68d1e87bbd9c20362f31385815c1da5d0a944fd726e7c974edafecc0eedecb1",
+      "pixels": [
+        1254,
+        1254
+      ]
+    },
+    "figures/algorithm-framework-imagegen.png": {
+      "sha256": "0761293e4f33ecc0e12188b3dc4197f38846e1a50180096a7e25033175baec26",
+      "pixels": [
+        1983,
+        793
+      ]
+    }
+  }
+}
