@@ -1,0 +1,36 @@
+{
+  "status": "supplementary after E006",
+  "prior": "independent fair binary answer labels; uniform hidden world",
+  "results": {
+    "0.1": {
+      "False": {
+        "expected_cost": 1.3000000000000003,
+        "states": 7179
+      },
+      "True": {
+        "expected_cost": 5.0703125,
+        "states": 7153
+      }
+    },
+    "1": {
+      "False": {
+        "expected_cost": 4.0,
+        "states": 7179
+      },
+      "True": {
+        "expected_cost": 7.0546875,
+        "states": 7153
+      }
+    },
+    "10": {
+      "False": {
+        "expected_cost": 25.875,
+        "states": 7179
+      },
+      "True": {
+        "expected_cost": 26.26171875,
+        "states": 7153
+      }
+    }
+  }
+}
