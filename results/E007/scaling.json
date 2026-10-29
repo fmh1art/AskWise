@@ -1,0 +1,170 @@
+{
+  "status": "development baseline; no novelty claim",
+  "rows": [
+    {
+      "n_repairs": 8,
+      "seed": 71029,
+      "worlds": "512",
+      "compiled_seconds": 0.0005048094317317009,
+      "message_states": 192,
+      "enumerated_seconds": 0.001988970208913088,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 8,
+      "seed": 71030,
+      "worlds": "512",
+      "compiled_seconds": 0.0004252530634403229,
+      "message_states": 177,
+      "enumerated_seconds": 0.002005601767450571,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 8,
+      "seed": 71031,
+      "worlds": "512",
+      "compiled_seconds": 0.0005240673199295998,
+      "message_states": 233,
+      "enumerated_seconds": 0.0019622989930212498,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 12,
+      "seed": 71029,
+      "worlds": "8192",
+      "compiled_seconds": 0.0009369468316435814,
+      "message_states": 386,
+      "enumerated_seconds": 0.0421836543828249,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 12,
+      "seed": 71030,
+      "worlds": "8192",
+      "compiled_seconds": 0.000937493983656168,
+      "message_states": 390,
+      "enumerated_seconds": 0.04222110891714692,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 12,
+      "seed": 71031,
+      "worlds": "8192",
+      "compiled_seconds": 0.0010969862341880798,
+      "message_states": 453,
+      "enumerated_seconds": 0.042645158246159554,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 16,
+      "seed": 71029,
+      "worlds": "131072",
+      "compiled_seconds": 0.0018676510080695152,
+      "message_states": 723,
+      "enumerated_seconds": 0.8290374493226409,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 16,
+      "seed": 71030,
+      "worlds": "131072",
+      "compiled_seconds": 0.0020164591260254383,
+      "message_states": 664,
+      "enumerated_seconds": 0.8258824669755995,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 16,
+      "seed": 71031,
+      "worlds": "131072",
+      "compiled_seconds": 0.0019844230264425278,
+      "message_states": 779,
+      "enumerated_seconds": 0.832544366363436,
+      "exact_histogram_match": true
+    },
+    {
+      "n_repairs": 32,
+      "seed": 71029,
+      "worlds": "8589934592",
+      "compiled_seconds": 0.0075354790315032005,
+      "message_states": 2790
+    },
+    {
+      "n_repairs": 32,
+      "seed": 71030,
+      "worlds": "8589934592",
+      "compiled_seconds": 0.007660513278096914,
+      "message_states": 2982
+    },
+    {
+      "n_repairs": 32,
+      "seed": 71031,
+      "worlds": "8589934592",
+      "compiled_seconds": 0.007597016170620918,
+      "message_states": 2951
+    },
+    {
+      "n_repairs": 64,
+      "seed": 71029,
+      "worlds": "36893488147419103232",
+      "compiled_seconds": 0.03215725300833583,
+      "message_states": 11042
+    },
+    {
+      "n_repairs": 64,
+      "seed": 71030,
+      "worlds": "36893488147419103232",
+      "compiled_seconds": 0.03166957711800933,
+      "message_states": 11077
+    },
+    {
+      "n_repairs": 64,
+      "seed": 71031,
+      "worlds": "36893488147419103232",
+      "compiled_seconds": 0.031911025289446115,
+      "message_states": 10897
+    },
+    {
+      "n_repairs": 128,
+      "seed": 71029,
+      "worlds": "680564733841876926926749214863536422912",
+      "compiled_seconds": 0.14306605886667967,
+      "message_states": 46607
+    },
+    {
+      "n_repairs": 128,
+      "seed": 71030,
+      "worlds": "680564733841876926926749214863536422912",
+      "compiled_seconds": 0.1272519789636135,
+      "message_states": 42115
+    },
+    {
+      "n_repairs": 128,
+      "seed": 71031,
+      "worlds": "680564733841876926926749214863536422912",
+      "compiled_seconds": 0.1313895769417286,
+      "message_states": 42542
+    },
+    {
+      "n_repairs": 256,
+      "seed": 71029,
+      "worlds": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+      "compiled_seconds": 0.5838836221955717,
+      "message_states": 176117
+    },
+    {
+      "n_repairs": 256,
+      "seed": 71030,
+      "worlds": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+      "compiled_seconds": 0.5543503086082637,
+      "message_states": 168072
+    },
+    {
+      "n_repairs": 256,
+      "seed": 71031,
+      "worlds": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+      "compiled_seconds": 0.580158306285739,
+      "message_states": 178786
+    }
+  ]
+}

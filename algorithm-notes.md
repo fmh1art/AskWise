@@ -2,6 +2,56 @@
 
 Updated 2026-10-29. No main-conference-quality new algorithm has been established.
 
+## Strict contract and E007–E009 follow-up
+
+The user has now explicitly confirmed strict answer correctness and question
+relevance within declared alternatives, with execution cost the primary target.
+The implementation formalizes relevance as a pair differing only in the queried
+coordinate and yielding unequal answers, both already observed. This makes the
+earlier arbitrary-pair gate in E006 insufficient. It also distinguishes relevance
+from one-step mutual information: a relevant XOR input has zero marginal answer
+information under uniform independent inputs. A nuisance input can tie with it
+under EC2; relevance filtering must therefore be a baseline, not a novelty claim.
+
+E008 audited all E001 episodes: EC2, optimal and answer-entropy asked no irrelevant
+questions there, but fixed/random/repair-first did. Thus the constructed nuisance
+XOR failure is a boundary example, not evidence of an EC2 failure rate on E001.
+
+E007 shows why structure-aware prior art matters. Classical forward/reverse
+score messages recover exact EC2 sufficient statistics without world expansion;
+the 16-repair development cases match enumeration exactly and the 256-repair
+cases finish in under one second each. This is not a new policy or a general SQL
+compiler. Large score ranges or multidimensional scores may remain intractable.
+
+For E008's Boolean uniform cube, let a,b,c,d be positive-label counts for the
+four (q,r) response cells 00,01,10,11. Expanding standard EC2 edge mass gives
+unnormalized gain(q)-gain(r)=(a-d)(b-c). Each unknown label contributes to one
+count interval. Since the two differences use disjoint cells, all endpoints are
+attainable independently; min/max products at the four box corners are the exact
+extrema over binary completions. Normalized gains divide this expression by n².
+Tests exhaust all 3^8 partial answer maps and 256 complete maps. This does not
+prove that an acquisition policy minimizes executions or is original.
+
+E009 confirms the limitation: fixed acquisition with exact bounds uses 13.7546
+executions versus 14.8746 with the partition relaxation, but immediate witnessed
+questioning uses 13.0117 and also wins total cost at weights 0.1, 1 and 10. These
+are Boolean transformations of the same development tasks. Exact EC2 action
+certification is therefore **not accepted as the main method** for the user's
+execution objective. A tighter bound is useful implementation evidence, not
+sufficient algorithmic success.
+
+Termination detail for the exact Boolean policy: on a completely labeled
+nonconstant cube, a coordinate's EC2 gain is a common term plus one quarter of
+the squared positive-label imbalance between its halves. An irrelevant
+coordinate has zero imbalance. If any imbalance is nonzero, a maximal one is
+relevant. If all imbalances are zero, every coordinate ties, and cube
+connectivity supplies a relevant one. The policy explicitly searches witnessed
+maximizers instead of gating a single preselected tie winner. Thus either an
+unexecuted world is executed, a coordinate is observed, or a constant surviving
+answer is returned. The limit is N distinct executions and at most m questions.
+This establishes safety and termination under the stated assumptions, not an
+execution-complexity improvement over the trivial worst-case bound.
+
 ## Oracle model lower bound
 
 Assume an arbitrary deterministic answer function over a finite declared universe and no structural certificates beyond executed labels. If a stopping algorithm leaves any surviving world unexecuted, construct a second function which matches every observed execution but differs at that surviving world. The execution and clarification transcript is identical, but the answer for that possible true world differs. Therefore exact answer certification requires every surviving world to be executed in this oracle model.

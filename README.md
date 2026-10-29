@@ -19,3 +19,16 @@ Read `state.json`, `decisions.md`, and the current protocol before resuming. Che
 E001 is a synthetic finite-world experiment with 11 strategies, including EC2 and exact optimal trees. E002 is an oracle audit on AmbiQT-C plus controlled value swaps. E003 measures actual model-generated candidate support. These are distinct endpoints. Two or three task families are not independent external benchmarks. An observed-data pruning ablation is not the complete AIR system.
 
 The original AmbiQT database and annotations remain outside this repository. Upstream: https://github.com/testzer0/AmbiQT (MIT repository; original Spider database provenance retained upstream). New code is MIT licensed. Raw model outputs are not endorsed findings; see `reviews/review-adjudication.md`.
+
+E003 is complete: both configured APIs returned 155 verified outcomes. Two-state
+reference recall is 67.74% (Doubao Lite) and 69.03% (GPT Sol); neither is a complete
+semantic-coverage guarantee. See `results/E003/summary.json` for denominators,
+precision, clustered uncertainty, and failures.
+
+The user requires strict correctness and question relevance within declared
+alternatives. E008 formalizes relevance using a context-matched unequal pair;
+E006's weaker arbitrary-pair gate does not meet this contract. E007 supplies a
+classical structured-inference baseline. E009's exact binary comparison bound
+beats an older relaxation but loses on execution cost to immediate-witness
+querying. These negative development results remain recorded. The substantive
+algorithm and independent confirmation gate have **not** been passed.

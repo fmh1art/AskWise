@@ -2,9 +2,9 @@
   "schema_version": 1,
   "topic": "A2: Ask only questions that change the answer",
   "phase": "algorithm-development",
-  "updated_at": "2026-10-29T03:16:15.507254+00:00",
+  "updated_at": "2026-10-29T04:04:49.328250+00:00",
   "active_hypotheses": [
-    "Joint internal counterfactual execution and external clarification can improve cost with certified stopping when answer classes are initially unknown"
+    "Sound query structure may support cheaper correctness and relevance certificates; generic EC2 action certification has not beaten the simple execution-cost control"
   ],
   "completed_milestones": [
     "remote skills synchronized",
@@ -14,18 +14,22 @@
     "E004/E005 exact-action prototype development",
     "E006 joint-cost prototype and tiny exact planner",
     "private code/paper remote repositories created",
-    "E003 all 310 planned outcomes verified and manuscript updated"
+    "E003 all 310 planned outcomes verified and manuscript updated",
+    "E007 classical structured-inference control",
+    "E008 strict relevance audit and exact binary comparison identity",
+    "E009 stronger bounds lose primary metric to immediate-witness control"
   ],
   "budget": {
     "wall_hours_limit": null,
     "gpu_hours_limit": null,
     "api_cost_limit": null,
     "currency": null,
-    "wall_hours_used": 0,
+    "wall_hours_used": null,
     "gpu_hours_used": 0,
-    "api_cost_used": 0,
+    "api_cost_used": null,
     "api_limit_status": "explicitly unlimited by user 2026-10-29",
-    "per_round_wall_hours_target": 24
+    "per_round_wall_hours_target": 24,
+    "measurement_note": "Wall-clock aggregate and gateway billing were not instrumented; zero must not be inferred. Returned model tokens are recorded per experiment."
   },
   "authorization": {
     "scope": "end-to-end A2 research and private code/LaTeX repositories",
@@ -39,11 +43,19 @@
     ]
   },
   "blockers": [],
-  "next_action": "Resolve guarantee preference and continue substantive algorithm development; E003 completion is not research completion",
+  "next_action": "Develop a substantive method under confirmed strict guarantees; decide structured aggregation scope, compare against immediate-witness and classical compiled inference, then freeze independent confirmation. Current algorithm gate has not passed.",
   "stop_reason": null,
   "acceptance": "ACL main-conference ALGORITHM paper; substantive method beyond EC2/query-driven cleaning required by user",
   "running_experiment": null,
   "open_decisions": [
-    "User preference for strict conditional guarantees versus small probabilistic error pending"
-  ]
+    "Optional scope choice pending: structured aggregation family versus general SQL black-box executions"
+  ],
+  "guarantees": {
+    "source": "User explicitly confirmed 2026-10-29",
+    "correctness": "strict within declared interpretation/repair universe with truthful feedback",
+    "question_relevance": "strict; operationalized as observed unequal-answer pair differing only in queried coordinate",
+    "primary_objective": "execution cost",
+    "open_world_coverage": "not guaranteed",
+    "error_budget": 0
+  }
 }

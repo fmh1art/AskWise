@@ -1,0 +1,38 @@
+{
+  "ec2": {
+    "questions": 8678,
+    "irrelevant_questions": 0,
+    "episodes": 4800,
+    "episodes_with_irrelevance": 0
+  },
+  "optimal": {
+    "questions": 8672,
+    "irrelevant_questions": 0,
+    "episodes": 4800,
+    "episodes_with_irrelevance": 0
+  },
+  "fixed": {
+    "questions": 10488,
+    "irrelevant_questions": 1532,
+    "episodes": 4800,
+    "episodes_with_irrelevance": 1108
+  },
+  "random": {
+    "questions": 11952,
+    "irrelevant_questions": 1752,
+    "episodes": 4800,
+    "episodes_with_irrelevance": 1280
+  },
+  "answer_entropy": {
+    "questions": 8678,
+    "irrelevant_questions": 0,
+    "episodes": 4800,
+    "episodes_with_irrelevance": 0
+  },
+  "repair_first": {
+    "questions": 14090,
+    "irrelevant_questions": 2336,
+    "episodes": 4800,
+    "episodes_with_irrelevance": 1480
+  }
+}

@@ -2,6 +2,16 @@
 
 Append dated decisions, evidence, and alternatives.
 
+## 2026-10-29 strict guarantee confirmed
+User explicitly selected strict answer correctness and question relevance within
+the declared interpretation/repair universe, optimizing execution cost. No
+probabilistic-error replacement is authorized. Implement relevance via an
+observed unequal-answer pair holding all other coordinates fixed. This formal
+criterion is our operationalization, not a claim that the user supplied a formal
+definition. It is complete for dependence on Cartesian coordinate supports;
+constrained worlds require a separate treatment. E006's arbitrary conflicting
+pair gate was weaker and is not sufficient under this contract.
+
 ## 2026-10-29
 - User confirmed ACL main-conference submission quality, unlimited total API budget, target <=24 hours per experimental round.
 - AIR execution-based pruning and EC2 equivalence-class determination directly overlap naive A2 novelty.
