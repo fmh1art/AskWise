@@ -4,7 +4,7 @@ No new model requests, scientific decisions, daemon, or recurring schedule.
 """
 from pathlib import Path
 import json,time,subprocess,sys,hashlib
-root=Path(__file__).resolve().parents[1];paper=root.parent/'A2-paper'
+root=Path(__file__).resolve().parents[1];paper=root.parent/'AskWise_Tex'
 data=Path('/data01/fanmeihao-data/A2-research/E003')
 plan=json.loads((root/'experiments/E003-plan.json').read_text())
 deadline=time.monotonic()+23*3600

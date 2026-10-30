@@ -1,8 +1,8 @@
-# A2: Ask only questions that change the answer
+# AskWise: Ask only questions that change the answer
 
 Active research targeting ACL main-conference submission quality. **Research in progress; not submission-ready.**
 
-Code and protocols live here. Manuscript: `../A2-paper`. Local datasets and raw API evidence: `/data01/fanmeihao-data/A2-research`. Credentials are read only from user-specified external YAML files and are never committed.
+Code and protocols live here. Manuscript: `../AskWise_Tex`. Local datasets and raw API evidence: `/data01/fanmeihao-data/A2-research`. Credentials are read only from user-specified external YAML files and are never committed.
 
 ```bash
 uv venv --python 3.12 .venv
@@ -60,7 +60,7 @@ The manuscript expansion adds a single-column overview and a double-column
 algorithm framework. Following the user's explicit image-model request, the
 active illustrations are now PNGs generated with the built-in image-generation
 tool. Five illustration calls produced the selected pair; actual initial and
-revision prompts are saved in A2-paper/figures/prompts. The overview prioritizes
+revision prompts are saved in AskWise_Tex/figures/prompts. The overview prioritizes
 an intuitive example and the framework preserves the algorithm's control flow.
 Earlier vector assets and scripts/draw_concept_figures.py remain archived.
 The ten-page main draft has six experimental subsections and seventeen PDF

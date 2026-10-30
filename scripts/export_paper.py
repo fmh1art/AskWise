@@ -4,7 +4,7 @@ import json,shutil
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-root=Path(__file__).resolve().parents[1];paper=root.parent/'A2-paper'
+root=Path(__file__).resolve().parents[1];paper=root.parent/'AskWise_Tex'
 (paper/'tables').mkdir(exist_ok=True)
 summary=json.loads((root/'results/E001/summary.json').read_text())['all']
 names={'none':'No clarification','ask_all':'Ask all','fixed':'Fixed order','random':'Random order','world_entropy':'World entropy','answer_entropy':'Answer entropy','ec2':'EC2','local':'Local check','observed_then_repair':'Observed then repair','repair_first':'Repair first','optimal':'Exact optimal'}

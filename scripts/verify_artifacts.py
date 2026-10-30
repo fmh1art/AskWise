@@ -29,7 +29,7 @@ for model in ['doubao_seed2_lite','gpt5_6_sol_hydra']:
     receipt['models'][model]=stats
 # Scan the exact tracked publication boundary, not external data or home files.
 keys=[str(yaml.safe_load((Path('/home/fanmeihao/projects/_llm_configs')/(name+'.yaml')).read_text())['key']).encode() for name in ['gpt5_6_sol_hydra','doubao_seed2_lite']]
-for repo in [root,root.parent/'A2-paper']:
+for repo in [root,root.parent/'AskWise_Tex']:
     names=subprocess.check_output(['git','-C',str(repo),'ls-files','-z']).split(b'\0')
     for n in names:
         if not n:continue

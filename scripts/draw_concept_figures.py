@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch, Polygon
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT.parent/'A2-paper'/'figures'
+OUT=ROOT.parent/'AskWise_Tex'/'figures'
 plt.rcParams.update({'font.family':'STIXGeneral','mathtext.fontset':'stix',
                      'font.size':8,'pdf.fonttype':42,'svg.fonttype':'none',
                      'svg.hashsalt':'a2-concept-figures'})

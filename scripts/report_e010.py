@@ -18,7 +18,7 @@ from a2.relevance import witness
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'results/E010'
-PAPER = ROOT.parent/'A2-paper'
+PAPER = ROOT.parent/'AskWise_Tex'
 FIG = PAPER/'figures'
 TABLE = PAPER/'tables'
 DATA = Path('/data01/fanmeihao-data/A2-research')
