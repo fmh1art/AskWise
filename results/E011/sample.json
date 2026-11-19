@@ -1,0 +1,1518 @@
+{
+  "population": {
+    "doubao_seed2_lite": {
+      "match": 257,
+      "mismatch": 276,
+      "match_after_column_reordering": 17,
+      "invalid": 11
+    },
+    "gpt5_6_sol_hydra": {
+      "match": 237,
+      "mismatch": 177,
+      "match_after_column_reordering": 15,
+      "invalid": 6
+    }
+  },
+  "sample": [
+    {
+      "case": "00421e19a702",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 708,
+      "position": 3,
+      "database": "tvshow",
+      "sql_sha256": "cc6e7efbedb537fb1952135e707e7d3e1540898a7e07ee85d31365f1fbaa124e",
+      "match_after_column_reordering": false,
+      "question": "What are the Package Options of the TV Channels whose series names are Sky Radio?",
+      "candidate": "SELECT DISTINCT tv_service_option, subscription_option FROM tv_channel WHERE series_name = 'Sky Radio'",
+      "references": [
+        "select subscription_option from tv_channel where series_name = \"Sky Radio\"",
+        "select tv_service_option from tv_channel where series_name = \"Sky Radio\""
+      ]
+    },
+    {
+      "case": "08263defdfa0",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 327,
+      "position": 4,
+      "database": "cre_Doc_Template_Mgt",
+      "sql_sha256": "87a2f8b4812155aa20f0fcbbe557b4f4e543fa232c2746e5d4f82adf59fe57ff",
+      "match_after_column_reordering": false,
+      "question": "What is the id and type code for the template used by the most documents?",
+      "candidate": "SELECT template_id, template_type_code FROM (SELECT t.template_id, t.template_type_code, DENSE_RANK() OVER (ORDER BY COUNT(DISTINCT d.document_id) DESC) AS usage_rank FROM templates AS t JOIN documents AS d ON d.pattern_id = t.template_id OR d.form_id = t.template_id GROUP BY t.template_id, t.template_type_code) AS ranked WHERE usage_rank = 1",
+      "references": [
+        "select t1.pattern_id, t2.template_type_code from documents as t1 join templates as t2 on t1.pattern_id = t2.template_id group by t1.pattern_id order by count(*) desc limit 1",
+        "select t1.form_id, t2.template_type_code from documents as t1 join templates as t2 on t1.form_id = t2.template_id group by t1.form_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "08a9c3c4495c",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 211,
+      "position": 4,
+      "database": "flight_2",
+      "sql_sha256": "3e38d170d865a8fbc3cc6db63e497c2820018776b8291ef7bc707c97ece641d1",
+      "match_after_column_reordering": false,
+      "question": "List all airline names and their abbreviations in \"USA\".",
+      "candidate": "SELECT DISTINCT a.airline, a.code FROM airlines AS a JOIN flights AS f ON f.airline = a.code WHERE EXISTS (SELECT 1 FROM airports AS ap WHERE ap.airportcode = f.sourceairport AND ap.countryabbrev = 'USA') OR EXISTS (SELECT 1 FROM airports AS ap WHERE ap.airportcode = f.destairport AND ap.countryabbrev = 'USA')",
+      "references": [
+        "select airline, short_name from airlines where country = \"USA\"",
+        "select airline, code from airlines where country = \"USA\""
+      ]
+    },
+    {
+      "case": "09d29f4d4c29",
+      "model": "doubao_seed2_lite",
+      "item_id": 623,
+      "position": 3,
+      "database": "student_transcripts_tracking",
+      "sql_sha256": "6378a1590a3c08e08e3d74506eeabf4c109b87164b0d7be88a4557b5f49a6188",
+      "match_after_column_reordering": false,
+      "question": "Which student has enrolled for the most times in any program? List the id, first name, middle name, last name, the number of enrollments and student id.",
+      "candidate": "SELECT s.id, s.first_name, s.middle_name, s.last_name, COUNT(DISTINCT sec.student_course_id) AS number_of_enrollments, s.id AS student_id FROM students s INNER JOIN student_enrolment se ON s.id = se.student_id INNER JOIN student_enrolment_courses sec ON se.student_enrolment_id = sec.student_enrolment_id GROUP BY s.id, s.first_name, s.middle_name, s.last_name HAVING COUNT(DISTINCT sec.student_course_id) = (SELECT MAX(course_count) FROM (SELECT COUNT(DISTINCT sec2.student_course_id) AS course_count FROM student_enrolment se2 INNER JOIN student_enrolment_courses sec2 ON se2.student_enrolment_id = sec2.student_enrolment_id GROUP BY se2.student_id))",
+      "references": [
+        "select t1.id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.id from students as t1 join student_enrolment as t2 on t1.id = t2.student_id group by t1.id order by count(*) desc limit 1",
+        "select t1.enrollment_id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.enrollment_id from students as t1 join student_enrolment as t2 on t1.enrollment_id = t2.student_id group by t1.enrollment_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "130627cd1cf9",
+      "model": "doubao_seed2_lite",
+      "item_id": 1031,
+      "position": 1,
+      "database": "network_1",
+      "sql_sha256": "934b9cedce2f4c70780b1c74c36313bf2a5a8c618481ca86af0676c688746998",
+      "match_after_column_reordering": false,
+      "question": "Show the names of high school students and their corresponding number of friends.",
+      "candidate": "SELECT h.full_name AS student_name, COUNT(f.friend_id) AS number_of_friends FROM highschooler h LEFT JOIN friend f ON h.id = f.student_id GROUP BY h.id, h.full_name",
+      "references": [
+        "select t2.full_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id",
+        "select t2.given_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id"
+      ]
+    },
+    {
+      "case": "15157d042866",
+      "model": "doubao_seed2_lite",
+      "item_id": 569,
+      "position": 2,
+      "database": "battle_death",
+      "sql_sha256": "df32ec23bea00f965853bb1209b8bc36f54f65296e055972e3eef0ceedc92edd",
+      "match_after_column_reordering": false,
+      "question": "Show names, results and bulgarian commanders of the battles with no ships lost in the 'English Channel'.",
+      "candidate": "SELECT b.name, b.outcome AS results, b.bulgarian_commander FROM battle b WHERE NOT EXISTS (SELECT 1 FROM ship s WHERE s.lost_in_battle = b.id) AND EXISTS (SELECT 1 FROM ship s2 WHERE s2.location = 'English Channel' AND (s2.lost_in_battle = b.id OR s2.lost_in_battle IS NULL))",
+      "references": [
+        "select name, outcome, bulgarian_commander from battle except select t1.name, t1.outcome, t1.bulgarian_commander from battle as t1 join ship as t2 on t1.id = t2.lost_in_battle where t2.location = 'English Channel'",
+        "select name, consequence, bulgarian_commander from battle except select t1.name, t1.consequence, t1.bulgarian_commander from battle as t1 join ship as t2 on t1.id = t2.lost_in_battle where t2.location = 'English Channel'"
+      ]
+    },
+    {
+      "case": "19c2339664a6",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 821,
+      "position": 1,
+      "database": "voter_1",
+      "sql_sha256": "ac06a9ca535e358254bdd009c0f4577eb1ad58df2b30e6120ebea20a1e3270ec",
+      "match_after_column_reordering": false,
+      "question": "List the area codes in which voters voted both for the contestant 'Tabatha Gehling' and the contestant 'Kelly Clauss'.",
+      "candidate": "SELECT substr(v.phone_number, 1, 3) AS area_code FROM votes AS v JOIN contestants AS c ON c.contestant_number = v.contestant_number WHERE c.contestant_name IN ('Tabatha Gehling', 'Kelly Clauss') GROUP BY substr(v.phone_number, 1, 3) HAVING COUNT(DISTINCT c.contestant_name) = 2",
+      "references": [
+        "select t3.zip_code from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number join area_code_state as t3 on t2.state = t3.state where t1.contestant_name = 'Tabatha Gehling' intersect select t3.zip_code from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number join area_code_state as t3 on t2.state = t3.state where t1.contestant_name = 'Kelly Clauss'",
+        "select t3.postal_code from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number join area_code_state as t3 on t2.state = t3.state where t1.contestant_name = 'Tabatha Gehling' intersect select t3.postal_code from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number join area_code_state as t3 on t2.state = t3.state where t1.contestant_name = 'Kelly Clauss'"
+      ]
+    },
+    {
+      "case": "19f228792664",
+      "model": "doubao_seed2_lite",
+      "item_id": 1192,
+      "position": 3,
+      "database": "dog_kennels",
+      "sql_sha256": "f7d04ede437e3860f2b8df4bb1374229d79c04cb9a0bb3915f3febb05ad49b68",
+      "match_after_column_reordering": false,
+      "question": "What are the email, cell phone and home phone of each professional?",
+      "candidate": "SELECT DISTINCT p.email_address AS email, o.cell_number AS cell_phone, o.home_phone AS home_phone FROM professionals p INNER JOIN treatments t ON p.professional_id = t.professional_id INNER JOIN dogs d ON t.dog_id = d.dog_id INNER JOIN owners o ON d.owner_id = o.owner_id",
+      "references": [
+        "select email_address, mobile_number, home_phone from professionals",
+        "select email_address, phone_number, home_phone from professionals"
+      ]
+    },
+    {
+      "case": "228579419061",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 772,
+      "position": 3,
+      "database": "poker_player",
+      "sql_sha256": "b61f8d16118e0f56fcd644e6301668f091b5ece6fecfad037b212d4b0a898e11",
+      "match_after_column_reordering": false,
+      "question": "Return the maximum final tables made across all poker players who have earnings below 200000.",
+      "candidate": "SELECT MAX(last_round_table + endgame_table) AS maximum_final_tables FROM poker_player WHERE earnings < 200000;",
+      "references": [
+        "select max(last_round_table) from poker_player where earnings < 200000",
+        "select max(endgame_table) from poker_player where earnings < 200000"
+      ]
+    },
+    {
+      "case": "26abe1588aae",
+      "model": "doubao_seed2_lite",
+      "item_id": 415,
+      "position": 2,
+      "database": "course_teach",
+      "sql_sha256": "293e8e2749baaa6bf9e346d87256685cb6ef47e2bba69d54ce84d3031be2283c",
+      "match_after_column_reordering": false,
+      "question": "Show the name of teachers aged either 32 or 33?",
+      "candidate": "SELECT DISTINCT t.full_name AS teacher_name FROM teacher t JOIN course_arrange ca ON t.teacher_id = ca.teacher_id WHERE t.age IN (32, 33);",
+      "references": [
+        "select full_name from teacher where age = 32 or age = 33",
+        "select title from teacher where age = 32 or age = 33"
+      ]
+    },
+    {
+      "case": "29cf7edde05d",
+      "model": "doubao_seed2_lite",
+      "item_id": 97,
+      "position": 4,
+      "database": "pets_1",
+      "sql_sha256": "6d2fc02ddb051d2c8792c8540b39e680436d8e4b0ca59a35d633b3fb0e56f620",
+      "match_after_column_reordering": false,
+      "question": "What are the different first names and ages of the students who do have pets?",
+      "candidate": "SELECT DISTINCT s.fname AS distinct_value FROM student s WHERE EXISTS (SELECT 1 FROM has_pet hp WHERE hp.stuid = s.stuid) UNION SELECT DISTINCT CAST(s.age_in_years AS TEXT) AS distinct_value FROM student s WHERE EXISTS (SELECT 1 FROM has_pet hp WHERE hp.stuid = s.stuid)",
+      "references": [
+        "select distinct t1.fname, t1.years_old from student as t1 join has_pet as t2 on t1.stuid = t2.stuid",
+        "select distinct t1.fname, t1.age_in_years from student as t1 join has_pet as t2 on t1.stuid = t2.stuid"
+      ]
+    },
+    {
+      "case": "2a54822c286b",
+      "model": "doubao_seed2_lite",
+      "item_id": 97,
+      "position": 3,
+      "database": "pets_1",
+      "sql_sha256": "74427020fb20119a94f1c8f2a125462ed669c66d641fcbf4f80fc1eb36c52b60",
+      "match_after_column_reordering": false,
+      "question": "What are the different first names and ages of the students who do have pets?",
+      "candidate": "SELECT DISTINCT s.fname, p.pet_age FROM student s JOIN has_pet hp ON s.stuid = hp.stuid JOIN pets p ON hp.petid = p.petid",
+      "references": [
+        "select distinct t1.fname, t1.years_old from student as t1 join has_pet as t2 on t1.stuid = t2.stuid",
+        "select distinct t1.fname, t1.age_in_years from student as t1 join has_pet as t2 on t1.stuid = t2.stuid"
+      ]
+    },
+    {
+      "case": "2b085db42a1e",
+      "model": "doubao_seed2_lite",
+      "item_id": 561,
+      "position": 1,
+      "database": "battle_death",
+      "sql_sha256": "5fb5d4ab7cd2b79aeae8a35efb34d6da8612e0f96bf620046657f8c78a84f2a9",
+      "match_after_column_reordering": false,
+      "question": "What is the ship id and name that caused most total injuries?",
+      "candidate": "SELECT s.id, s.ship_name FROM ship s INNER JOIN death d ON s.id = d.caused_by_ship_id GROUP BY s.id, s.ship_name ORDER BY SUM(d.injured) DESC LIMIT 1",
+      "references": [
+        "select t2.id, t2.ship_name from death as t1 join ship as t2 on t1.caused_by_ship_id = t2.id group by t2.id order by count(*) desc limit 1",
+        "select t2.id, t2.vessel_name from death as t1 join ship as t2 on t1.caused_by_ship_id = t2.id group by t2.id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "2b546163d69a",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 7,
+      "position": 2,
+      "database": "concert_singer",
+      "sql_sha256": "d00aa6d61d81eeadf5ee85fdf9e1f3c7531b2881af04b5a1aa3e1aee2c1c6c2e",
+      "match_after_column_reordering": false,
+      "question": "What is the average, minimum, and maximum age for all French singers?",
+      "candidate": "SELECT AVG(CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', birthdate) AS INTEGER) - (strftime('%m-%d', 'now') < strftime('%m-%d', birthdate))) AS average_age, MIN(CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', birthdate) AS INTEGER) - (strftime('%m-%d', 'now') < strftime('%m-%d', birthdate))) AS minimum_age, MAX(CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', birthdate) AS INTEGER) - (strftime('%m-%d', 'now') < strftime('%m-%d', birthdate))) AS maximum_age FROM singer WHERE country = 'France'",
+      "references": [
+        "select avg(years_old), min(years_old), max(years_old) from singer where country = 'France'",
+        "select avg(birthdate), min(birthdate), max(birthdate) from singer where country = 'France'"
+      ]
+    },
+    {
+      "case": "2c3db28250ab",
+      "model": "doubao_seed2_lite",
+      "item_id": 518,
+      "position": 4,
+      "database": "wta_1",
+      "sql_sha256": "740f3f405256ed5af909971b6352b7e1e5f43d2450dc9b27ca3836d705917256",
+      "match_after_column_reordering": false,
+      "question": "What are the first names of all players, and their average rankings?",
+      "candidate": "SELECT p.given_name AS first_name, AVG(r.ranking_points) AS average_ranking FROM players p INNER JOIN rankings r ON p.player_id = r.player_id GROUP BY p.player_id, p.given_name",
+      "references": [
+        "select avg(ranking), t1.given_name from players as t1 join rankings as t2 on t1.player_id = t2.player_id group by t1.given_name",
+        "select avg(ranking), t1.forename from players as t1 join rankings as t2 on t1.player_id = t2.player_id group by t1.forename"
+      ]
+    },
+    {
+      "case": "2f31cc8544e9",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 627,
+      "position": 2,
+      "database": "student_transcripts_tracking",
+      "sql_sha256": "386e27c532923fb295fc0eb49c67694268f4efcaa0b7f85f5a328f9fa65ef54b",
+      "match_after_column_reordering": false,
+      "question": "What is the first, middle, and last name, along with the id and number of enrollments, for the student who enrolled the most in any program?",
+      "candidate": "SELECT s.first_name, s.middle_name, s.last_name, s.id, e.enrollment_count FROM students AS s JOIN (SELECT student_id, degree_program_id, COUNT(*) AS enrollment_count FROM student_enrolment GROUP BY student_id, degree_program_id) AS e ON e.student_id = s.id WHERE e.enrollment_count = (SELECT MAX(x.enrollment_count) FROM (SELECT COUNT(*) AS enrollment_count FROM student_enrolment GROUP BY student_id, degree_program_id) AS x);",
+      "references": [
+        "select t1.id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.id from students as t1 join student_enrolment as t2 on t1.id = t2.student_id group by t1.id order by count(*) desc limit 1",
+        "select t1.enrollment_id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.enrollment_id from students as t1 join student_enrolment as t2 on t1.enrollment_id = t2.student_id group by t1.enrollment_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "32ce9773cdd8",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 435,
+      "position": 1,
+      "database": "course_teach",
+      "sql_sha256": "bcca430e948ffc3738601404017034958c7cb570e8d572758de129cd3800c4b8",
+      "match_after_column_reordering": false,
+      "question": "Show names of teachers and the number of courses they teach.",
+      "candidate": "SELECT t.full_name, COUNT(DISTINCT ca.course_id) AS course_count FROM teacher AS t LEFT JOIN course_arrange AS ca ON ca.teacher_id = t.teacher_id GROUP BY t.teacher_id, t.full_name",
+      "references": [
+        "select t2.full_name, count(*) from course_arrange as t1 join teacher as t2 on t1.teacher_id = t2.teacher_id group by t2.full_name",
+        "select t2.title, count(*) from course_arrange as t1 join teacher as t2 on t1.teacher_id = t2.teacher_id group by t2.title"
+      ]
+    },
+    {
+      "case": "32ecbd2b44c5",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 482,
+      "position": 4,
+      "database": "wta_1",
+      "sql_sha256": "b142b40c76067f6bb6034aed4145360e29d821ec27285634c5d118d1e8d60c6e",
+      "match_after_column_reordering": false,
+      "question": "What are the names of tournaments that have more than 10 matches?",
+      "candidate": "SELECT tournament_name FROM matches GROUP BY tournament_name, year HAVING COUNT(*) > 10",
+      "references": [
+        "select event_name from matches group by event_name having count(*) > 10",
+        "select tournament_name from matches group by tournament_name having count(*) > 10"
+      ]
+    },
+    {
+      "case": "33fe964f7693",
+      "model": "doubao_seed2_lite",
+      "item_id": 491,
+      "position": 4,
+      "database": "wta_1",
+      "sql_sha256": "9864d692a4d93a8fb6d978e3619868d1b1e1ed2917b9e9a2586a61f285798389",
+      "match_after_column_reordering": false,
+      "question": "What is the first name and country code of the oldest player?",
+      "candidate": "SELECT DISTINCT p.forename AS first_name, p.country_code FROM players p JOIN rankings r ON p.player_id = r.player_id ORDER BY p.birth_date ASC LIMIT 1",
+      "references": [
+        "select given_name, country_code from players order by birth_date limit 1",
+        "select forename, country_code from players order by birth_date limit 1"
+      ]
+    },
+    {
+      "case": "392d6e5ec713",
+      "model": "doubao_seed2_lite",
+      "item_id": 1030,
+      "position": 4,
+      "database": "network_1",
+      "sql_sha256": "5a33fd85120393a6804e644d068f8fefb68e1f5725fc7e2e40bf3613e9bd93d6",
+      "match_after_column_reordering": false,
+      "question": "How many friends does each student have?",
+      "candidate": "SELECT l.student_id, COUNT(f.friend_id) AS total_friends FROM likes l LEFT JOIN friend f ON l.student_id = f.person_id GROUP BY l.student_id",
+      "references": [
+        "select user_id, count(*) from friend group by user_id",
+        "select person_id, count(*) from friend group by person_id"
+      ]
+    },
+    {
+      "case": "39665e7c12b0",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 38,
+      "position": 3,
+      "database": "concert_singer",
+      "sql_sha256": "54234ad82875bb54cff069babf96ab9fe2ca007a3ba14e0b321d39780744f5be",
+      "match_after_column_reordering": false,
+      "question": "Show countries where a singer above age 40 and a singer below 30 are from.",
+      "candidate": "SELECT DISTINCT nationality FROM singer WHERE nationality IS NOT NULL AND (age > 40 OR age < 30)",
+      "references": [
+        "select nationality from singer where age > 40 intersect select nationality from singer where age < 30",
+        "select citizenship from singer where age > 40 intersect select citizenship from singer where age < 30"
+      ]
+    },
+    {
+      "case": "3b58c5cdc565",
+      "model": "doubao_seed2_lite",
+      "item_id": 963,
+      "position": 4,
+      "database": "world_1",
+      "sql_sha256": "f070a098ac11e586e2e704ad04252236960eeec4f96949d955379c436721a350",
+      "match_after_column_reordering": false,
+      "question": "What is the language spoken by the largest percentage of people in each country?",
+      "candidate": "SELECT c.name AS country_name, cl.language FROM country c INNER JOIN (SELECT countrycode, language, ROW_NUMBER() OVER (PARTITION BY countrycode ORDER BY fraction DESC) AS rn FROM countrylanguage) cl ON c.code = cl.countrycode WHERE cl.rn = 1",
+      "references": [
+        "select language, countrycode, max(fraction) from countrylanguage group by countrycode",
+        "select language, countrycode, max(proportion) from countrylanguage group by countrycode"
+      ]
+    },
+    {
+      "case": "401abf38966d",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 482,
+      "position": 3,
+      "database": "wta_1",
+      "sql_sha256": "d119e8c2c9555e94f2a557283ba48ffdf71d5b975da13e9347f41d0066af8180",
+      "match_after_column_reordering": false,
+      "question": "What are the names of tournaments that have more than 10 matches?",
+      "candidate": "SELECT tournament_name FROM matches GROUP BY tourney_id, tournament_name HAVING COUNT(*) > 10",
+      "references": [
+        "select event_name from matches group by event_name having count(*) > 10",
+        "select tournament_name from matches group by tournament_name having count(*) > 10"
+      ]
+    },
+    {
+      "case": "425218cbf90a",
+      "model": "doubao_seed2_lite",
+      "item_id": 38,
+      "position": 4,
+      "database": "concert_singer",
+      "sql_sha256": "50e16a2b44b2270d050d583ba72f3ecd219c3b477b8740bbc0aeb643aeabcf8e",
+      "match_after_column_reordering": false,
+      "question": "Show countries where a singer above age 40 and a singer below 30 are from.",
+      "candidate": "SELECT DISTINCT s.citizenship AS country FROM singer s INNER JOIN singer_in_concert sic ON s.singer_id = sic.singer_id WHERE sic.concert_id IN (SELECT concert_id FROM singer_in_concert s1 JOIN singer s2 ON s1.singer_id = s2.singer_id WHERE s2.age > 40 INTERSECT SELECT concert_id FROM singer_in_concert s3 JOIN singer s4 ON s3.singer_id = s4.singer_id WHERE s4.age < 30)",
+      "references": [
+        "select nationality from singer where age > 40 intersect select nationality from singer where age < 30",
+        "select citizenship from singer where age > 40 intersect select citizenship from singer where age < 30"
+      ]
+    },
+    {
+      "case": "478ebfee92dd",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 347,
+      "position": 3,
+      "database": "cre_Doc_Template_Mgt",
+      "sql_sha256": "adebdc8f4d3fae2386275b5538b347833d90ea78bb2f9ee4db0d04ced34a1244",
+      "match_after_column_reordering": false,
+      "question": "Return the version numbers and template type codes of templates with a version number greater than 5.",
+      "candidate": "SELECT revision_number, edition_number, template_type_code FROM templates WHERE revision_number > 5 OR edition_number > 5",
+      "references": [
+        "select revision_number, template_type_code from templates where revision_number > 5",
+        "select edition_number, template_type_code from templates where edition_number > 5"
+      ]
+    },
+    {
+      "case": "49428bfaa2d5",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 532,
+      "position": 2,
+      "database": "wta_1",
+      "sql_sha256": "cec5c1e28585f586af7068782f6ae3c8fe8b7c945d0db2b41e3d9ac9fa1d18a7",
+      "match_after_column_reordering": true,
+      "question": "How many matches were played in each year?",
+      "candidate": "SELECT event_year AS year, COUNT(*) AS match_count FROM matches GROUP BY event_year ORDER BY event_year;",
+      "references": [
+        "select count(*), match_year from matches group by match_year",
+        "select count(*), event_year from matches group by event_year"
+      ]
+    },
+    {
+      "case": "49e78a3f0dd5",
+      "model": "doubao_seed2_lite",
+      "item_id": 222,
+      "position": 2,
+      "database": "flight_2",
+      "sql_sha256": "9b1691acf546ecabe9cbe676f4cdee242675a113d3dd3159dcc8b4573f9535b2",
+      "match_after_column_reordering": false,
+      "question": "Which city and country is the Alton airport at?",
+      "candidate": "SELECT urbanarea AS city, country FROM airports WHERE airportname LIKE '%Alton%'",
+      "references": [
+        "select metropolis, country from airports where airportname = \"Alton\"",
+        "select urbanarea, country from airports where airportname = \"Alton\""
+      ]
+    },
+    {
+      "case": "4a69685c45d7",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 810,
+      "position": 3,
+      "database": "voter_1",
+      "sql_sha256": "f4a8e7c504fc4693c6e73ea0ebf1cb5bfa8cd4ef28bb6cb5034fb618e42185d7",
+      "match_after_column_reordering": false,
+      "question": "What are the names of the contestants whose names are not 'Jessie Alloway'",
+      "candidate": "SELECT fullname, applicant_name FROM contestants WHERE fullname <> 'Jessie Alloway' AND applicant_name <> 'Jessie Alloway'",
+      "references": [
+        "select fullname from contestants where fullname != 'Jessie Alloway'",
+        "select applicant_name from contestants where applicant_name != 'Jessie Alloway'"
+      ]
+    },
+    {
+      "case": "4b59920dbfff",
+      "model": "doubao_seed2_lite",
+      "item_id": 1239,
+      "position": 1,
+      "database": "real_estate_properties",
+      "sql_sha256": "0ceb4055f6702195aabb472cefc617ecbd995ac20a77da1972e20d1572442de3",
+      "match_after_column_reordering": false,
+      "question": "What are the names of properties that are either houses or apartments with more than 1 room?",
+      "candidate": "SELECT DISTINCT p.name FROM properties p INNER JOIN ref_property_types rpt ON p.property_type_code = rpt.property_type_code WHERE rpt.property_type_description = 'house' OR (rpt.property_type_description = 'apartment' AND p.room_count > 1)",
+      "references": [
+        "select name from properties where property_type_code = \"House\" union select name from properties where property_type_code = \"Apartment\" and room_count > 1",
+        "select title from properties where property_type_code = \"House\" union select title from properties where property_type_code = \"Apartment\" and room_count > 1"
+      ]
+    },
+    {
+      "case": "4d7c261aa96a",
+      "model": "doubao_seed2_lite",
+      "item_id": 918,
+      "position": 2,
+      "database": "world_1",
+      "sql_sha256": "b7a784cdb04e1cad19de427e706dc4aa7fa3f163089798e977b7c197f45e3ea7",
+      "match_after_column_reordering": false,
+      "question": "Give the name, year of independence, and surface area of the country that has the lowest population.",
+      "candidate": "SELECT c.name, c.independence_year, c.surfacearea FROM country c JOIN city ci ON c.code = ci.countrycode ORDER BY ci.population ASC LIMIT 1",
+      "references": [
+        "select name, surfacearea, independence_year from country order by population limit 1",
+        "select name, surfacearea, sovereignty_year from country order by population limit 1"
+      ]
+    },
+    {
+      "case": "4d9334ffb035",
+      "model": "doubao_seed2_lite",
+      "item_id": 433,
+      "position": 1,
+      "database": "course_teach",
+      "sql_sha256": "0866eff2e81b9ec96685e9636bbac32235d4d3d6d1fad4fb67a65cbd373a4f36",
+      "match_after_column_reordering": false,
+      "question": "Show the name of the teacher for the math course.",
+      "candidate": "SELECT DISTINCT t.full_name FROM teacher t INNER JOIN course_arrange ca ON t.teacher_id = ca.teacher_id INNER JOIN course c ON ca.course_id = c.course_id WHERE c.course = 'math'",
+      "references": [
+        "select t3.full_name from course_arrange as t1 join course as t2 on t1.course_id = t2.course_id join teacher as t3 on t1.teacher_id = t3.teacher_id where t2.course = \"Math\"",
+        "select t3.title from course_arrange as t1 join course as t2 on t1.course_id = t2.course_id join teacher as t3 on t1.teacher_id = t3.teacher_id where t2.course = \"Math\""
+      ]
+    },
+    {
+      "case": "50a233622c36",
+      "model": "doubao_seed2_lite",
+      "item_id": 509,
+      "position": 3,
+      "database": "wta_1",
+      "sql_sha256": "e042b8829ac62e5736f7b697517eeebb49b0c15bb2fe80d08bee6a7a44f1df6d",
+      "match_after_column_reordering": false,
+      "question": "What is the name of the winner who has won the most matches, and how many rank points does this player have?",
+      "candidate": "WITH top_winner AS (SELECT winner_id, COUNT(*) AS total_wins FROM matches GROUP BY winner_id ORDER BY total_wins DESC LIMIT 1) SELECT m.winner_name AS winner_name, m.winning_player_rank_points AS latest_win_rank_points FROM matches m INNER JOIN top_winner tw ON m.winner_id = tw.winner_id ORDER BY m.tourney_date DESC, m.match_num DESC LIMIT 1;",
+      "references": [
+        "select winner_name, winning_player_rank_points from matches group by winner_name order by count(*) desc limit 1",
+        "select winner_name, victorious_player_rank_points from matches group by winner_name order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "58775c60dc0a",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1237,
+      "position": 3,
+      "database": "real_estate_properties",
+      "sql_sha256": "e79d75f886310ba0a9705c043fb93083ad697705facd5629455f57d3494a836d",
+      "match_after_column_reordering": false,
+      "question": "What is the feature type name of feature AirCon?",
+      "candidate": "SELECT DISTINCT r.type_name FROM other_property_features AS pf JOIN other_available_features AS f ON f.feature_id = pf.feature_id JOIN ref_feature_types AS r ON r.feature_type_code = f.feature_type_code WHERE pf.property_feature_description = 'AirCon'",
+      "references": [
+        "select t2.type_name from other_available_features as t1 join ref_feature_types as t2 on t1.feature_type_code = t2.feature_type_code where t1.feature_name = \"AirCon\"",
+        "select t2.category_name from other_available_features as t1 join ref_feature_types as t2 on t1.feature_type_code = t2.feature_type_code where t1.feature_name = \"AirCon\""
+      ]
+    },
+    {
+      "case": "58928d9c778b",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 469,
+      "position": 3,
+      "database": "wta_1",
+      "sql_sha256": "5560818e71db0fcff032c4e966fd1ccfc9622b5311cfe1ef15734ab152f36c80",
+      "match_after_column_reordering": false,
+      "question": "Find the average age of losers and winners of all matches.",
+      "candidate": "SELECT AVG(age) AS average_participant_age FROM (SELECT loser_age AS age FROM matches UNION ALL SELECT winning_player_age AS age FROM matches);",
+      "references": [
+        "select avg(loser_age), avg(winning_player_age) from matches",
+        "select avg(loser_age), avg(victorious_player_age) from matches"
+      ]
+    },
+    {
+      "case": "597ffdd1bab3",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 816,
+      "position": 4,
+      "database": "voter_1",
+      "sql_sha256": "d6e768761d9632a8fad9b91f16af2a4be2035bcfa83081ff262badfbc325b99f",
+      "match_after_column_reordering": false,
+      "question": "Of all the contestants who got voted, what is the contestant number and name of the contestant who got least votes?",
+      "candidate": "SELECT c.contestant_number, c.fullname AS name FROM contestants AS c JOIN (SELECT contestant_number, DENSE_RANK() OVER (ORDER BY voter_count) AS vote_rank FROM (SELECT contestant_number, COUNT(DISTINCT phone_number) AS voter_count FROM votes GROUP BY contestant_number)) AS ranked_votes ON ranked_votes.contestant_number = c.contestant_number WHERE ranked_votes.vote_rank = 1 ORDER BY c.contestant_number",
+      "references": [
+        "select t1.contestant_number, t1.fullname from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number group by t1.contestant_number order by count(*) asc limit 1",
+        "select t1.contestant_number, t1.applicant_name from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number group by t1.contestant_number order by count(*) asc limit 1"
+      ]
+    },
+    {
+      "case": "59a90f901e3d",
+      "model": "doubao_seed2_lite",
+      "item_id": 123,
+      "position": 3,
+      "database": "car_1",
+      "sql_sha256": "fdee6ce51e08ade815fb8fbcb5310b2422611bd03cee612dbc14b0dc96119784",
+      "match_after_column_reordering": false,
+      "question": "Find the name of the makers that produced some cars in the year of 1970?",
+      "candidate": "SELECT DISTINCT cm.manufacturer AS maker_name FROM car_makers cm INNER JOIN model_list ml ON cm.id = ml.maker INNER JOIN cars_data cd ON ml.modelid = cd.id WHERE cd.year = 1970",
+      "references": [
+        "select distinct t1.brand from car_makers as t1 join model_list as t2 on t1.id = t2.maker join car_names as t3 on t2.model = t3.model join cars_data as t4 on t3.makeid = t4.id where t4.year = '1970'",
+        "select distinct t1.manufacturer from car_makers as t1 join model_list as t2 on t1.id = t2.maker join car_names as t3 on t2.model = t3.model join cars_data as t4 on t3.makeid = t4.id where t4.year = '1970'"
+      ]
+    },
+    {
+      "case": "5f9b65322176",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 620,
+      "position": 1,
+      "database": "student_transcripts_tracking",
+      "sql_sha256": "430541b5682512e0ec487c1dd3cff5e935d72607d5490cc7ea01e085ed8c77af",
+      "match_after_column_reordering": false,
+      "question": "Find the program which most number of students are enrolled in. List both the id and the summary.",
+      "candidate": "SELECT dp.degree_program_id, dp.degree_summary_description FROM degree_programs AS dp JOIN student_enrolment AS se ON se.degree_program_id = dp.degree_program_id GROUP BY dp.degree_program_id, dp.degree_summary_description HAVING COUNT(DISTINCT se.student_id) = (SELECT MAX(student_count) FROM (SELECT COUNT(DISTINCT student_id) AS student_count FROM student_enrolment GROUP BY degree_program_id));",
+      "references": [
+        "select t1.degree_program_id, t1.program_name from degree_programs as t1 join student_enrolment as t2 on t1.degree_program_id = t2.degree_program_id group by t1.degree_program_id order by count(*) desc limit 1",
+        "select t1.degree_program_id, t1.degree_name from degree_programs as t1 join student_enrolment as t2 on t1.degree_program_id = t2.degree_program_id group by t1.degree_program_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "5fb89ccea96d",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 701,
+      "position": 4,
+      "database": "tvshow",
+      "sql_sha256": "4a4fea84f3d138d98351631e06be7e7450b49c994c09487645660344a6cd34f7",
+      "match_after_column_reordering": false,
+      "question": "List the number of different series names and contents in the TV Channel table.",
+      "candidate": "SELECT COUNT(*) AS different_series_name_content_pairs FROM (SELECT DISTINCT program_name, content FROM tv_channel);",
+      "references": [
+        "select count(distinct show_name), count(distinct content) from tv_channel",
+        "select count(distinct program_name), count(distinct content) from tv_channel"
+      ]
+    },
+    {
+      "case": "602060d6f239",
+      "model": "doubao_seed2_lite",
+      "item_id": 772,
+      "position": 3,
+      "database": "poker_player",
+      "sql_sha256": "60eda40ca49a2865cec5d08720463d5111f75a0d25be67c0f96cdef4294c449a",
+      "match_after_column_reordering": false,
+      "question": "Return the maximum final tables made across all poker players who have earnings below 200000.",
+      "candidate": "SELECT MAX(table_player_count) AS max_final_tables_made FROM (SELECT COUNT(DISTINCT poker_player_id) AS table_player_count FROM poker_player WHERE earnings < 200000 GROUP BY endgame_table) AS final_table_counts",
+      "references": [
+        "select max(last_round_table) from poker_player where earnings < 200000",
+        "select max(endgame_table) from poker_player where earnings < 200000"
+      ]
+    },
+    {
+      "case": "6405c11947ec",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 87,
+      "position": 4,
+      "database": "pets_1",
+      "sql_sha256": "13157b1b3b3ef29cd4c56c476b4e91a36fca2e159e33d253eaf11529eb6f02da",
+      "match_after_column_reordering": false,
+      "question": "Find the average and maximum age for each type of pet.",
+      "candidate": "SELECT p.kind, AVG(s.age) AS average_age, MAX(s.age) AS maximum_age FROM pets AS p JOIN has_pet AS hp ON hp.petid = p.petid JOIN student AS s ON s.stuid = hp.stuid GROUP BY p.kind;",
+      "references": [
+        "select avg(pet_age), max(pet_age), type from pets group by type",
+        "select avg(pet_age), max(pet_age), kind from pets group by kind"
+      ]
+    },
+    {
+      "case": "64933272bc24",
+      "model": "doubao_seed2_lite",
+      "item_id": 1198,
+      "position": 1,
+      "database": "dog_kennels",
+      "sql_sha256": "757581d0011a8e67adfcbcb475e652abc516ea2a9de29895723073c4a2d637a6",
+      "match_after_column_reordering": false,
+      "question": "List the first name of all the professionals along with the description of the treatment they have done.",
+      "candidate": "SELECT p.forename AS first_name, tt.treatment_type_description AS treatment_description FROM professionals p INNER JOIN treatments t ON p.professional_id = t.professional_id INNER JOIN treatment_types tt ON t.treatment_type_code = tt.treatment_type_code;",
+      "references": [
+        "select distinct t1.forename, t3.treatment_type_description from professionals as t1 join treatments as t2 on t1.professional_id = t2.professional_id join treatment_types as t3 on t2.treatment_type_code = t3.treatment_type_code",
+        "select distinct t1.given_name, t3.treatment_type_description from professionals as t1 join treatments as t2 on t1.professional_id = t2.professional_id join treatment_types as t3 on t2.treatment_type_code = t3.treatment_type_code"
+      ]
+    },
+    {
+      "case": "662145ccdb00",
+      "model": "doubao_seed2_lite",
+      "item_id": 449,
+      "position": 1,
+      "database": "museum_visit",
+      "sql_sha256": "c1aa5b3eb876dab50d4079ff852e27bf5c848f014e4ade11e036e8fc07032b2a",
+      "match_after_column_reordering": true,
+      "question": "What are the opening year and staff number of the museum named Plaza Museum?",
+      "candidate": "SELECT open_year AS opening_year, staff_size AS staff_number FROM museum WHERE name = 'Plaza Museum'",
+      "references": [
+        "select employee_count, open_year from museum where name = 'Plaza Museum'",
+        "select staff_size, open_year from museum where name = 'Plaza Museum'"
+      ]
+    },
+    {
+      "case": "68d7509b5187",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 963,
+      "position": 1,
+      "database": "world_1",
+      "sql_sha256": "9db9cadd16cf9ff9a0de54d4120df5fae222c8987328735ff7643fda5a05d540",
+      "match_after_column_reordering": false,
+      "question": "What is the language spoken by the largest percentage of people in each country?",
+      "candidate": "SELECT c.name AS country, cl.language, cl.proportion FROM country AS c JOIN countrylanguage AS cl ON cl.countrycode = c.code WHERE cl.proportion = (SELECT MAX(cl2.proportion) FROM countrylanguage AS cl2 WHERE cl2.countrycode = cl.countrycode) ORDER BY c.name, cl.language",
+      "references": [
+        "select language, countrycode, max(fraction) from countrylanguage group by countrycode",
+        "select language, countrycode, max(proportion) from countrylanguage group by countrycode"
+      ]
+    },
+    {
+      "case": "693a32c5fc76",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 771,
+      "position": 3,
+      "database": "poker_player",
+      "sql_sha256": "d9af450460dd79446424eb889dc9c4907738f279c1c57ed68d1b122df7d2cbcc",
+      "match_after_column_reordering": false,
+      "question": "What is the maximum number of final tables made among poker players with earnings less than 200000?",
+      "candidate": "SELECT MAX(COALESCE(last_round_table, 0) + COALESCE(endgame_table, 0)) FROM poker_player WHERE earnings < 200000;",
+      "references": [
+        "select max(last_round_table) from poker_player where earnings < 200000",
+        "select max(endgame_table) from poker_player where earnings < 200000"
+      ]
+    },
+    {
+      "case": "6dc096570ca6",
+      "model": "doubao_seed2_lite",
+      "item_id": 771,
+      "position": 2,
+      "database": "poker_player",
+      "sql_sha256": "0b13c97fed3bfd3e5a8bf0f7d648ffe6f37aec875247a6e7a817b6e188111e62",
+      "match_after_column_reordering": false,
+      "question": "What is the maximum number of final tables made among poker players with earnings less than 200000?",
+      "candidate": "SELECT MAX(attendee_count) AS max_final_table_attendance FROM (SELECT COUNT(DISTINCT poker_player_id) AS attendee_count FROM poker_player WHERE earnings < 200000 GROUP BY endgame_table) AS final_table_counts",
+      "references": [
+        "select max(last_round_table) from poker_player where earnings < 200000",
+        "select max(endgame_table) from poker_player where earnings < 200000"
+      ]
+    },
+    {
+      "case": "7286a976848b",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 982,
+      "position": 3,
+      "database": "orchestra",
+      "sql_sha256": "1f3792209cf3cf11ccf4fe13d1d3081d339d06e2d230e7fe678d31ea0a171d48",
+      "match_after_column_reordering": false,
+      "question": "Return the maximum and minimum shares for performances that do not have the type \"Live final\".",
+      "candidate": "SELECT MAX(percentage_share) AS maximum_percentage_share, MIN(percentage_share) AS minimum_percentage_share, MAX(market_share) AS maximum_market_share, MIN(market_share) AS minimum_market_share FROM performance WHERE type <> 'Live final'",
+      "references": [
+        "select max(percentage_share), min(percentage_share) from performance where type != \"Live final\"",
+        "select max(market_share), min(market_share) from performance where type != \"Live final\""
+      ]
+    },
+    {
+      "case": "74c1305c7dec",
+      "model": "doubao_seed2_lite",
+      "item_id": 1235,
+      "position": 3,
+      "database": "singer",
+      "sql_sha256": "1ca7613c9cffc2b46c8a137186c6e06ae513a08741eb848eaf7918b3e5419e78",
+      "match_after_column_reordering": false,
+      "question": "Show the citizenship shared by singers with birth year before 1945 and after 1955.",
+      "candidate": "SELECT nationality AS shared_citizenship, COUNT(DISTINCT CASE WHEN birth_year < 1945 THEN singer_id END) AS pre_1945_singer_count, COUNT(DISTINCT CASE WHEN birth_year > 1955 THEN singer_id END) AS post_1955_singer_count FROM singer GROUP BY nationality HAVING pre_1945_singer_count > 0 AND post_1955_singer_count > 0",
+      "references": [
+        "select nationality from singer where birth_year < 1945 intersect select nationality from singer where birth_year > 1955",
+        "select country_of_origin from singer where birth_year < 1945 intersect select country_of_origin from singer where birth_year > 1955"
+      ]
+    },
+    {
+      "case": "779104ae25b0",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 627,
+      "position": 1,
+      "database": "student_transcripts_tracking",
+      "sql_sha256": "fa4c4d45174a01148bc6149824e037127595d3f5705190e9de401648f9e4df50",
+      "match_after_column_reordering": false,
+      "question": "What is the first, middle, and last name, along with the id and number of enrollments, for the student who enrolled the most in any program?",
+      "candidate": "SELECT s.first_name, s.middle_name, s.last_name, s.id, e.enrollment_count FROM students AS s JOIN (SELECT student_id, COUNT(*) AS enrollment_count FROM student_enrolment GROUP BY student_id) AS e ON e.student_id = s.id WHERE e.enrollment_count = (SELECT MAX(x.enrollment_count) FROM (SELECT COUNT(*) AS enrollment_count FROM student_enrolment GROUP BY student_id) AS x);",
+      "references": [
+        "select t1.id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.id from students as t1 join student_enrolment as t2 on t1.id = t2.student_id group by t1.id order by count(*) desc limit 1",
+        "select t1.enrollment_id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.enrollment_id from students as t1 join student_enrolment as t2 on t1.enrollment_id = t2.student_id group by t1.enrollment_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "7a17746045da",
+      "model": "doubao_seed2_lite",
+      "item_id": 718,
+      "position": 1,
+      "database": "tvshow",
+      "sql_sha256": "d517d3199603250c2ceb6c95a657d15e8474d1a1e973e1f6727ea50a92bca644",
+      "match_after_column_reordering": false,
+      "question": "What are all of the episodes ordered by ratings?",
+      "candidate": "SELECT * FROM tv_series ORDER BY rating DESC",
+      "references": [
+        "select part from tv_series order by rating",
+        "select chapter from tv_series order by rating"
+      ]
+    },
+    {
+      "case": "7d362b6d349b",
+      "model": "doubao_seed2_lite",
+      "item_id": 1223,
+      "position": 4,
+      "database": "singer",
+      "sql_sha256": "ae3b5b66bee53caf25b47863628c9653cf087305fb6cd216d78c39e7d348c295",
+      "match_after_column_reordering": false,
+      "question": "What are the song titles and singer names?",
+      "candidate": "SELECT song.title AS song_title, singer.stage_name AS singer_name FROM song FULL OUTER JOIN singer ON song.singer_id = singer.singer_id",
+      "references": [
+        "select t2.title, t1.stage_name from singer as t1 join song as t2 on t1.singer_id = t2.singer_id",
+        "select t2.title, t1.artist_name from singer as t1 join song as t2 on t1.singer_id = t2.singer_id"
+      ]
+    },
+    {
+      "case": "7ec22e9c7a3f",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1031,
+      "position": 4,
+      "database": "network_1",
+      "sql_sha256": "064124e1bf145894aef9f5f77b1ce454a8eae326dfc9aadec49cffd58f5e8ab8",
+      "match_after_column_reordering": false,
+      "question": "Show the names of high school students and their corresponding number of friends.",
+      "candidate": "SELECT h.full_name, COUNT(DISTINCT CASE WHEN f.student_id = h.id THEN f.friend_id ELSE f.student_id END) AS friend_count FROM highschooler AS h LEFT JOIN friend AS f ON f.student_id = h.id OR f.friend_id = h.id GROUP BY h.id, h.full_name",
+      "references": [
+        "select t2.full_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id",
+        "select t2.given_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id"
+      ]
+    },
+    {
+      "case": "810a00c27c1b",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 701,
+      "position": 3,
+      "database": "tvshow",
+      "sql_sha256": "1c09ffa3e5e6ccee4b719dccbd06554ce00d00100d3d27ecaff5b2a1d3fdf9ab",
+      "match_after_column_reordering": false,
+      "question": "List the number of different series names and contents in the TV Channel table.",
+      "candidate": "SELECT COUNT(*) AS different_series_name_content_pairs FROM (SELECT DISTINCT show_name, content FROM tv_channel);",
+      "references": [
+        "select count(distinct show_name), count(distinct content) from tv_channel",
+        "select count(distinct program_name), count(distinct content) from tv_channel"
+      ]
+    },
+    {
+      "case": "884bd362c018",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 92,
+      "position": 2,
+      "database": "pets_1",
+      "sql_sha256": "97b1220156f179e9e3b4f6dbe9ee799222e0062c20c537f577556b38cf85527d",
+      "match_after_column_reordering": true,
+      "question": "Find the average weight for each pet type.",
+      "candidate": "SELECT pettype, AVG(mass) AS average_weight FROM pets GROUP BY pettype",
+      "references": [
+        "select avg(mass), pettype from pets group by pettype",
+        "select avg(body_weight), pettype from pets group by pettype"
+      ]
+    },
+    {
+      "case": "8da8cc498f62",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1031,
+      "position": 1,
+      "database": "network_1",
+      "sql_sha256": "1de1eda0f9c8716d72c530bd6f833dae0f65149c3367457362eb809ea3ca6dd6",
+      "match_after_column_reordering": false,
+      "question": "Show the names of high school students and their corresponding number of friends.",
+      "candidate": "SELECT h.full_name, COUNT(DISTINCT f.friend_id) AS friend_count FROM highschooler AS h LEFT JOIN friend AS f ON f.student_id = h.id GROUP BY h.id, h.full_name",
+      "references": [
+        "select t2.full_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id",
+        "select t2.given_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id"
+      ]
+    },
+    {
+      "case": "8fb23c5796f8",
+      "model": "doubao_seed2_lite",
+      "item_id": 1048,
+      "position": 3,
+      "database": "network_1",
+      "sql_sha256": "9393e3bd5516f0a52c2199b990e0c3a5da5435fc3e63cfc83c4138febf098753",
+      "match_after_column_reordering": false,
+      "question": "How many likes correspond to each student id?",
+      "candidate": "SELECT liked_id AS student_id, COUNT(*) AS like_count FROM likes GROUP BY liked_id",
+      "references": [
+        "select liker_id, count(*) from likes group by liker_id",
+        "select admirer_id, count(*) from likes group by admirer_id"
+      ]
+    },
+    {
+      "case": "910e9d21ab2e",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 145,
+      "position": 2,
+      "database": "car_1",
+      "sql_sha256": "ffc534f351ed36e545cabbe7e4360ac7c42d1a94f9803f149b3f94f76aaded9e",
+      "match_after_column_reordering": false,
+      "question": "What are all the makers and models?",
+      "candidate": "SELECT make, model FROM car_names",
+      "references": [
+        "select maker, model_name from model_list",
+        "select maker, vehicle_name from model_list"
+      ]
+    },
+    {
+      "case": "96017112cea1",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 327,
+      "position": 2,
+      "database": "cre_Doc_Template_Mgt",
+      "sql_sha256": "3cff1c2d299e39d389742b4479552da23804af655bd1b404cb01f935a5e30f90",
+      "match_after_column_reordering": false,
+      "question": "What is the id and type code for the template used by the most documents?",
+      "candidate": "SELECT t.template_id, t.template_type_code FROM templates AS t JOIN documents AS d ON d.form_id = t.template_id GROUP BY t.template_id, t.template_type_code ORDER BY COUNT(*) DESC, t.template_id LIMIT 1",
+      "references": [
+        "select t1.pattern_id, t2.template_type_code from documents as t1 join templates as t2 on t1.pattern_id = t2.template_id group by t1.pattern_id order by count(*) desc limit 1",
+        "select t1.form_id, t2.template_type_code from documents as t1 join templates as t2 on t1.form_id = t2.template_id group by t1.form_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "97bb8f3599f3",
+      "model": "doubao_seed2_lite",
+      "item_id": 627,
+      "position": 3,
+      "database": "student_transcripts_tracking",
+      "sql_sha256": "16ab514c2df6770fe3605da4cc6fc93cbbd94309cd0438a2da5c8075417b437b",
+      "match_after_column_reordering": false,
+      "question": "What is the first, middle, and last name, along with the id and number of enrollments, for the student who enrolled the most in any program?",
+      "candidate": "SELECT s.first_name, s.middle_name, s.last_name, s.id, COUNT(DISTINCT se.degree_program_id) AS number_of_enrollments FROM students s JOIN student_enrolment se ON s.id = se.student_id GROUP BY s.id, s.first_name, s.middle_name, s.last_name ORDER BY number_of_enrollments DESC LIMIT 1;",
+      "references": [
+        "select t1.id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.id from students as t1 join student_enrolment as t2 on t1.id = t2.student_id group by t1.id order by count(*) desc limit 1",
+        "select t1.enrollment_id, t1.first_name, t1.middle_name, t1.last_name, count(*), t1.enrollment_id from students as t1 join student_enrolment as t2 on t1.enrollment_id = t2.student_id group by t1.enrollment_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "9c302c88055a",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 610,
+      "position": 3,
+      "database": "student_transcripts_tracking",
+      "sql_sha256": "b858a6269c6d031075c6a1b055a213570123f623622200b071ca6d1ed9ea783c",
+      "match_after_column_reordering": false,
+      "question": "What are the first, middle, and last names, along with the ids, of all students who enrolled in 2 degree programs in one semester?",
+      "candidate": "SELECT DISTINCT s.student_id, s.first_name, s.middle_name, s.surname AS last_name FROM students AS s WHERE EXISTS (SELECT 1 FROM student_enrolment AS se WHERE se.student_id = s.student_id GROUP BY se.semester_id HAVING COUNT(DISTINCT se.degree_program_id) = 2)",
+      "references": [
+        "select t1.first_name, t1.middle_name, t1.surname, t1.student_id from students as t1 join student_enrolment as t2 on t1.student_id = t2.student_id group by t1.student_id having count(*) = 2",
+        "select t1.first_name, t1.middle_name, t1.family_name, t1.student_id from students as t1 join student_enrolment as t2 on t1.student_id = t2.student_id group by t1.student_id having count(*) = 2"
+      ]
+    },
+    {
+      "case": "a0a7a8669aaa",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 428,
+      "position": 2,
+      "database": "course_teach",
+      "sql_sha256": "8eb5f2eabb02a1061ca2c6ca7431caf37c3dab64e9d8e9c4033de9be84908516",
+      "match_after_column_reordering": false,
+      "question": "What is the name of each teacher and what course they teach?",
+      "candidate": "SELECT teacher.name, course.course_id, course.subject, course.topic FROM teacher JOIN course_arrange ON teacher.teacher_id = course_arrange.teacher_id JOIN course ON course_arrange.course_id = course.course_id",
+      "references": [
+        "select t3.name, t2.topic from course_arrange as t1 join course as t2 on t1.course_id = t2.course_id join teacher as t3 on t1.teacher_id = t3.teacher_id",
+        "select t3.name, t2.subject from course_arrange as t1 join course as t2 on t1.course_id = t2.course_id join teacher as t3 on t1.teacher_id = t3.teacher_id"
+      ]
+    },
+    {
+      "case": "a7853235df48",
+      "model": "doubao_seed2_lite",
+      "item_id": 65,
+      "position": 3,
+      "database": "pets_1",
+      "sql_sha256": "fdd07f50acad7a9f988caa71141cf1868ae91e0964dfb0ba042b23ae6534c54e",
+      "match_after_column_reordering": false,
+      "question": "Find the first name of students who have cat or dog pet.",
+      "candidate": "SELECT s.first_name FROM student s WHERE (SELECT COUNT(petid) FROM has_pet hp WHERE hp.stuid = s.stuid) = 1 AND EXISTS (SELECT 1 FROM has_pet hp JOIN pets p ON hp.petid = p.petid WHERE hp.stuid = s.stuid AND p.pettype IN ('cat', 'dog'))",
+      "references": [
+        "select distinct t1.given_name from student as t1 join has_pet as t2 on t1.stuid = t2.stuid join pets as t3 on t3.petid = t2.petid where t3.pettype = 'cat' or t3.pettype = 'dog'",
+        "select distinct t1.first_name from student as t1 join has_pet as t2 on t1.stuid = t2.stuid join pets as t3 on t3.petid = t2.petid where t3.pettype = 'cat' or t3.pettype = 'dog'"
+      ]
+    },
+    {
+      "case": "a8ad9f8e6269",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 620,
+      "position": 2,
+      "database": "student_transcripts_tracking",
+      "sql_sha256": "bfc3ac58ea74742dd50adcb3ed56f0c0b4f9829c64427bf516ca2920c6db3a2d",
+      "match_after_column_reordering": false,
+      "question": "Find the program which most number of students are enrolled in. List both the id and the summary.",
+      "candidate": "SELECT dp.degree_program_id, dp.degree_summary_description FROM degree_programs AS dp JOIN student_enrolment AS se ON se.degree_program_id = dp.degree_program_id GROUP BY dp.degree_program_id, dp.degree_summary_description HAVING COUNT(*) = (SELECT MAX(enrollment_count) FROM (SELECT COUNT(*) AS enrollment_count FROM student_enrolment GROUP BY degree_program_id));",
+      "references": [
+        "select t1.degree_program_id, t1.program_name from degree_programs as t1 join student_enrolment as t2 on t1.degree_program_id = t2.degree_program_id group by t1.degree_program_id order by count(*) desc limit 1",
+        "select t1.degree_program_id, t1.degree_name from degree_programs as t1 join student_enrolment as t2 on t1.degree_program_id = t2.degree_program_id group by t1.degree_program_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "ae0a758d7858",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 144,
+      "position": 1,
+      "database": "car_1",
+      "sql_sha256": "e6b21ec96b40ab0ee30bfc3cc0994c745988f85a81a04531a1c089464f15c4d3",
+      "match_after_column_reordering": false,
+      "question": "What is the minimu weight of the car with 8 cylinders produced in 1974?",
+      "candidate": "SELECT MIN(mass) AS minimum_weight FROM cars_data WHERE cylinders = 8 AND year = 1974;",
+      "references": [
+        "select mass from cars_data where cylinders = 4 and year = 1974 order by mass asc limit 1",
+        "select load from cars_data where cylinders = 4 and year = 1974 order by load asc limit 1"
+      ]
+    },
+    {
+      "case": "b3157c3a506a",
+      "model": "doubao_seed2_lite",
+      "item_id": 444,
+      "position": 3,
+      "database": "museum_visit",
+      "sql_sha256": "c7948d774f54d9e13fe09fc6437ade57b0acd81938846e6366c7dba9a4e50a18",
+      "match_after_column_reordering": false,
+      "question": "Find the name and membership level of the visitors whose membership level is higher than 4, and sort by their age from old to young.",
+      "candidate": "SELECT m.name, v.membership_level FROM visitor v INNER JOIN visit vi ON v.id = vi.visitor_id INNER JOIN museum m ON vi.museum_id = m.museum_id WHERE v.membership_level > 4 ORDER BY v.age DESC;",
+      "references": [
+        "select name, membership_level from visitor where membership_level > 4 order by age desc",
+        "select name, subscription_level from visitor where subscription_level > 4 order by age desc"
+      ]
+    },
+    {
+      "case": "b6d489dc459b",
+      "model": "doubao_seed2_lite",
+      "item_id": 863,
+      "position": 2,
+      "database": "world_1",
+      "sql_sha256": "405971b4b46a7aec324e1f666524c51abdf935fbf4946f9178579651c5e8ec0b",
+      "match_after_column_reordering": false,
+      "question": "What is the total number of languages used in Aruba?",
+      "candidate": "SELECT COUNT(DISTINCT cl.tongue) AS total_official_languages FROM countrylanguage cl JOIN country c ON cl.countrycode = c.code WHERE c.name = 'Aruba' AND cl.isofficial = 1",
+      "references": [
+        "select count(t2.tongue) from country as t1 join countrylanguage as t2 on t1.code = t2.countrycode where t1.name = \"Aruba\"",
+        "select count(t2.dialect) from country as t1 join countrylanguage as t2 on t1.code = t2.countrycode where t1.name = \"Aruba\""
+      ]
+    },
+    {
+      "case": "b87d9e37fd85",
+      "model": "doubao_seed2_lite",
+      "item_id": 144,
+      "position": 1,
+      "database": "car_1",
+      "sql_sha256": "89efd8cdba9d3ce13d86c071cca7524c65b288dd89af095c69ce9b6fe9399b57",
+      "match_after_column_reordering": false,
+      "question": "What is the minimu weight of the car with 8 cylinders produced in 1974?",
+      "candidate": "SELECT MIN(mass) AS minimum_car_weight FROM cars_data WHERE cylinders = 8 AND year = 1974",
+      "references": [
+        "select mass from cars_data where cylinders = 4 and year = 1974 order by mass asc limit 1",
+        "select load from cars_data where cylinders = 4 and year = 1974 order by load asc limit 1"
+      ]
+    },
+    {
+      "case": "ba160c2f96e8",
+      "model": "doubao_seed2_lite",
+      "item_id": 1045,
+      "position": 3,
+      "database": "network_1",
+      "sql_sha256": "0f2c70c0bbbfdaacc85b10a3a28a8720f224751355842004b4abd9555afe6590",
+      "match_after_column_reordering": false,
+      "question": "Show name of all students who have some friends and also are liked by someone else.",
+      "candidate": "SELECT DISTINCT h.full_name AS name FROM highschooler h WHERE EXISTS (SELECT 1 FROM friend f WHERE f.student_id = h.id) AND EXISTS (SELECT 1 FROM friend f2 INNER JOIN likes l ON f2.friend_id = l.student_id WHERE f2.student_id = h.id AND l.liked_id = h.id)",
+      "references": [
+        "select t2.full_name from friend as t1 join highschooler as t2 on t1.student_id = t2.id intersect select t2.full_name from likes as t1 join highschooler as t2 on t1.liked_id = t2.id",
+        "select t2.given_name from friend as t1 join highschooler as t2 on t1.student_id = t2.id intersect select t2.given_name from likes as t1 join highschooler as t2 on t1.liked_id = t2.id"
+      ]
+    },
+    {
+      "case": "bc323d976f0a",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 167,
+      "position": 2,
+      "database": "car_1",
+      "sql_sha256": "dec192e1e87dc1f6ec8d8beab1d513359138c8226a8000e551c4c8ef3fb9f382",
+      "match_after_column_reordering": false,
+      "question": "What is the average edispl of the cars of model volvo?",
+      "candidate": "SELECT AVG(cd.engine_displacement) AS average_edispl FROM cars_data AS cd JOIN car_names AS cn ON cn.makeid = cd.id JOIN model_list AS ml ON ml.modelid = cn.model JOIN car_makers AS cm ON cm.id = ml.maker WHERE LOWER(cm.fullname) = 'volvo'",
+      "references": [
+        "select avg(t2.engine_displacement) from car_names as t1 join cars_data as t2 on t1.makeid = t2.id where t1.model = 'volvo'",
+        "select avg(t2.engine_size) from car_names as t1 join cars_data as t2 on t1.makeid = t2.id where t1.model = 'volvo'"
+      ]
+    },
+    {
+      "case": "bd1fe4a4ca3f",
+      "model": "doubao_seed2_lite",
+      "item_id": 804,
+      "position": 4,
+      "database": "voter_1",
+      "sql_sha256": "dd0b99cf1e40c9c96e50cf24f51739f599c096422004a6f100e61ac3b14fa815",
+      "match_after_column_reordering": false,
+      "question": "List the contestant numbers and names, ordered by contestant name descending.",
+      "candidate": "SELECT DISTINCT c.contestant_number, c.applicant_name AS contestant_name FROM contestants c INNER JOIN votes v ON c.contestant_number = v.contestant_number ORDER BY c.applicant_name DESC",
+      "references": [
+        "select contestant_number, fullname from contestants order by fullname desc",
+        "select contestant_number, applicant_name from contestants order by applicant_name desc"
+      ]
+    },
+    {
+      "case": "c1620e2fee10",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 995,
+      "position": 3,
+      "database": "orchestra",
+      "sql_sha256": "c2108724609eec4a46f3c63d559706fe2456d634c1780cbc0afb221932514b7f",
+      "match_after_column_reordering": false,
+      "question": "Show the name of the conductor that has conducted the most number of orchestras.",
+      "candidate": "SELECT c.full_name FROM conductor AS c JOIN orchestra AS o ON o.conductor_id = c.conductor_id GROUP BY c.conductor_id, c.full_name HAVING COUNT(DISTINCT o.orchestra) = (SELECT MAX(orchestra_count) FROM (SELECT COUNT(DISTINCT orchestra) AS orchestra_count FROM orchestra GROUP BY conductor_id));",
+      "references": [
+        "select t1.full_name from conductor as t1 join orchestra as t2 on t1.conductor_id = t2.conductor_id group by t2.conductor_id order by count(*) desc limit 1",
+        "select t1.title from conductor as t1 join orchestra as t2 on t1.conductor_id = t2.conductor_id group by t2.conductor_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "c4a365764ee9",
+      "model": "doubao_seed2_lite",
+      "item_id": 561,
+      "position": 2,
+      "database": "battle_death",
+      "sql_sha256": "4bb5844a784eb3a9d7e548a0675fdfc9dc7db5781d1b7e715d03550612c44125",
+      "match_after_column_reordering": false,
+      "question": "What is the ship id and name that caused most total injuries?",
+      "candidate": "SELECT s.id, s.ship_name FROM ship s INNER JOIN death d ON s.id = d.caused_by_ship_id GROUP BY s.id, s.ship_name ORDER BY COUNT(*) DESC LIMIT 1",
+      "references": [
+        "select t2.id, t2.ship_name from death as t1 join ship as t2 on t1.caused_by_ship_id = t2.id group by t2.id order by count(*) desc limit 1",
+        "select t2.id, t2.vessel_name from death as t1 join ship as t2 on t1.caused_by_ship_id = t2.id group by t2.id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "c544b4c0be4a",
+      "model": "doubao_seed2_lite",
+      "item_id": 307,
+      "position": 2,
+      "database": "cre_Doc_Template_Mgt",
+      "sql_sha256": "1c486d8253494b66d031de48044d5364b6040c40917ce58282644d852551a702",
+      "match_after_column_reordering": false,
+      "question": "List document IDs, document names, and document descriptions for all documents.",
+      "candidate": "SELECT DISTINCT p.document_id, d.document_name, d.document_description FROM documents d INNER JOIN paragraphs p ON d.record_id = p.document_id",
+      "references": [
+        "select record_id, document_name, document_description from documents",
+        "select file_id, document_name, document_description from documents"
+      ]
+    },
+    {
+      "case": "c69adf842c2c",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1003,
+      "position": 3,
+      "database": "orchestra",
+      "sql_sha256": "f0970549508136f0d0f4928e1bd3c15128769c38940085dc14e2d4f40aeac25a",
+      "match_after_column_reordering": false,
+      "question": "List the record company shared by the most number of orchestras.",
+      "candidate": "SELECT company FROM (SELECT audio_company AS company, orchestra_id FROM orchestra WHERE audio_company IS NOT NULL UNION SELECT recording_label AS company, orchestra_id FROM orchestra WHERE recording_label IS NOT NULL) AS companies GROUP BY company ORDER BY COUNT(DISTINCT orchestra_id) DESC LIMIT 1;",
+      "references": [
+        "select recording_label from orchestra group by recording_label order by count(*) desc limit 1",
+        "select audio_company from orchestra group by audio_company order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "cc7767371635",
+      "model": "doubao_seed2_lite",
+      "item_id": 812,
+      "position": 2,
+      "database": "voter_1",
+      "sql_sha256": "5666ccd220d4f71f959a80d9ecf85f946c29c3fe3042d77ca39f41b13330a675",
+      "match_after_column_reordering": false,
+      "question": "What are the distinct states and create time of all votes?",
+      "candidate": "SELECT DISTINCT acs.state, v.created AS create_time FROM votes v LEFT JOIN area_code_state acs ON SUBSTR(v.phone_number, 1, 3) = acs.area_code",
+      "references": [
+        "select distinct province, created from votes",
+        "select distinct territory, created from votes"
+      ]
+    },
+    {
+      "case": "cf8a9b754b33",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1198,
+      "position": 3,
+      "database": "dog_kennels",
+      "sql_sha256": "8873dd6aedaed9f693e719689ad64614cc07bdf796426fa3db473b54a95545c3",
+      "match_after_column_reordering": false,
+      "question": "List the first name of all the professionals along with the description of the treatment they have done.",
+      "candidate": "SELECT p.forename, tt.treatment_type_description FROM professionals AS p LEFT JOIN treatments AS t ON t.professional_id = p.professional_id LEFT JOIN treatment_types AS tt ON tt.treatment_type_code = t.treatment_type_code",
+      "references": [
+        "select distinct t1.forename, t3.treatment_type_description from professionals as t1 join treatments as t2 on t1.professional_id = t2.professional_id join treatment_types as t3 on t2.treatment_type_code = t3.treatment_type_code",
+        "select distinct t1.given_name, t3.treatment_type_description from professionals as t1 join treatments as t2 on t1.professional_id = t2.professional_id join treatment_types as t3 on t2.treatment_type_code = t3.treatment_type_code"
+      ]
+    },
+    {
+      "case": "d0309c117b89",
+      "model": "doubao_seed2_lite",
+      "item_id": 266,
+      "position": 3,
+      "database": "flight_2",
+      "sql_sha256": "20b02453ff3eac1f72c471a10a42761fa786d3672122e6fe3352a1c932b7aa86",
+      "match_after_column_reordering": false,
+      "question": "Which airports do not have departing or arriving flights?",
+      "candidate": "SELECT a.airportcode, a.aerodrome_name FROM airports a WHERE a.airportcode NOT IN (SELECT f.sourceairport FROM flights f JOIN airlines al ON f.airline = al.airline UNION SELECT f.destairport FROM flights f JOIN airlines al ON f.airline = al.airline)",
+      "references": [
+        "select aerodrome_name from airports where airportcode not in (select sourceairport from flights union select destairport from flights)",
+        "select aviation_terminal from airports where airportcode not in (select sourceairport from flights union select destairport from flights)"
+      ]
+    },
+    {
+      "case": "d07ea6b98b6c",
+      "model": "doubao_seed2_lite",
+      "item_id": 1031,
+      "position": 4,
+      "database": "network_1",
+      "sql_sha256": "8a48f5fe1c1b9a12691d5e2c876cd09b96c2810ffad64c292a78daf3d9dd5bfb",
+      "match_after_column_reordering": false,
+      "question": "Show the names of high school students and their corresponding number of friends.",
+      "candidate": "SELECT h.given_name AS student_name, COUNT(f.friend_id) AS number_of_friends FROM highschooler h LEFT JOIN friend f ON h.id = f.student_id GROUP BY h.id, h.given_name",
+      "references": [
+        "select t2.full_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id",
+        "select t2.given_name, count(*) from friend as t1 join highschooler as t2 on t1.student_id = t2.id group by t1.student_id"
+      ]
+    },
+    {
+      "case": "d2e340a01885",
+      "model": "doubao_seed2_lite",
+      "item_id": 92,
+      "position": 2,
+      "database": "pets_1",
+      "sql_sha256": "97b1220156f179e9e3b4f6dbe9ee799222e0062c20c537f577556b38cf85527d",
+      "match_after_column_reordering": true,
+      "question": "Find the average weight for each pet type.",
+      "candidate": "SELECT pettype, AVG(mass) AS average_weight FROM pets GROUP BY pettype",
+      "references": [
+        "select avg(mass), pettype from pets group by pettype",
+        "select avg(body_weight), pettype from pets group by pettype"
+      ]
+    },
+    {
+      "case": "d78573242813",
+      "model": "doubao_seed2_lite",
+      "item_id": 491,
+      "position": 3,
+      "database": "wta_1",
+      "sql_sha256": "8de53ea04238f6777290d528919a1e78b5fc328313cd95937b83a0e5ff77d6a1",
+      "match_after_column_reordering": false,
+      "question": "What is the first name and country code of the oldest player?",
+      "candidate": "SELECT p.forename AS first_name, p.country_code FROM players p JOIN matches m ON p.player_id = m.loser_id ORDER BY m.loser_age DESC LIMIT 1",
+      "references": [
+        "select given_name, country_code from players order by birth_date limit 1",
+        "select forename, country_code from players order by birth_date limit 1"
+      ]
+    },
+    {
+      "case": "d9497a9b216f",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1192,
+      "position": 1,
+      "database": "dog_kennels",
+      "sql_sha256": "185d6203c7fa1c5ad1912dce607d11fe1690cceba798b3ee241d86cd1159689a",
+      "match_after_column_reordering": false,
+      "question": "What are the email, cell phone and home phone of each professional?",
+      "candidate": "SELECT professional_id, email_address, mobile_number AS cell_phone, home_phone FROM professionals",
+      "references": [
+        "select email_address, mobile_number, home_phone from professionals",
+        "select email_address, phone_number, home_phone from professionals"
+      ]
+    },
+    {
+      "case": "db8114c48edf",
+      "model": "doubao_seed2_lite",
+      "item_id": 1090,
+      "position": 4,
+      "database": "dog_kennels",
+      "sql_sha256": "23d8fd9a94ebdf76e32fc37e193b6f77e0a3c8e72d5c5df71ec57d8d27c6e97e",
+      "match_after_column_reordering": false,
+      "question": "What are the id, role, and first name of the professionals who have performed two or more treatments?",
+      "candidate": "SELECT p.professional_id AS id, p.job_code AS role, p.first_name FROM professionals p INNER JOIN treatments t ON p.professional_id = t.professional_id GROUP BY p.professional_id, p.job_code, p.first_name HAVING COUNT(DISTINCT t.treatment_type_code) >= 2",
+      "references": [
+        "select t1.professional_id, t1.position_code, t1.first_name from professionals as t1 join treatments as t2 on t1.professional_id = t2.professional_id group by t1.professional_id having count(*) >= 2",
+        "select t1.professional_id, t1.job_code, t1.first_name from professionals as t1 join treatments as t2 on t1.professional_id = t2.professional_id group by t1.professional_id having count(*) >= 2"
+      ]
+    },
+    {
+      "case": "de5de799bb24",
+      "model": "doubao_seed2_lite",
+      "item_id": 718,
+      "position": 3,
+      "database": "tvshow",
+      "sql_sha256": "c20e1f5dfcd1205f2eaf71df37bbff40ea383f6c70ec6229ea5b8a0569f91564",
+      "match_after_column_reordering": false,
+      "question": "What are all of the episodes ordered by ratings?",
+      "candidate": "SELECT * FROM tv_series ORDER BY share DESC",
+      "references": [
+        "select part from tv_series order by rating",
+        "select chapter from tv_series order by rating"
+      ]
+    },
+    {
+      "case": "deb965a4ec52",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1215,
+      "position": 1,
+      "database": "singer",
+      "sql_sha256": "c0db20e82335d32eeff5ca1011d37918a4aac19b3868bf3e0f1fac282d4d185b",
+      "match_after_column_reordering": false,
+      "question": "Please show the most common citizenship of singers.",
+      "candidate": "SELECT nationality, COUNT(*) AS singer_count FROM singer WHERE nationality IS NOT NULL GROUP BY nationality HAVING COUNT(*) = (SELECT MAX(singer_count) FROM (SELECT COUNT(*) AS singer_count FROM singer WHERE nationality IS NOT NULL GROUP BY nationality));",
+      "references": [
+        "select nationality from singer group by nationality order by count(*) desc limit 1",
+        "select country_of_origin from singer group by country_of_origin order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "dffa7b3c9ba7",
+      "model": "doubao_seed2_lite",
+      "item_id": 518,
+      "position": 2,
+      "database": "wta_1",
+      "sql_sha256": "68bfc041bfb79c67de8bbc7f20af86cda2b8d3990076f324b73ba841521f84c1",
+      "match_after_column_reordering": false,
+      "question": "What are the first names of all players, and their average rankings?",
+      "candidate": "SELECT p.forename AS first_name, AVG(r.ranking) AS average_ranking FROM players p INNER JOIN rankings r ON p.player_id = r.player_id GROUP BY p.player_id, p.forename",
+      "references": [
+        "select avg(ranking), t1.given_name from players as t1 join rankings as t2 on t1.player_id = t2.player_id group by t1.given_name",
+        "select avg(ranking), t1.forename from players as t1 join rankings as t2 on t1.player_id = t2.player_id group by t1.forename"
+      ]
+    },
+    {
+      "case": "e18ba8de1721",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 749,
+      "position": 3,
+      "database": "tvshow",
+      "sql_sha256": "ea5f15935c3863faa2b13bec38bbea6f855212e3327377bc85ad7dc125a48ad7",
+      "match_after_column_reordering": false,
+      "question": "What is the series name and country of all TV channels that are playing cartoons directed by Ben Jones and cartoons directed by Michael Chang?",
+      "candidate": "SELECT DISTINCT tc.program_name, tc.country FROM tv_channel AS tc JOIN cartoon AS c ON c.channel = tc.id WHERE c.directed_by IN ('Ben Jones', 'Michael Chang')",
+      "references": [
+        "select t1.show_name, t1.country from tv_channel as t1 join cartoon as t2 on t1.id = t2.channel where t2.directed_by = 'Michael Chang' intersect select t1.show_name, t1.country from tv_channel as t1 join cartoon as t2 on t1.id = t2.channel where t2.directed_by = 'Ben Jones'",
+        "select t1.program_name, t1.country from tv_channel as t1 join cartoon as t2 on t1.id = t2.channel where t2.directed_by = 'Michael Chang' intersect select t1.program_name, t1.country from tv_channel as t1 join cartoon as t2 on t1.id = t2.channel where t2.directed_by = 'Ben Jones'"
+      ]
+    },
+    {
+      "case": "e1f879a59f6c",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 451,
+      "position": 4,
+      "database": "museum_visit",
+      "sql_sha256": "f9086e7a11f3c1358c3b52de35efed0a39d349794fb652d60dd21f8727918c3a",
+      "match_after_column_reordering": false,
+      "question": "find the id, name and age for visitors who visited some museums more than once.",
+      "candidate": "SELECT DISTINCT v.unique_id AS id, v.name, v.age FROM visitor AS v JOIN visit AS vi ON vi.visitor_id = v.unique_id GROUP BY v.unique_id, v.name, v.age, vi.museum_id HAVING COUNT(*) > 1",
+      "references": [
+        "select t1.unique_id, t1.name, t1.age from visitor as t1 join visit as t2 on t1.unique_id = t2.visitor_id group by t1.unique_id having count(*) > 1",
+        "select t1.identifier, t1.name, t1.age from visitor as t1 join visit as t2 on t1.identifier = t2.visitor_id group by t1.identifier having count(*) > 1"
+      ]
+    },
+    {
+      "case": "e2e8dfeab854",
+      "model": "doubao_seed2_lite",
+      "item_id": 996,
+      "position": 1,
+      "database": "orchestra",
+      "sql_sha256": "603ae4d104b3940b278816b0651196ed522ca184eb59d9dd9d150fbd0eb58377",
+      "match_after_column_reordering": false,
+      "question": "What is the name of the conductor who has conducted the most orchestras?",
+      "candidate": "SELECT c.full_name FROM conductor c JOIN orchestra o ON c.conductor_id = o.conductor_id GROUP BY c.conductor_id, c.full_name ORDER BY COUNT(DISTINCT o.orchestra_id) DESC LIMIT 1",
+      "references": [
+        "select t1.full_name from conductor as t1 join orchestra as t2 on t1.conductor_id = t2.conductor_id group by t2.conductor_id order by count(*) desc limit 1",
+        "select t1.title from conductor as t1 join orchestra as t2 on t1.conductor_id = t2.conductor_id group by t2.conductor_id order by count(*) desc limit 1"
+      ]
+    },
+    {
+      "case": "e66f4b0147f9",
+      "model": "doubao_seed2_lite",
+      "item_id": 564,
+      "position": 4,
+      "database": "battle_death",
+      "sql_sha256": "b3098bf27fb526ed6c0a3ebfc884db6c18494da5acf90548b7d81639f0a6629f",
+      "match_after_column_reordering": false,
+      "question": "How many different results are there for the battles?",
+      "candidate": "SELECT COUNT(DISTINCT id) AS total_distinct_battle_records FROM battle",
+      "references": [
+        "select count(distinct outcome) from battle",
+        "select count(distinct consequence) from battle"
+      ]
+    },
+    {
+      "case": "ec89d6291e4c",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 449,
+      "position": 1,
+      "database": "museum_visit",
+      "sql_sha256": "1c217bcd4a8faa83a40e4905cd8634b5ee41ccfa8996837d51f8a7a1ec2a748a",
+      "match_after_column_reordering": true,
+      "question": "What are the opening year and staff number of the museum named Plaza Museum?",
+      "candidate": "SELECT open_year, staff_size FROM museum WHERE name = 'Plaza Museum';",
+      "references": [
+        "select employee_count, open_year from museum where name = 'Plaza Museum'",
+        "select staff_size, open_year from museum where name = 'Plaza Museum'"
+      ]
+    },
+    {
+      "case": "ed0bf3a5eae4",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 774,
+      "position": 3,
+      "database": "poker_player",
+      "sql_sha256": "4fe897196346f12ee603855b279d41f49cbdc74eafa9cc70578e48b0526f4beb",
+      "match_after_column_reordering": false,
+      "question": "Return the names of all the poker players.",
+      "candidate": "SELECT people.full_name, people.complete_name FROM poker_player JOIN people ON poker_player.people_id = people.people_id",
+      "references": [
+        "select t1.full_name from people as t1 join poker_player as t2 on t1.people_id = t2.people_id",
+        "select t1.complete_name from people as t1 join poker_player as t2 on t1.people_id = t2.people_id"
+      ]
+    },
+    {
+      "case": "ef5db4aad254",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 322,
+      "position": 4,
+      "database": "cre_Doc_Template_Mgt",
+      "sql_sha256": "ee831e02ed065ffa03607529ed6922afec216c126413eae802cf8747a0d0f53e",
+      "match_after_column_reordering": false,
+      "question": "Return the document id, template id, and description for the document with the name Robbin CV.",
+      "candidate": "SELECT d.document_id, t.template_id, t.template_details AS description FROM documents AS d JOIN templates AS t ON t.template_id = d.pattern_id WHERE d.document_name = 'Robbin CV'",
+      "references": [
+        "select document_id, pattern_id, document_description from documents where document_name = \"Robbin CV\"",
+        "select document_id, form_id, document_description from documents where document_name = \"Robbin CV\""
+      ]
+    },
+    {
+      "case": "f1276a5dfeae",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 839,
+      "position": 2,
+      "database": "world_1",
+      "sql_sha256": "87e1f88e206ef41d27d87e1ec6a91af92803dac59492f204d63513e73ae046ff",
+      "match_after_column_reordering": true,
+      "question": "What region does Angola belong to and what is its population?",
+      "candidate": "SELECT region, citizen_count AS population FROM country WHERE name = 'Angola'",
+      "references": [
+        "select headcount, region from country where name = \"Angola\"",
+        "select citizen_count, region from country where name = \"Angola\""
+      ]
+    },
+    {
+      "case": "f2185a1bb78f",
+      "model": "doubao_seed2_lite",
+      "item_id": 291,
+      "position": 3,
+      "database": "employee_hire_evaluation",
+      "sql_sha256": "64ea8c9c670fa83f7fa9f57fbc55d4d5b9a8669281ec4fed3bc470c1a2cffa59",
+      "match_after_column_reordering": false,
+      "question": "Find the name of the employee who got the highest one time bonus.",
+      "candidate": "SELECT e.full_name AS name FROM employee e INNER JOIN evaluation ev ON e.employee_id = ev.employee_id GROUP BY e.employee_id, e.full_name ORDER BY SUM(ev.bonus) DESC LIMIT 1",
+      "references": [
+        "select t1.full_name from employee as t1 join evaluation as t2 on t1.employee_id = t2.employee_id order by t2.bonus desc limit 1",
+        "select t1.given_name from employee as t1 join evaluation as t2 on t1.employee_id = t2.employee_id order by t2.bonus desc limit 1"
+      ]
+    },
+    {
+      "case": "f2e510e27b87",
+      "model": "doubao_seed2_lite",
+      "item_id": 805,
+      "position": 3,
+      "database": "voter_1",
+      "sql_sha256": "48b659de9cbeeaa364f7e950dcfff1b41c0affa09a6eb9db87eee95b6dd6e241",
+      "match_after_column_reordering": false,
+      "question": "List the vote ids, phone numbers and states of all votes.",
+      "candidate": "SELECT v.voting_id AS vote_id, v.phone_number, a.state FROM votes v LEFT JOIN area_code_state a ON SUBSTR(v.phone_number, 1, 3) = a.area_code;",
+      "references": [
+        "select ballot_id, phone_number, state from votes",
+        "select voting_id, phone_number, state from votes"
+      ]
+    },
+    {
+      "case": "f3b809801582",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 242,
+      "position": 2,
+      "database": "flight_2",
+      "sql_sha256": "9418794a7d82c183e6a35743495c6ed11b23f867481635c452026a6402b0d4f0",
+      "match_after_column_reordering": false,
+      "question": "What is the abbreviation of the airilne has the fewest flights and what country is it in?",
+      "candidate": "WITH counts AS (SELECT a.code, a.country, COUNT(f.flightno) AS flight_count FROM airlines AS a LEFT JOIN flights AS f ON f.airline = a.code GROUP BY a.uid, a.code, a.country) SELECT code, country FROM counts WHERE flight_count = (SELECT MIN(flight_count) FROM counts)",
+      "references": [
+        "select t1.short_name, t1.country from airlines as t1 join flights as t2 on t1.uid = t2.airline group by t1.airline order by count(*) limit 1",
+        "select t1.code, t1.country from airlines as t1 join flights as t2 on t1.uid = t2.airline group by t1.airline order by count(*) limit 1"
+      ]
+    },
+    {
+      "case": "f56804ad6b44",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 1045,
+      "position": 2,
+      "database": "network_1",
+      "sql_sha256": "9ebc00c8877f9fe9ed7faf8b5a1aff5899b90310a57b66b886cb89027cafaf83",
+      "match_after_column_reordering": false,
+      "question": "Show name of all students who have some friends and also are liked by someone else.",
+      "candidate": "SELECT h.given_name FROM highschooler AS h WHERE EXISTS (SELECT 1 FROM friend AS f WHERE f.student_id = h.id) AND EXISTS (SELECT 1 FROM likes AS l WHERE l.liked_id = h.id AND l.student_id <> h.id)",
+      "references": [
+        "select t2.full_name from friend as t1 join highschooler as t2 on t1.student_id = t2.id intersect select t2.full_name from likes as t1 join highschooler as t2 on t1.liked_id = t2.id",
+        "select t2.given_name from friend as t1 join highschooler as t2 on t1.student_id = t2.id intersect select t2.given_name from likes as t1 join highschooler as t2 on t1.liked_id = t2.id"
+      ]
+    },
+    {
+      "case": "f5ef1f86733e",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 816,
+      "position": 2,
+      "database": "voter_1",
+      "sql_sha256": "1b4752654d62f23966e65ac849ae933b9cf6239b40086c6b701f9884f7109c45",
+      "match_after_column_reordering": false,
+      "question": "Of all the contestants who got voted, what is the contestant number and name of the contestant who got least votes?",
+      "candidate": "SELECT c.contestant_number, c.applicant_name AS name FROM contestants AS c JOIN (SELECT contestant_number, DENSE_RANK() OVER (ORDER BY vote_count) AS vote_rank FROM (SELECT contestant_number, COUNT(*) AS vote_count FROM votes GROUP BY contestant_number)) AS ranked_votes ON ranked_votes.contestant_number = c.contestant_number WHERE ranked_votes.vote_rank = 1 ORDER BY c.contestant_number",
+      "references": [
+        "select t1.contestant_number, t1.fullname from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number group by t1.contestant_number order by count(*) asc limit 1",
+        "select t1.contestant_number, t1.applicant_name from contestants as t1 join votes as t2 on t1.contestant_number = t2.contestant_number group by t1.contestant_number order by count(*) asc limit 1"
+      ]
+    },
+    {
+      "case": "f75cc7e82d92",
+      "model": "doubao_seed2_lite",
+      "item_id": 1237,
+      "position": 2,
+      "database": "real_estate_properties",
+      "sql_sha256": "0a92961b296eb57b399e01a92175fb813ffbd2481d3627f1eb4a133b8a0129d1",
+      "match_after_column_reordering": false,
+      "question": "What is the feature type name of feature AirCon?",
+      "candidate": "SELECT rft.type_name FROM ref_feature_types rft JOIN other_available_features oaf ON rft.feature_type_code = oaf.feature_type_code WHERE oaf.feature_description = 'AirCon'",
+      "references": [
+        "select t2.type_name from other_available_features as t1 join ref_feature_types as t2 on t1.feature_type_code = t2.feature_type_code where t1.feature_name = \"AirCon\"",
+        "select t2.category_name from other_available_features as t1 join ref_feature_types as t2 on t1.feature_type_code = t2.feature_type_code where t1.feature_name = \"AirCon\""
+      ]
+    },
+    {
+      "case": "fc53f30851aa",
+      "model": "gpt5_6_sol_hydra",
+      "item_id": 145,
+      "position": 3,
+      "database": "car_1",
+      "sql_sha256": "5a475e46194d1f7ab2054d1563ff2aa9018bf7b63924dd68aba8c1032a554f3b",
+      "match_after_column_reordering": false,
+      "question": "What are all the makers and models?",
+      "candidate": "SELECT car_makers.maker, model_list.vehicle_name FROM car_makers JOIN model_list ON car_makers.id = model_list.maker",
+      "references": [
+        "select maker, model_name from model_list",
+        "select maker, vehicle_name from model_list"
+      ]
+    },
+    {
+      "case": "fd669c14b6cd",
+      "model": "doubao_seed2_lite",
+      "item_id": 911,
+      "position": 3,
+      "database": "world_1",
+      "sql_sha256": "c7a38dd96071f31e168c47176f9f80d6630ef86b01ff98e7900aca320e56ad19",
+      "match_after_column_reordering": false,
+      "question": "Which cities are in European countries where English is not the official language?",
+      "candidate": "SELECT DISTINCT ci.city_name FROM city ci INNER JOIN country co ON ci.countrycode = co.code INNER JOIN countrylanguage cl ON co.code = cl.countrycode WHERE co.continent = 'Europe' AND cl.language = 'English' AND cl.isofficial = 0",
+      "references": [
+        "select distinct t2.city_name from country as t1 join city as t2 on t2.countrycode = t1.code where t1.continent = 'Europe' and t1.name not in (select t3.name from country as t3 join countrylanguage as t4 on t3.code = t4.countrycode where t4.isofficial = 'T' and t4.language = 'English')",
+        "select distinct t2.title from country as t1 join city as t2 on t2.countrycode = t1.code where t1.continent = 'Europe' and t1.name not in (select t3.name from country as t3 join countrylanguage as t4 on t3.code = t4.countrycode where t4.isofficial = 'T' and t4.language = 'English')"
+      ]
+    }
+  ]
+}

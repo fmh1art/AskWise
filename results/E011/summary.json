@@ -1,0 +1,113 @@
+{
+  "doubao_seed2_lite": {
+    "n": 50,
+    "distinct_questions": 44,
+    "databases": 20,
+    "multilabel_queries": 10,
+    "match_after_column_reordering": 2,
+    "labels": {
+      "projection": {
+        "count": 17,
+        "percent": 34.0
+      },
+      "relation": {
+        "count": 15,
+        "percent": 30.0
+      },
+      "filter": {
+        "count": 11,
+        "percent": 22.0
+      },
+      "aggregation": {
+        "count": 13,
+        "percent": 26.0
+      },
+      "ranking": {
+        "count": 5,
+        "percent": 10.0
+      },
+      "other": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "unresolved": {
+        "count": 0,
+        "percent": 0.0
+      }
+    }
+  },
+  "gpt5_6_sol_hydra": {
+    "n": 50,
+    "distinct_questions": 42,
+    "databases": 18,
+    "multilabel_queries": 22,
+    "match_after_column_reordering": 4,
+    "labels": {
+      "projection": {
+        "count": 29,
+        "percent": 58.0
+      },
+      "relation": {
+        "count": 13,
+        "percent": 26.0
+      },
+      "filter": {
+        "count": 8,
+        "percent": 16.0
+      },
+      "aggregation": {
+        "count": 14,
+        "percent": 28.0
+      },
+      "ranking": {
+        "count": 9,
+        "percent": 18.0
+      },
+      "other": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "unresolved": {
+        "count": 0,
+        "percent": 0.0
+      }
+    }
+  },
+  "balanced_sample": {
+    "n": 100,
+    "distinct_questions": 73,
+    "databases": 20,
+    "multilabel_queries": 32,
+    "match_after_column_reordering": 6,
+    "labels": {
+      "projection": {
+        "count": 46,
+        "percent": 46.0
+      },
+      "relation": {
+        "count": 28,
+        "percent": 28.0
+      },
+      "filter": {
+        "count": 19,
+        "percent": 19.0
+      },
+      "aggregation": {
+        "count": 27,
+        "percent": 27.0
+      },
+      "ranking": {
+        "count": 14,
+        "percent": 14.0
+      },
+      "other": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "unresolved": {
+        "count": 0,
+        "percent": 0.0
+      }
+    }
+  }
+}

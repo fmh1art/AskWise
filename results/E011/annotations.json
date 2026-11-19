@@ -1,0 +1,736 @@
+[
+  {
+    "case": "00421e19a702",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns both option columns together. Each reference returns one option. DISTINCT is inert on these two states."
+  },
+  {
+    "case": "08263defdfa0",
+    "labels": [
+      "relation",
+      "ranking"
+    ],
+    "rationale": "Matches documents through either template key instead of one. DENSE_RANK also returns three tied templates on the original state, while each reference returns one."
+  },
+  {
+    "case": "08a9c3c4495c",
+    "labels": [
+      "relation",
+      "filter"
+    ],
+    "rationale": "Requires flights through an airport associated with USA. Both references instead select airlines by the airline's own country."
+  },
+  {
+    "case": "09d29f4d4c29",
+    "labels": [
+      "relation",
+      "aggregation"
+    ],
+    "rationale": "Adds course registrations and counts distinct course-registration IDs per student. The references count program enrollment rows. The maximum condition returns a single winner on both states."
+  },
+  {
+    "case": "130627cd1cf9",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "The left join retains students with no friendship row, returning 16 groups instead of 14."
+  },
+  {
+    "case": "15157d042866",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Rejects battles with any ship lost anywhere, with an additional existence test. The references exclude only battles with a loss in the English Channel."
+  },
+  {
+    "case": "19c2339664a6",
+    "labels": [
+      "projection",
+      "relation"
+    ],
+    "rationale": "Extracts a prefix from the voter's phone and compares voters by prefix. The references join votes by state to the area-code mapping before intersecting codes."
+  },
+  {
+    "case": "19f228792664",
+    "labels": [
+      "projection",
+      "relation"
+    ],
+    "rationale": "Returns owners' phone numbers and requires a path through treatments and dogs. The references return professionals' own contact details without that participation requirement."
+  },
+  {
+    "case": "228579419061",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Takes the maximum of the sum of the two alternative fields. Each reference takes the maximum of one field."
+  },
+  {
+    "case": "26abe1588aae",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "The course-arrangement join requires a teaching assignment in addition to the matching age. Neither reference requires one."
+  },
+  {
+    "case": "29cf7edde05d",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Stacks first names and text-cast ages as one column. The references return each name paired with that student's age."
+  },
+  {
+    "case": "2a54822c286b",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "The projected age belongs to the pet reached through the extra lookup, while both references pair a name with the student's age."
+  },
+  {
+    "case": "2b085db42a1e",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Ranks by the sum of injury counts rather than by the number of death records. Both queries select one ship in descending order."
+  },
+  {
+    "case": "2b546163d69a",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Derives each age by applying date arithmetic to birthdate. The references aggregate the stored age or birthdate column directly."
+  },
+  {
+    "case": "2c3db28250ab",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Returns the name first and averages ranking points rather than rankings. Grouping by player ID also splits groups that the references form by first name."
+  },
+  {
+    "case": "2f31cc8544e9",
+    "labels": [
+      "projection",
+      "aggregation",
+      "ranking"
+    ],
+    "rationale": "Reorders the name and ID fields and drops the repeated ID. Counts within student-program pairs rather than students and returns two tied winners instead of one."
+  },
+  {
+    "case": "32ce9773cdd8",
+    "labels": [
+      "relation",
+      "aggregation"
+    ],
+    "rationale": "Includes teachers without assignments through a left join. Counts distinct course IDs per teacher ID rather than assignment rows grouped by teacher name."
+  },
+  {
+    "case": "32ecbd2b44c5",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Adds year to the grouping key. Counts are per tournament-year rather than per tournament name."
+  },
+  {
+    "case": "33fe964f7693",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "Restricts eligible players to those with ranking records before choosing the oldest. The references search all players."
+  },
+  {
+    "case": "392d6e5ec713",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "Starts from students in likes and joins their rows to friendship records. This changes both the eligible students and the number of rows counted for them."
+  },
+  {
+    "case": "39665e7c12b0",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "A country needs a singer in either age band. The reference intersection requires representation in both bands."
+  },
+  {
+    "case": "3b58c5cdc565",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns a country name and language. The references return language, country code and maximum fraction. The name lookup and window calculation serve this different output."
+  },
+  {
+    "case": "401abf38966d",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Groups by tournament ID as well as name, splitting matches that the references count in a single name group."
+  },
+  {
+    "case": "425218cbf90a",
+    "labels": [
+      "relation",
+      "filter"
+    ],
+    "rationale": "Requires a shared concert and selects citizenships of performers at those concerts. The references require the two age groups to share a country, independent of performances."
+  },
+  {
+    "case": "478ebfee92dd",
+    "labels": [
+      "projection",
+      "filter"
+    ],
+    "rationale": "Returns both version fields and accepts a row if either exceeds five. Each reference applies the threshold to the one field it returns."
+  },
+  {
+    "case": "49428bfaa2d5",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns year before count. Reference B computes the same groups but returns count before year. Sorting rows cannot account for the two-state mismatch."
+  },
+  {
+    "case": "49e78a3f0dd5",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Uses a substring pattern for Alton, while both references require exact equality. It returns one airport where the references return none."
+  },
+  {
+    "case": "4a69685c45d7",
+    "labels": [
+      "projection",
+      "filter"
+    ],
+    "rationale": "Projects both names and applies the Jessie exclusion to both of them. Each reference returns and tests just one name field."
+  },
+  {
+    "case": "4b59920dbfff",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Tests lowercase house and apartment against a looked-up description. The references test capitalized codes on the property itself. The lookup supplies the different filter operand."
+  },
+  {
+    "case": "4d7c261aa96a",
+    "labels": [
+      "projection",
+      "relation",
+      "ranking"
+    ],
+    "rationale": "Swaps the area and independence columns. Requires a city record and ranks by the city's population instead of the country's."
+  },
+  {
+    "case": "4d9334ffb035",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Uses the literal math instead of Math in an equality predicate, returning zero rows instead of two. DISTINCT cannot explain the empty result."
+  },
+  {
+    "case": "50a233622c36",
+    "labels": [
+      "aggregation",
+      "ranking"
+    ],
+    "rationale": "Counts wins by player ID instead of winner name, then selects the most recent winning match to obtain the points. The references do not impose that latest-match rule."
+  },
+  {
+    "case": "58775c60dc0a",
+    "labels": [
+      "relation",
+      "filter"
+    ],
+    "rationale": "Requires a property-specific feature assignment and compares its description to AirCon. The references compare the available feature's name, without requiring an assignment."
+  },
+  {
+    "case": "58928d9c778b",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Pools winner and loser ages into a single average. The two separate role-specific average columns in each reference are missing."
+  },
+  {
+    "case": "597ffdd1bab3",
+    "labels": [
+      "aggregation",
+      "ranking"
+    ],
+    "rationale": "Counts distinct phone numbers rather than vote rows and returns both contestants tied at the minimum instead of one."
+  },
+  {
+    "case": "59a90f901e3d",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "Joins model ID directly to the car data ID, omitting the car_names link between model names and make IDs."
+  },
+  {
+    "case": "5f9b65322176",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Returns the program description instead of either program-name field and ranks counts of distinct students rather than enrollment rows."
+  },
+  {
+    "case": "5fb89ccea96d",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Returns one count of distinct name/content pairs instead of two separate marginal distinct counts."
+  },
+  {
+    "case": "602060d6f239",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Groups by table value, counts distinct players per value and maximizes that count. The references maximize the table value itself."
+  },
+  {
+    "case": "6405c11947ec",
+    "labels": [
+      "projection",
+      "relation"
+    ],
+    "rationale": "Returns the kind first and computes age statistics from students. The ownership and student joins restrict and reweight the pet population relative to the pet-only references."
+  },
+  {
+    "case": "64933272bc24",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Omits DISTINCT on professional and treatment description. The same join yields 15 rows before deduplication and 12 after."
+  },
+  {
+    "case": "662145ccdb00",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns opening year before staff size. Reference B projects the same two values in reverse order, while the question asks for the candidate order."
+  },
+  {
+    "case": "68d7509b5187",
+    "labels": [
+      "projection",
+      "ranking"
+    ],
+    "rationale": "Returns the country name first instead of the country code second. Equality to the country maximum includes all tied languages, yielding 241 rows for 233 country groups."
+  },
+  {
+    "case": "693a32c5fc76",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Maximizes the sum of the two alternative table fields with nulls replaced by zero. Each reference maximizes one field."
+  },
+  {
+    "case": "6dc096570ca6",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Counts distinct players per table value and maximizes that count. Each reference takes the maximum stored table value directly."
+  },
+  {
+    "case": "7286a976848b",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns maxima and minima for both share columns together. Each reference returns the pair for one column."
+  },
+  {
+    "case": "74c1305c7dec",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns the two age-band counts alongside nationality. Reference A returns nationality alone for the same overlapping groups."
+  },
+  {
+    "case": "779104ae25b0",
+    "labels": [
+      "projection",
+      "ranking"
+    ],
+    "rationale": "Changes the order and multiplicity of the ID field. Joining all groups with the maximum count also returns both tied students instead of one."
+  },
+  {
+    "case": "7a17746045da",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "The wildcard returns every series field instead of a single episode field. Reversing row order has no effect on the scoring multiset."
+  },
+  {
+    "case": "7d362b6d349b",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "Uses a full outer join. Unmatched rows raise the number of singer-song pairs from eight to ten."
+  },
+  {
+    "case": "7ec22e9c7a3f",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "The outer join matches either endpoint of a friendship. Both references join only outgoing friendship rows and omit students without such a row."
+  },
+  {
+    "case": "810a00c27c1b",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Returns one count of distinct name/content pairs instead of separate counts of distinct names and distinct contents."
+  },
+  {
+    "case": "884bd362c018",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Projects pet type before mean mass. Reference A projects the same two values in reverse order."
+  },
+  {
+    "case": "8da8cc498f62",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "The left join includes 16 students instead of 14. The directed friendship pairs contain no duplicates, so DISTINCT does not change those counts."
+  },
+  {
+    "case": "8fb23c5796f8",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Groups and counts incoming likes by their recipient. The references count outgoing likes by their sender."
+  },
+  {
+    "case": "910e9d21ab2e",
+    "labels": [
+      "projection",
+      "relation"
+    ],
+    "rationale": "Reads make and model from individual car-name records. Both references read the maker and model fields of the model list, with 36 rows rather than 406."
+  },
+  {
+    "case": "96017112cea1",
+    "labels": [
+      "ranking"
+    ],
+    "rationale": "Explicitly breaks a tie in document counts by the smallest template ID. It selects 11 while reference B selects 25 among tied templates."
+  },
+  {
+    "case": "97bb8f3599f3",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Reorders the student ID and name fields and omits the final repeated ID. Counts distinct degree programs for each student instead of enrollment records."
+  },
+  {
+    "case": "9c302c88055a",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Places the student ID first. Counts distinct programs per student and semester rather than counting all enrollment rows per student as in reference A."
+  },
+  {
+    "case": "a0a7a8669aaa",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns course ID, subject and topic with the teacher name. Each reference returns one course field with the teacher name."
+  },
+  {
+    "case": "a7853235df48",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Restricts qualifying students to owners of exactly one pet. Both references admit any student with a cat or dog."
+  },
+  {
+    "case": "a8ad9f8e6269",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns the program description rather than either reference name field. There is one winning program on both states."
+  },
+  {
+    "case": "ae0a758d7858",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Uses eight cylinders, as stated in the question. Both references test four cylinders for the same year."
+  },
+  {
+    "case": "b3157c3a506a",
+    "labels": [
+      "projection",
+      "relation"
+    ],
+    "rationale": "Returns the museum's name in place of the visitor's. Joining visits and museums also excludes qualifying visitors without a recorded visit."
+  },
+  {
+    "case": "b6d489dc459b",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Adds an official-language requirement and compares the text flag to 1. Both references count all four Aruba language rows."
+  },
+  {
+    "case": "b87d9e37fd85",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Selects cars with eight cylinders as requested in the question. Both references instead select cars with four cylinders."
+  },
+  {
+    "case": "ba160c2f96e8",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Requires a like from one of the student's own friends. The references require a friendship and being liked without linking the two witnesses."
+  },
+  {
+    "case": "bc323d976f0a",
+    "labels": [
+      "relation",
+      "filter"
+    ],
+    "rationale": "Joins the model and maker tables, matching a model ID against a model name. It then filters on the maker's full name instead of the model string."
+  },
+  {
+    "case": "bd1fe4a4ca3f",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "The votes join keeps only contestants who received votes. DISTINCT removes the extra per-vote copies but cannot restore the eight excluded contestants."
+  },
+  {
+    "case": "c1620e2fee10",
+    "labels": [
+      "ranking"
+    ],
+    "rationale": "Returns all twelve conductors tied for the largest count. The two references select one of these conductors."
+  },
+  {
+    "case": "c4a365764ee9",
+    "labels": [
+      "ranking"
+    ],
+    "rationale": "Both queries rank by count and take one ship. Their tie has no explicit secondary key, so they select different ships with the same maximum count."
+  },
+  {
+    "case": "c544b4c0be4a",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "Requires a matching paragraph, omitting five documents. DISTINCT removes repeated paragraph matches for the remaining documents."
+  },
+  {
+    "case": "c69adf842c2c",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Combines the two label fields before grouping and counting orchestras. Each reference computes company frequencies for a single field."
+  },
+  {
+    "case": "cc7767371635",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Replaces the state's stored vote field with a state inferred from a three-digit phone prefix and a mapping table."
+  },
+  {
+    "case": "cf8a9b754b33",
+    "labels": [
+      "relation",
+      "aggregation"
+    ],
+    "rationale": "Outer joins preserve professionals without treatments. Omitting DISTINCT also retains repeated name and description pairs for professionals with treatments."
+  },
+  {
+    "case": "d0309c117b89",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Adds the airport code to each airport name. Each reference returns only the name."
+  },
+  {
+    "case": "d07ea6b98b6c",
+    "labels": [
+      "relation"
+    ],
+    "rationale": "Uses a left join, thus retaining two students without any outgoing friendship row. Reference B excludes both."
+  },
+  {
+    "case": "d2e340a01885",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Projects pet type followed by mean mass. Reference A returns mean mass followed by pet type."
+  },
+  {
+    "case": "d78573242813",
+    "labels": [
+      "relation",
+      "ranking"
+    ],
+    "rationale": "Restricts the players to recorded match losers and ranks by age at that match. The references rank all players by birth date."
+  },
+  {
+    "case": "d9497a9b216f",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Adds professional ID as the first result column. Both references return only three contact fields."
+  },
+  {
+    "case": "db8114c48edf",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Counts different treatment types rather than treatment occurrences. Four professionals reach the threshold under that rule, compared with six in the references."
+  },
+  {
+    "case": "de5de799bb24",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns every series field instead of an episode field. Ordering by share changes only row order, which the evaluator ignores."
+  },
+  {
+    "case": "deb965a4ec52",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Adds the number of singers to the most common nationality. The winning nationality is unique on both states."
+  },
+  {
+    "case": "dffa7b3c9ba7",
+    "labels": [
+      "projection",
+      "aggregation"
+    ],
+    "rationale": "Puts the player's name ahead of the average. Grouping by player ID splits groups formed by first name in the references."
+  },
+  {
+    "case": "e18ba8de1721",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Accepts a channel with cartoons by either director. The reference intersection requires the channel to have both directors."
+  },
+  {
+    "case": "e1f879a59f6c",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Counts visits per visitor and museum. The references pool visits to different museums per visitor before applying the threshold."
+  },
+  {
+    "case": "e2e8dfeab854",
+    "labels": [
+      "ranking"
+    ],
+    "rationale": "Every conductor has one qualifying orchestra. The candidate and reference A select different members of that tie under LIMIT 1 without a secondary key."
+  },
+  {
+    "case": "e66f4b0147f9",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Counts distinct battle IDs rather than the distinct outcome or consequence values that the references count."
+  },
+  {
+    "case": "ec89d6291e4c",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns year before staff size, following the question's order. Reference B returns the same fields with staff size first."
+  },
+  {
+    "case": "ed0bf3a5eae4",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns both alternative name fields in each row. Each reference projects only one name."
+  },
+  {
+    "case": "ef5db4aad254",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Looks up the template description. Both references return the document's own description."
+  },
+  {
+    "case": "f1276a5dfeae",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Returns region first, followed by population. Reference B returns the same values with population first."
+  },
+  {
+    "case": "f2185a1bb78f",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "Selects the employee with the largest sum of bonuses across evaluations. The references select the largest single bonus payment."
+  },
+  {
+    "case": "f2e510e27b87",
+    "labels": [
+      "projection"
+    ],
+    "rationale": "Uses the phone prefix to look up a state instead of projecting the state recorded with the vote."
+  },
+  {
+    "case": "f3b809801582",
+    "labels": [
+      "relation",
+      "ranking"
+    ],
+    "rationale": "Joins flight airline to the abbreviation instead of the numeric UID and keeps airlines with no match. The minimum condition then selects all twelve tied rows rather than one."
+  },
+  {
+    "case": "f56804ad6b44",
+    "labels": [
+      "aggregation"
+    ],
+    "rationale": "EXISTS returns one row per qualifying student. The reference intersection removes duplicate names, leaving seven rather than eight rows on the swapped state."
+  },
+  {
+    "case": "f5ef1f86733e",
+    "labels": [
+      "ranking"
+    ],
+    "rationale": "Returns both contestants tied for the minimum number of votes. Reference B retains only one of them."
+  },
+  {
+    "case": "f75cc7e82d92",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Tests AirCon against feature_description instead of feature_name. It matches no row while the name predicate matches one."
+  },
+  {
+    "case": "fc53f30851aa",
+    "labels": [
+      "projection",
+      "relation"
+    ],
+    "rationale": "Returns the maker's text name rather than the model row's numeric maker field. The extra inner join also removes an unmatched model row."
+  },
+  {
+    "case": "fd669c14b6cd",
+    "labels": [
+      "filter"
+    ],
+    "rationale": "Requires an English-language row with flag 0. The references instead exclude countries with an official English row and include countries without any English row."
+  }
+]
