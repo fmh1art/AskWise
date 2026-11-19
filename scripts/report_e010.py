@@ -344,7 +344,7 @@ for partial in product((None,0,1),repeat=8):
         g[name]+=any(all(scores[q,r]>=0 for r in range(3) if r!=q) for q in eligible)
 bound_rows=[{'observed':k,**g,'exact_rate':g['exact']/g['states'],'partition_rate':g['partition']/g['states'],
              'mean_slack':g['slack_sum']/(6*g['states'])} for k,g in sorted(bound_groups.items())]
-fig,axes=plt.subplots(1,2,figsize=(7.1,2.45),layout='constrained')
+fig,axes=plt.subplots(1,2,figsize=(7.1,2.65),layout='constrained')
 observed=np.array([r['observed'] for r in bound_rows])
 for j,(key,label,color,hatch) in enumerate([
         ('exact_rate','Exact four-cell',PRUNE_COLOR['stable'],''),
@@ -356,11 +356,11 @@ for j,(key,label,color,hatch) in enumerate([
 axes[0].set(xlabel='Observed labels (of 8)',ylabel='Certified states (%)',
             xticks=range(9),ylim=(0,110),yticks=[0,25,50,75,100])
 panel(axes[0],'a','Action certificates');grid(axes[0])
-axes[0].legend(loc='upper center',bbox_to_anchor=(.5,-.32),fontsize=8,ncol=2)
+axes[0].legend(loc='upper left',fontsize=8,ncol=1)
 gap=[r['mean_slack'] for r in bound_rows]
 axes[1].plot(observed,gap,'o-',color=PRUNE_COLOR['stable'],markerfacecolor='white',markeredgewidth=.9)
 axes[1].fill_between(observed,0,gap,color=PRUNE_COLOR['observed'],alpha=.6,linewidth=0)
-axes[1].set(xlabel='Observed labels (of 8)',ylabel='Lower-bound gap (edge units)',
+axes[1].set(xlabel='Observed labels (of 8)',ylabel='Bound gap',
             xticks=range(9),ylim=(0,None))
 axes[1].yaxis.set_major_locator(MaxNLocator(4))
 panel(axes[1],'b','Relaxation slack');grid(axes[1])
